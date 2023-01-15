@@ -9,35 +9,21 @@ const Header = () => {
         <Link className={styles["nav-item"]} to="/">
           Home
         </Link>
-        <Link className={styles["nav-item"]} to="/book-online">
-          Book Online
-        </Link>
-        <Link className={styles["nav-item"]} to="/plans">
-          Plans & Pricing
-        </Link>
+        <div className={styles.subnav}>
+          <Link className={styles["nav-item"]} to='/book-online'>Book Online</Link>
+          <div className={styles['subnav-content']}>
+            <Link className={styles["subnav-item"]} to="/plans">
+              Plans & Pricing
+            </Link>
+          </div>
+        </div>
         <Link className={styles["nav-item"]} to="/blog">
           Blog
         </Link>
         <Link className={styles["nav-item"]} to="/members">
           Members
         </Link>
-        <Link className={styles["nav-item"]} to="/policy">
-          Site Policy
-        </Link>
-        <div className={styles.subnav}>
-            <p className={styles["nav-item"]}>More</p>
-            <div className={styles['subnav-content']}>
-                <Link className={styles["subnav-item"]} to="/resources">
-                    Resources
-                </Link>
-                <Link className={styles["subnav-item"]} to="/support">
-                    Support
-                </Link>
-                <Link className={styles["subnav-item"]} to="/forum">
-                    Forum
-                </Link>
-            </div>
-        </div>
+        <Link className={styles['sign-in']} to='/sign-in'>Sign in</Link>
       </nav>
     </header>
   );

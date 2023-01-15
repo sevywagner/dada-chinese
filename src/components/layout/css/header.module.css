@@ -1,6 +1,6 @@
 header {
   padding: 2vh;
-  background-color: rgb(79, 15, 15);
+  background-color: rgb(102, 0, 0);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -17,8 +17,8 @@ nav {
   display: flex;
   align-items: center;
   margin-right: 5vh;
-  font-family: 'avenir';
-  font-size: 2.2vh;
+  font-family: 'Proza Libre';
+  font-size: 2.5vh;
 }
 
 .nav-item {
@@ -26,44 +26,81 @@ nav {
   color: white;
   text-decoration: none;
   border-radius: 5px;
-  border: 1px solid rgb(79, 15, 15);
+  display: inline;
+  position: relative;
 }
 
-.nav-item:hover {
-  animation: hover 0.3s ease-in-out;
+.nav-item:after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
   background-color: white;
-  color: black;
-  border: 1px solid black;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.nav-item:hover:after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
 }
 
 .subnav-content {
   display: none;
 }
 
+.subnav {
+  display: flex;
+  justify-content: center;
+}
+
 .subnav:hover > .subnav-content {
   animation: dropdown 0.3s ease-out;
   position: absolute;
+  top: 12.3vh;
   display: flex;
-  flex-direction: column;
 }
 
 .subnav-item {
   color: white;
-  background-color: rgba(90, 18, 18, 0.427);
+  background-color: rgba(125, 22, 22, 0.573);
   padding: 2vh;
   text-decoration: none;
   margin: 0.3vh;
   border-radius: 5px;
-  border: 1px solid black;
+  border: 1px solid white;
+  text-align: center;
 }
 
 .subnav-item:hover {
   animation: subnav-hover .3s ease-in-out;
-  background-color: rgb(111, 23, 23);
+  background-color: rgb(151, 0, 0);
 }
 
 .subnav p {
-    cursor: pointer;
+  cursor: pointer;
+}
+
+.sign-in {
+  text-decoration: none;
+  background-color: black;
+  color: white;
+  padding: 1.5vh;
+  padding-left: 3vh;
+  padding-right: 3vh;
+  border-radius: 30px;
+  border: 1px solid white;
+  margin-left: 3vh;
+}
+
+.sign-in:hover {
+  animation: sign-in-hover .3s ease-in;
+  background-color: white;
+  border-color: black;
+  color: black;
 }
 
 @keyframes dropdown {
@@ -81,17 +118,28 @@ nav {
     background-color: inherit;
   }
   to {
-    background-color: white;
-    color: black;
-    border: 1px solid black;
+    text-decoration: underline;
   }
 }
 
 @keyframes subnav-hover {
     from {
-      background-color: rgba(90, 18, 18, 0.427);
+      background-color: rgba(125, 22, 22, 0.573);
     }
     to {
-      background-color: rgb(111, 23, 23);
+      background-color: rgb(151, 0, 0);
     }
+}
+
+@keyframes sign-in-hover {
+  from {
+    background-color: black;
+    border-color: white;
+    color: white;
+  }
+  to {
+    background-color: white;
+    border-color: black;
+    color: black;
+  }
 }
