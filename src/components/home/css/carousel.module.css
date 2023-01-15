@@ -1,0 +1,17 @@
+.root {
+    height: 90vh;
+}
+
+.root img {
+    width: 100%;
+    height: 100%;
+}
+
+@keyframes slide-in {
+    from {
+        transform: translateX(-90vh);
+    }
+    to {
+        transform: translateX(0vh);
+    }
+}

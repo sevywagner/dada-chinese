@@ -1,0 +1,97 @@
+header {
+  padding: 2vh;
+  background-color: rgb(79, 15, 15);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-text {
+  margin-left: 5vh;
+  color: white;
+  font-size: 4vh;
+  font-family: 'Montserrat';
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  margin-right: 5vh;
+  font-family: 'avenir';
+  font-size: 2.2vh;
+}
+
+.nav-item {
+  padding: 2vh;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  border: 1px solid rgb(79, 15, 15);
+}
+
+.nav-item:hover {
+  animation: hover 0.3s ease-in-out;
+  background-color: white;
+  color: black;
+  border: 1px solid black;
+}
+
+.subnav-content {
+  display: none;
+}
+
+.subnav:hover > .subnav-content {
+  animation: dropdown 0.3s ease-out;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+}
+
+.subnav-item {
+  color: white;
+  background-color: rgba(90, 18, 18, 0.427);
+  padding: 2vh;
+  text-decoration: none;
+  margin: 0.3vh;
+  border-radius: 5px;
+  border: 1px solid black;
+}
+
+.subnav-item:hover {
+  animation: subnav-hover .3s ease-in-out;
+  background-color: rgb(111, 23, 23);
+}
+
+.subnav p {
+    cursor: pointer;
+}
+
+@keyframes dropdown {
+  from {
+    transform: translateX(10vh);
+  }
+  to {
+    transform: translateX(0vh);
+  }
+}
+
+@keyframes hover {
+  from {
+    color: white;
+    background-color: inherit;
+  }
+  to {
+    background-color: white;
+    color: black;
+    border: 1px solid black;
+  }
+}
+
+@keyframes subnav-hover {
+    from {
+      background-color: rgba(90, 18, 18, 0.427);
+    }
+    to {
+      background-color: rgb(111, 23, 23);
+    }
+}

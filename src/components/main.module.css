@@ -1,0 +1,21 @@
+.subtitle {
+    font-size: 4vh;
+    text-align: center;
+}
+
+.wrap {
+    display: flex;
+    justify-content: center;
+}
+
+.half-width-block {
+    width: 50%;
+}
+
+.pg {
+    font-size: 2.2vh;
+    line-height: 5vh;
+    margin-left: 4vh;
+    margin-right: 4vh;
+    text-align: center;
+}
