@@ -19,3 +19,7 @@
     margin-right: 4vh;
     text-align: center;
 }
+
+.row {
+    display: flex;
+}

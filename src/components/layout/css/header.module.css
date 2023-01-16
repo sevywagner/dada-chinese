@@ -86,21 +86,21 @@ nav {
 
 .sign-in {
   text-decoration: none;
-  background-color: black;
-  color: white;
+  background-color: white;
+  color: black;
   padding: 1.5vh;
   padding-left: 3vh;
   padding-right: 3vh;
   border-radius: 30px;
-  border: 1px solid white;
+  border: 1px solid black;
   margin-left: 3vh;
 }
 
 .sign-in:hover {
   animation: sign-in-hover .3s ease-in;
-  background-color: white;
-  border-color: black;
-  color: black;
+  background-color: black;
+  border-color: white;
+  color: white;
 }
 
 @keyframes dropdown {
@@ -133,13 +133,13 @@ nav {
 
 @keyframes sign-in-hover {
   from {
-    background-color: black;
-    border-color: white;
-    color: white;
-  }
-  to {
     background-color: white;
     border-color: black;
     color: black;
+  }
+  to {
+    background-color: black;
+    border-color: white;
+    color: white;
   }
 }
