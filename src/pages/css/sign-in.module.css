@@ -1,0 +1,16 @@
+.root {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.elevate {
+    width: 30%;
+    border-radius: 20px;
+    box-shadow: 10px 10px 40px;
+    margin: 5vh;
+    background-color: rgb(236, 236, 236);
+    padding: 10vh;
+    padding-top: 0vh;
+    padding-bottom: 10vh;
+}

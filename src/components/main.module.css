@@ -1,6 +1,7 @@
 .subtitle {
     font-size: 4vh;
     text-align: center;
+    font-family: 'montserrat';
 }
 
 .wrap {
@@ -22,4 +23,11 @@
 
 .row {
     display: flex;
+}
+
+.title {
+    text-align: center;
+    font-size: 10vh;
+    font-family: 'lato';
+    margin: 3vh;
 }

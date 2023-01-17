@@ -5,7 +5,8 @@ import { useEffect, useState } from 'react';
 const Carousel = () => {
     const [pic, setPic] = useState(require('./../../pictures/carousel/pic1.jpeg'));
     const [counter, setCounter] = useState(2);
-    
+    const [image, setImage] = useState(<img src={pic} />);
+
     useEffect(() => {
         setTimeout(() => {
             if (counter == 6) {
@@ -14,6 +15,8 @@ const Carousel = () => {
             setPic(require(`./../../pictures/carousel/pic${counter}.jpeg`));
             setCounter((prevState) => prevState + 1);
             console.log(counter);
+            setImage(<img className={styles.animate} src={pic} />);
+            setImage(<img src={pic} />);
         }, 5000);
     }, [pic])
     
@@ -21,7 +24,7 @@ const Carousel = () => {
     return (
         <div className={`${mainStyles.wrap} ${styles.root}`}>
             <div className={styles.carousel}>
-                <img src={pic} alt='Carousel' />
+                {image}
             </div>
         </div>
     );
