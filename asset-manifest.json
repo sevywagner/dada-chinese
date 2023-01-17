@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/dada-chinese/static/css/main.ac4e215b.css",
-    "main.js": "/dada-chinese/static/js/main.86653bcd.js",
+    "main.css": "/dada-chinese/static/css/main.58a64dce.css",
+    "main.js": "/dada-chinese/static/js/main.9faf120a.js",
     "static/media/bg.jpeg": "/dada-chinese/static/media/bg.b7ac9aa93d010823e495.jpeg",
     "static/media/pic1.jpeg": "/dada-chinese/static/media/pic1.a533b526baa59b796015.jpeg",
     "static/media/pic4.jpeg": "/dada-chinese/static/media/pic4.38d215cd30a2ad139629.jpeg",
@@ -10,11 +10,11 @@
     "static/media/pic3.jpeg": "/dada-chinese/static/media/pic3.22d28957f05a2c345bca.jpeg",
     "static/media/pic6.jpeg": "/dada-chinese/static/media/pic6.217073341f33c05ba1fd.jpeg",
     "index.html": "/dada-chinese/index.html",
-    "main.ac4e215b.css.map": "/dada-chinese/static/css/main.ac4e215b.css.map",
-    "main.86653bcd.js.map": "/dada-chinese/static/js/main.86653bcd.js.map"
+    "main.58a64dce.css.map": "/dada-chinese/static/css/main.58a64dce.css.map",
+    "main.9faf120a.js.map": "/dada-chinese/static/js/main.9faf120a.js.map"
   },
   "entrypoints": [
-    "static/css/main.ac4e215b.css",
-    "static/js/main.86653bcd.js"
+    "static/css/main.58a64dce.css",
+    "static/js/main.9faf120a.js"
   ]
 }
