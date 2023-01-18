@@ -1,19 +1,14 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import useInput from "../../hooks/use-input";
-import styles from "./css/sign-in-form.module.css";
+import styles from "./css/contact-form.module.css";
 
 const SignUpForm = () => {
-  const [error, setError] = useState({
-    hasError: false,
-    errorMessage: "",
-  });
-
   const {
     value: name,
     isValid: nameIsValid,
     hasError: nameHasError,
-    blurHandler: nameBlurHandler,
     valueChangeHandler: nameChangeHandler,
+    blurHandler: nameBlurHandler,
     reset: resetName,
   } = useInput((data) => data.trim() !== "");
 
@@ -21,58 +16,98 @@ const SignUpForm = () => {
     value: email,
     isValid: emailIsValid,
     hasError: emailHasError,
-    blurHandler: emailBlurHandler,
     valueChangeHandler: emailChangeHandler,
+    blurHandler: emailBlurHandler,
     reset: resetEmail,
   } = useInput((data) => data.includes("@"));
 
-  const formSubmitHandler = (event) => {
+  const {
+    value: password,
+    isValid: passwordIsValid,
+    hasError: passwordHasError,
+    valueChangeHandler: passwordChangeHandler,
+    blurHandler: passwordBlurHandler,
+    reset: resetPassword,
+  } = useInput(
+    (data) =>
+      data.trim().length >= 8 &&
+      (data.includes("!") ||
+        data.includes("@") ||
+        data.includes(".") ||
+        data.includes("/") ||
+        data.includes("(") ||
+        data.includes(")"))
+  );
+
+  const {
+    value: password2,
+    isValid: password2IsValid,
+    hasError: password2HasError,
+    valueChangeHandler: password2ChangeHandler,
+    blurHandler: password2BlurHandler,
+    reset: resetPassword2,
+  } = useInput((data) => data === password);
+
+  const submitHandler = (event) => {
     event.preventDefault();
-
-    if (nameIsValid) {
-    } else {
-      setError({
-        hasError: true,
-        errorMessage: "Name must be longer than 0 characters",
-      });
-    }
-
-    resetName();
-    resetEmail();
   };
-  
-  let classNames = {
+
+  const classNames = {
     name: nameHasError ? styles.invalid : "",
     email: emailHasError ? styles.invalid : "",
+    password: passwordHasError ? styles.invalid : "",
+    password2: password2HasError ? styles.invalid : ""
   };
 
-
   return (
-    <>
-      {error.hasError && <p>{error.errorMessage}</p>}
-      <form onSubmit={formSubmitHandler}>
-        <div className={styles.inputs}>
-          <label>Name</label>
-          <input
-            className={classNames.name}
-            type="text"
-            onBlur={nameBlurHandler}
-            onChange={nameChangeHandler}
-            value={name}
-          />
+    <div className={styles.wrap}>
+      <form className={styles.contact} onSubmit={submitHandler}>
 
-          <label>Email</label>
-          <input
-            className={classNames.email}
-            type="text"
-            onBlur={emailBlurHandler}
-            onChange={emailChangeHandler}
-            value={email}
-          />
+        <label className={styles.label}>Name</label>
+        <input
+          className={classNames.name}
+          type="text"
+          onChange={nameChangeHandler}
+          onBlur={nameBlurHandler}
+          value={name}
+          name="name"
+        />
+
+        <label className={styles.label}>Email</label>
+        <input
+          className={classNames.email}
+          type="text"
+          onChange={emailChangeHandler}
+          onBlur={emailBlurHandler}
+          value={email}
+          name="email"
+        />
+
+        <label className={styles.label}>Set password</label>
+        <input
+          className={classNames.password}
+          type="text"
+          onChange={passwordChangeHandler}
+          onBlur={passwordBlurHandler}
+          value={password}
+          name="password"
+        />
+
+        <label className={styles.label}>Confirm password</label>
+        <input
+          className={classNames.password}
+          type="text"
+          onChange={password2ChangeHandler}
+          onBlur={password2BlurHandler}
+          value={password2}
+          name="password2"
+        />
+
+        <div className={styles.wrap}>
+          <button className={styles.submit} type="submit">Submit</button>
         </div>
-        <button type="submit">Log in</button>
       </form>
-    </>
+    </div>
   );
 };
 

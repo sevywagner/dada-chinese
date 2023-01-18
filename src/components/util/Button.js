@@ -10,10 +10,27 @@ const Button = styled.button`
     background-color: rgb(102, 0, 0);
     color: white;
     font-size: 3vh;
-    font-family: 'avenir'
+    font-family: 'avenir';
 
     &:hover {
-        background-color: black
+        animation: hover .3s ease-in;
+        background-color: white;
+        color: black;
+        border-color: black;
+    }
+
+    @keyframes hover {
+        from {
+            border-color: white;
+            background-color: rgb(102, 0, 0);
+            color: white;
+        }
+
+        to {
+            border-color: black;
+            background-color: white;
+            color: black;
+        }
     }
 `;
 

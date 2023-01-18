@@ -14,7 +14,6 @@ const SignInForm = () => {
   };
 
   return (
-    <>
       <form onSubmit={formSubmitHandler}>
         <div className={styles.inputs}>
           <div className={styles.block}>
@@ -29,7 +28,6 @@ const SignInForm = () => {
         </div>
         <Button type="submit">Log in</Button>
       </form>
-    </>
   );
 };
 

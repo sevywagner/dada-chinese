@@ -1,13 +1,3 @@
-.submit {
-    padding: 1vh;
-    background-color: white;
-    border-radius: 10px;
-    border: 1px solid black;
-    font-size: 2.3vh;
-    font-family: 'Proza Libre';
-    margin: 4vh;
-}
-
 form {
     margin: 5vh;
 }
@@ -28,4 +18,47 @@ form {
 
 .label {
     text-align: left;
+}
+
+textarea {
+    height: 20vh;
+    border-radius: 20px;
+    border: 1px solid black;
+    padding: 2vh;
+    margin: 2vh;
+    margin-left: 2vh;
+    margin-right: 2vh;
+}
+
+.submit {
+    padding: 1.5vh;
+    padding-left: 2.5vh;
+    padding-right: 2.5vh;
+    background-color: white;
+    border-radius: 30px;
+    border: 1px solid black;
+    font-size: 2.3vh;
+    font-family: 'Proza Libre';
+    margin: 4vh;
+}
+
+.submit:hover {
+    animation: hover .3s ease-in;
+    background-color: black;
+    border-color: white;
+    color: white;
+}
+
+@keyframes hover {
+    from {
+        background-color: white;
+        border-color: black;
+        color: black;
+    }
+
+    to {
+        background-color: black;
+        border-color: white;
+        color: white;
+    }
 }

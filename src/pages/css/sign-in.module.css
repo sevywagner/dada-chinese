@@ -14,3 +14,8 @@
     padding-top: 0vh;
     padding-bottom: 10vh;
 }
+
+.form {
+    display: flex;
+    justify-content: center;
+}

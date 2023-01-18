@@ -7,7 +7,9 @@ const SignIn = () => {
         <div className={styles.root}>
             <div className={styles['elevate']}>
                 <p className={mainStyles.title}>Sign in</p>
-                <SignInForm />
+                <div className={styles.form}>
+                    <SignInForm />
+                </div>
             </div>
         </div>
     );

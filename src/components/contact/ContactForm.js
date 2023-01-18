@@ -22,42 +22,24 @@ const ContactForm = () => {
   } = useInput((data) => data.includes("@"));
 
   const {
-    value: password,
-    isValid: passwordIsValid,
-    hasError: passwordHasError,
-    valueChangeHandler: passwordChangeHandler,
-    blurHandler: passwordBlurHandler,
-    reset: resetPassword,
-  } = useInput(
-    (data) =>
-      data.trim().length >= 8 &&
-      (data.includes("!") ||
-        data.includes("@") ||
-        data.includes(".") ||
-        data.includes("/") ||
-        data.includes("(") ||
-        data.includes(")"))
-  );
-
-  const {
-    value: password2,
-    isValid: password2IsValid,
-    hasError: password2HasError,
-    valueChangeHandler: password2ChangeHandler,
-    blurHandler: password2BlurHandler,
-    reset: resetPassword2,
-  } = useInput((data) => data === password);
-
-  const submitHandler = (event) => {
-    event.preventDefault();
-  };
+    value: message,
+    isValid: messageIsValid,
+    hasError: messageHasError,
+    valueChangeHandler: messageChangeHandler,
+    blurHandler: messageBlurHandler,
+    reset: resetMessage,
+  } = useInput((data) => data.trim() !== '');
 
   const classNames = {
     name: nameHasError ? styles.invalid : "",
     email: emailHasError ? styles.invalid : "",
-    password: passwordHasError ? styles.invalid : "",
-    password2: password2HasError ? styles.invalid : ""
+    message: messageHasError ? styles.invalid : ""
   };
+
+  const submitHandler = (event) => {
+    event.preventDefault();
+
+  }
 
   return (
     <div className={styles.wrap}>
@@ -83,25 +65,14 @@ const ContactForm = () => {
           name="email"
         />
 
-        <label className={styles.label}>Set password</label>
-        <input
-          className={classNames.password}
-          type="text"
-          onChange={passwordChangeHandler}
-          onBlur={passwordBlurHandler}
-          value={password}
-          name="password"
-        />
-
-        <label className={styles.label}>Confirm password</label>
-        <input
-          className={classNames.password}
-          type="text"
-          onChange={password2ChangeHandler}
-          onBlur={password2BlurHandler}
-          value={password2}
-          name="password2"
-        />
+        <label className={styles.label}>Message</label>
+        <textarea
+          className={classNames.message}
+          onChange={messageChangeHandler}
+          onBlur={messageBlurHandler}
+          value={message}
+          name='message'
+        ></textarea>
 
         <div className={styles.wrap}>
           <button className={styles.submit} type="submit">Submit</button>
