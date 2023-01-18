@@ -153,3 +153,16 @@ nav {
     color: white;
   }
 }
+
+@media only screen and (max-width: 1000px) {
+  .logo {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+  }
+
+  nav {
+    display: none;
+  }
+}

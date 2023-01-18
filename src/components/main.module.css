@@ -31,3 +31,9 @@
     font-family: 'lato';
     margin: 3vh;
 }
+
+@media only screen and (max-width: 800px) {
+    .half-width-block {
+        width: 100%;
+    }
+}

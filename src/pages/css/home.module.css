@@ -17,3 +17,14 @@
     overflow: hidden;
     scroll-snap-align: center;
 }
+
+.row {
+    display: flex;
+    flex-direction: row;
+}
+
+@media only screen and (max-width: 800px) {
+    .row {
+        flex-direction: column;
+    }
+}

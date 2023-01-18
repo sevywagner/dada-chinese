@@ -21,7 +21,7 @@ const Carousel = () => {
     
 
     return (
-        <div className={`${mainStyles.wrap} ${styles.root}`}>
+        <div className={styles.root}>
             <div className={styles.carousel}>
                 {image}
             </div>

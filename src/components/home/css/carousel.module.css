@@ -1,5 +1,6 @@
 .root {
-    
+    display: flex;
+    width: 100%;
 }
 
 .carousel {
@@ -31,5 +32,21 @@
     }
     to {
         opacity: 0;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .root {
+        margin: 0;
+        width: 100%;
+        justify-content: center;
+    }
+
+    .carousel {
+        margin: 3vh;
+        height: 30vh;
+    }
+
+    .carousel img {
     }
 }

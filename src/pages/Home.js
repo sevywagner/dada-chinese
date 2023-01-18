@@ -12,7 +12,7 @@ const Home = () => {
                 <p>Dada Chinese</p>
                 <p>欢迎</p>
             </div>
-            <div className={mainStyles.row}>
+            <div className={styles.row}>
                 <div className={mainStyles['half-width-block']}>
                     <Carousel />
                 </div>
