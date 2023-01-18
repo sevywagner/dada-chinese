@@ -6,6 +6,16 @@ header {
   align-items: center;
 }
 
+.logo {
+  display: flex;
+  align-items: center;
+  height: 15vh;
+}
+
+.logo img {
+  height: 80%;
+}
+
 .header-text {
   margin-left: 5vh;
   color: white;
@@ -60,7 +70,7 @@ nav {
 .subnav:hover > .subnav-content {
   animation: dropdown 0.3s ease-out;
   position: absolute;
-  top: 12.3vh;
+  top: 12.8vh;
   display: flex;
 }
 

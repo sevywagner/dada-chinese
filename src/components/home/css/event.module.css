@@ -1,0 +1,59 @@
+.events {
+    display: flex;
+    justify-content: space-around;
+    margin: 5vh;
+}
+
+.event-item {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    border-radius: 10px;
+    border: 1px solid black;
+    padding: 10vh;
+    padding-top: 0;
+    box-shadow: 10px 10px 30px;
+}
+
+.top {
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.bottom {
+    height: 20vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: 1px solid black;
+}
+
+.rsvp {
+    padding: 1vh;
+    padding-left: 3vh;
+    padding-right: 3vh;
+    background-color: white;
+    border: 1px solid black;
+}
+
+.rsvp:hover {
+    animation: hover .3s ease-in;
+    background-color: rgb(77, 77, 77);
+    color: white;
+}
+
+@keyframes hover {
+    from {
+        background-color: white;
+        color: black;
+    }
+
+    to {
+        background-color: rgb(77, 77, 77);
+        color: white;
+    }
+}

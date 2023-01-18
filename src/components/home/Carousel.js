@@ -14,7 +14,6 @@ const Carousel = () => {
             }
             setPic(require(`./../../pictures/carousel/pic${counter}.jpeg`));
             setCounter((prevState) => prevState + 1);
-            console.log(counter);
             setImage(<img className={styles.animate} src={pic} />);
             setImage(<img src={pic} />);
         }, 5000);

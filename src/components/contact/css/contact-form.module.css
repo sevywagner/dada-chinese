@@ -1,0 +1,31 @@
+.submit {
+    padding: 1vh;
+    background-color: white;
+    border-radius: 10px;
+    border: 1px solid black;
+    font-size: 2.3vh;
+    font-family: 'Proza Libre';
+    margin: 4vh;
+}
+
+form {
+    margin: 5vh;
+}
+
+.contact {
+    width: 40%;
+}
+
+.wrap {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.invalid {
+    background-color: rgba(185, 0, 0, 0.594);
+}
+
+.label {
+    text-align: left;
+}
