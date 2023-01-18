@@ -6,6 +6,7 @@ import Members from "../pages/Members";
 import Plans from "../pages/Plans";
 import Policy from "../pages/Policy";
 import SignIn from "../pages/SignIn";
+import BlogPost from "./blog/BlogPost";
 
 const Routing = () => {
     return (
@@ -14,6 +15,7 @@ const Routing = () => {
             <Route path='/dada-chinese/contact' element={<Contact />} />
             <Route path='/dada-chinese/plans' element={<Plans />} />
             <Route path='/dada-chinese/blog' element={<Blog />} />
+            <Route path='/dada-chinese/blog-post/:postId' element={<BlogPost />} />
             <Route path='/dada-chinese/members' element={<Members />} />
             <Route path='/dada-chinese/policy' element={<Policy />} />
             <Route path="/dada-chinese/sign-in" element={<SignIn />} />

@@ -1,7 +1,11 @@
+import mainStyles from './../components/main.module.css';
+import BlogList from '../components/blog/BlogList';
+
 const Blog = () => {
     return (
         <div>
-            <h1>Blog</h1>
+            <p className={mainStyles.title}>Blog</p>
+            <BlogList />
         </div>
     );
 }
