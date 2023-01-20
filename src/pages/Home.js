@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import styles from './css/home.module.css';
 import mainStyles from './../components/main.module.css';
 import About from '../components/home/About';
@@ -11,6 +12,7 @@ const Home = () => {
             <div className={styles.title}>
                 <p>Dada Chinese</p>
                 <p>欢迎</p>
+                <Link to='/book' className={mainStyles.book}>Book a Class</Link>
             </div>
             <div className={styles.row}>
                 <div className={mainStyles['half-width-block']}>
@@ -21,7 +23,6 @@ const Home = () => {
                 </div>
             </div>
             <Impact />
-            <Events />
         </div>
     );
 }

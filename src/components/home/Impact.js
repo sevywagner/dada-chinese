@@ -34,7 +34,7 @@ const Impact = () => {
             </div>
             <div className={mainStyles['half-width-block']}>
                 <div className={styles['image-wrap']}>
-                    <img src={require('./../../pictures/download.jpeg')} />
+                    <img src={require('./../../pictures/impact.jpeg')} />
                 </div>
             </div>
         </div>

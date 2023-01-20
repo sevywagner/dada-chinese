@@ -28,3 +28,22 @@
 .root img {
     height: 100%;
 }
+
+@media only screen and (max-width: 800px) {
+    .root {
+        width: 100%;
+        height: auto;
+        align-items: center;
+    }
+
+    .wrap {
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        padding: 0;
+    }
+
+    .image-wrap {
+        display: none;
+    }
+}

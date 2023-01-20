@@ -72,11 +72,12 @@ nav {
   position: absolute;
   top: 12.8vh;
   display: flex;
+  flex-direction: column;
 }
 
 .subnav-item {
   color: white;
-  background-color: rgba(125, 22, 22, 0.573);
+  background-color: rgba(125, 22, 22, 0.424);
   padding: 2vh;
   text-decoration: none;
   margin: 0.3vh;
@@ -87,7 +88,7 @@ nav {
 
 .subnav-item:hover {
   animation: subnav-hover .3s ease-in-out;
-  background-color: rgb(151, 0, 0);
+  background-color: rgb(122, 0, 0);
 }
 
 .subnav p {
@@ -137,7 +138,7 @@ nav {
       background-color: rgba(125, 22, 22, 0.573);
     }
     to {
-      background-color: rgb(151, 0, 0);
+      background-color: rgb(122, 0, 0);
     }
 }
 

@@ -14,6 +14,7 @@ const Header = () => {
           <Link className={styles["nav-item"]} to='/dada-chinese/our-classes'>Our Classes</Link>
           <div className={styles['subnav-content']}>
             <Link className={styles["subnav-item"]} to="/dada-chinese/plans">Plans & Pricing</Link>
+            <Link className={styles["subnav-item"]} to="/dada-chinese/plans">Our Teachers</Link>
           </div>
         </div>
         <Link className={styles["nav-item"]} to='/dada-chinese/contact'>Contact</Link>
