@@ -25,7 +25,7 @@ const Carousel = () => {
       <div className={styles.carousel}>
         <motion.div
           key={counter}
-          initial={{ transform: "translateX(30vh)", opacity: 0 }}
+          initial={{ transform: "translateX(50vh)", opacity: 0 }}
           animate={{ transform: "translateX(0vh)", opacity: 1 }}
           exit={{ transform: "translateX(-30vh)" }}
         >

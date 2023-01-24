@@ -1,6 +1,15 @@
 footer {
-    padding: 2vh;
-    background-color: rgb(102, 0, 0);
+    padding: .5vh;
+    background-color: rgb(92, 0, 0);
     color: white;
     text-align: center;
+}
+
+.footer-item {
+    margin: 3vh;
+}
+
+.socials {
+    display: flex;
+    justify-content: center;
 }

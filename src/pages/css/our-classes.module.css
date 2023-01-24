@@ -1,0 +1,9 @@
+.classes {
+    display: flex;
+    justify-content: center;
+}
+
+.wrap {
+    display: flex;
+    justify-content: center;
+}

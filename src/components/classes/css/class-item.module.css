@@ -1,0 +1,32 @@
+.wrap {
+    display: flex;
+    justify-content: center;
+    height: 100%;
+}
+
+.item {
+    border: 1px solid black;
+    width: 50%;
+    margin: 5vh;
+    box-shadow: 10px 10px 30px black;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.pic img {
+    width: 100%;
+}
+
+.pic {
+    width: 100%;
+}
+
+.data {
+    text-align: center;
+    margin-left: 4vh;
+    margin-right: 4vh;
+    font-family: 'avenir';
+}
