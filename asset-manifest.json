@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/dada-chinese/static/css/main.7a64557c.css",
-    "main.js": "/dada-chinese/static/js/main.dc839e24.js",
+    "main.css": "/dada-chinese/static/css/main.598c60af.css",
+    "main.js": "/dada-chinese/static/js/main.98ff636f.js",
     "static/media/impact.jpeg": "/dada-chinese/static/media/impact.dae60d6c9907b21398f6.jpeg",
     "static/media/bg.jpeg": "/dada-chinese/static/media/bg.b7ac9aa93d010823e495.jpeg",
     "static/media/pic1.jpeg": "/dada-chinese/static/media/pic1.a533b526baa59b796015.jpeg",
@@ -10,16 +10,17 @@
     "static/media/pic2.jpeg": "/dada-chinese/static/media/pic2.eed805deb08f946008e2.jpeg",
     "static/media/pic3.jpeg": "/dada-chinese/static/media/pic3.22d28957f05a2c345bca.jpeg",
     "static/media/pic6.jpeg": "/dada-chinese/static/media/pic6.217073341f33c05ba1fd.jpeg",
+    "static/media/Jingyi.jpg": "/dada-chinese/static/media/Jingyi.ea6e804478ba292916af.jpg",
     "static/media/studying.jpeg": "/dada-chinese/static/media/studying.16b16f4556bd3d11bec4.jpeg",
     "static/media/studying2.avif": "/dada-chinese/static/media/studying2.55a84622f7ee8679abf6.avif",
     "static/media/twitter.png": "/dada-chinese/static/media/twitter.43e83bc37910c47eda0d.png",
     "static/media/instagram.png": "/dada-chinese/static/media/instagram.edb90ecc706a7a25542b.png",
     "index.html": "/dada-chinese/index.html",
-    "main.7a64557c.css.map": "/dada-chinese/static/css/main.7a64557c.css.map",
-    "main.dc839e24.js.map": "/dada-chinese/static/js/main.dc839e24.js.map"
+    "main.598c60af.css.map": "/dada-chinese/static/css/main.598c60af.css.map",
+    "main.98ff636f.js.map": "/dada-chinese/static/js/main.98ff636f.js.map"
   },
   "entrypoints": [
-    "static/css/main.7a64557c.css",
-    "static/js/main.dc839e24.js"
+    "static/css/main.598c60af.css",
+    "static/js/main.98ff636f.js"
   ]
 }
