@@ -11,6 +11,7 @@ import Policy from "../pages/Policy";
 import SignIn from "../pages/SignIn";
 import Teacher from "../pages/Teacher";
 import BlogPost from "./blog/BlogPost";
+import Error from "../pages/Error";
 
 const Routing = () => {
     return (
@@ -33,6 +34,8 @@ const Routing = () => {
 
             <Route path='/dada-chinese/our-teachers' element={<OurTeachers />} />
             <Route path='/dada-chinese/our-teachers/:teacherName' element={<Teacher />} />
+
+            <Route path='/*' element={<Error />} />
         </Routes>
     );
 }

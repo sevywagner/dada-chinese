@@ -4,7 +4,6 @@ import mainStyles from './../components/main.module.css';
 import About from '../components/home/About';
 import Carousel from '../components/home/Carousel';
 import Impact from '../components/home/Impact';
-import Events from '../components/home/Events';
 
 const Home = () => {
     return (
