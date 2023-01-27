@@ -12,7 +12,7 @@ const Home = () => {
             <div className={styles.title}>
                 <p>Dada Chinese</p>
                 <p>欢迎</p>
-                <Link to='/book' className={mainStyles.book}>Book a Class</Link>
+                <Link to='/dada-chinese/our-classes' className={mainStyles.book}>Book a Class</Link>
             </div>
             <div className={styles.row}>
                 <div className={mainStyles['half-width-block']}>

@@ -13,3 +13,13 @@ footer {
     display: flex;
     justify-content: center;
 }
+
+.foot-note {
+    color: white;
+    font-family: 'Proza Libre';
+    font-size: 3vh;
+}
+
+.foot-note a {
+    color: white;
+}

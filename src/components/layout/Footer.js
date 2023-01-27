@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styles from "./css/footer.module.css";
 
 const Footer = () => {
@@ -21,7 +22,7 @@ const Footer = () => {
             />
           </a>
         </div>
-        <p>&copy; Dada Chinese</p>
+        <p className={styles['foot-note']}>&copy; Dada Chinese - <Link to='/dada-chinese/policy'>Privacy Policy</Link></p>
       </footer>
     </>
   );

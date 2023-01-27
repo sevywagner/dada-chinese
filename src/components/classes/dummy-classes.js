@@ -7,13 +7,13 @@ const classes = [
     },
     {
         id: 'c2',
-        imageUrl: 'studying.jpeg',
+        imageUrl: 'teacher.jpg',
         name: 'Dada and we',
         price: 25.00
     },
     {
         id: 'c3',
-        imageUrl: 'studying.jpeg',
+        imageUrl: 'studying3.jpg',
         name: 'Dadada',
         price: 30.00
     },
