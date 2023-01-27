@@ -16,7 +16,7 @@ form {
 }
 
 .invalid {
-    background-color: red;
+    background-color: rgba(185, 0, 0, 0.594);
 }
 
 label {

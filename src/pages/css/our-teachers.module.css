@@ -1,0 +1,8 @@
+.root {
+    margin: 10vh;
+}
+
+.teachers {
+    display: flex;
+    justify-content: center;
+}

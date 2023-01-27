@@ -1,8 +1,14 @@
 import { useState } from "react";
 import useInput from "../../hooks/use-input";
-import styles from "./css/contact-form.module.css";
+import Button from "../util/Button";
+import styles from './css/sign-in-form.module.css';
 
-const SignUpForm = () => {
+const SignUpForm = ({ onSubmit }) => {
+  const [error, setError] = useState({
+    hasError: false,
+    message: ''
+  });
+  
   const {
     value: name,
     isValid: nameIsValid,
@@ -48,10 +54,6 @@ const SignUpForm = () => {
     reset: resetPassword2,
   } = useInput((data) => data === password);
 
-  const submitHandler = (event) => {
-    event.preventDefault();
-  };
-
   const classNames = {
     name: nameHasError ? styles.invalid : "",
     email: emailHasError ? styles.invalid : "",
@@ -60,8 +62,7 @@ const SignUpForm = () => {
   };
 
   return (
-    <div className={styles.wrap}>
-      <form className={styles.contact} onSubmit={submitHandler}>
+      <form onSubmit={onSubmit}>
 
         <label className={styles.label}>Name</label>
         <input
@@ -103,11 +104,8 @@ const SignUpForm = () => {
           name="password2"
         />
 
-        <div className={styles.wrap}>
-          <button className={styles.submit} type="submit">Submit</button>
-        </div>
+        <Button className={styles.submit} type="submit">Submit</Button>
       </form>
-    </div>
   );
 };
 
