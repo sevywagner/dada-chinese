@@ -1,25 +1,30 @@
 .item {
-    background-color: black;
-    border-top: 2px solid black;
-    border-bottom: 2px solid black;
+    /* border-top: 2px solid black;
+    border-bottom: 2px solid black; */
     height: 50vh;
     border-radius: 2vh;
+    background-image: url('./../../../pictures/teachers/Jingyi.jpg');
     background-size: cover;
     background-repeat: no-repeat;
-}
-
-.item img {
-    height: 100%;
-    border-radius: 2vh;
-    z-index: -1;
-}
-
-.title {
-    font-family: 'montserrat';
-    font-size: 6vh;
-    text-align: center;
+    width: 30vh;
 }
 
 .item:hover {
+    animation: hover .3s ease-in;
     opacity: .7;
+}
+
+.title {
+    text-align: center;
+    font-family: 'montserrat';
+    font-size: 6vh;
+}
+
+@keyframes hover {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: .7;
+    }
 }

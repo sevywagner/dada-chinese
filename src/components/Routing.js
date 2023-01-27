@@ -9,6 +9,7 @@ import OurTeachers from "../pages/OurTeachers";
 import Plans from "../pages/Plans";
 import Policy from "../pages/Policy";
 import SignIn from "../pages/SignIn";
+import Teacher from "../pages/Teacher";
 import BlogPost from "./blog/BlogPost";
 
 const Routing = () => {
@@ -31,6 +32,7 @@ const Routing = () => {
             <Route path='/dada-chinese/our-classes/:classId' element={<OurClassesDetail />} />
 
             <Route path='/dada-chinese/our-teachers' element={<OurTeachers />} />
+            <Route path='/dada-chinese/our-teachers/:teacherName' element={<Teacher />} />
         </Routes>
     );
 }

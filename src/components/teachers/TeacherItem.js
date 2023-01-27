@@ -1,12 +1,13 @@
 import styles from './css/teacher-item.module.css';
-import mainStyles from './../main.module.css';
+import { Link } from 'react-router-dom';
 
 const TeacherItem = (props) => {
     return (
-        <div className={styles.item}>
-            <img src={require(`./../../pictures/teachers/${props.imageUrl}.jpg`)} />
-            <p className={styles.title}>JingYi</p>
-        </div>
+        <Link to={`/dada-chinese/our-teachers/${props.name}`}>
+            <div className={styles.item}>
+                <p className={styles.title}>JingYi</p>
+            </div>
+        </Link>
     );
 }
 
