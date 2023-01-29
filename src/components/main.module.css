@@ -4,6 +4,13 @@
     font-family: 'montserrat';
 }
 
+.error {
+    color: red;
+    font-size: 4vh;
+    text-align: center;
+    font-family: 'montserrat';
+}
+
 .wrap {
     display: flex;
     justify-content: center;
