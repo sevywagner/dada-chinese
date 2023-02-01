@@ -1,19 +1,33 @@
+import { useState, useEffect } from "react";
 import styles from "./css/blog.module.css";
 import BlogItem from "./BlogItem";
-import posts from "./dummy-posts";
 
 const BlogList = () => {
+  const [blogPosts, setBlogPosts] = useState();
+
+  useEffect(() => {
+    fetch('http://localhost:8080/posts', {
+        method: 'GET'
+    }).then((response) => {
+        if (response.ok) {
+            return response.json();
+        }
+    }).then((blogs) => {
+        setBlogPosts(blogs.posts)
+    }).catch(err => console(err));
+  }, []);
+
   return (
     <div className={styles.root}>
         <div className={styles.list}>
-        {posts.map((post) => (
+        {blogPosts && blogPosts.map((post) => (
             <BlogItem
-            key={post.id}
-            id={post.id}
-            title={post.title}
-            imageUrl={post.imageUrl}
-            content={post.content}
-            date={post.date}
+              key={post._id}
+              id={post._id}
+              title={post.title}
+              imageUrl={post.imageUrl}
+              content={post.content}
+              date={post.date}
             />
         ))}
         </div>

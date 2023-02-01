@@ -10,7 +10,12 @@ const BlogItem = (props) => {
                     <img src={props.imageUrl} />
                 </div>
                 <div className={styles.right}>
-                    <p className={mainStyles.subtitle}>{props.title}</p>
+                    <div className={styles.date}>
+                        <p>{props.date}</p>
+                    </div>
+                    <div>
+                        <p className={mainStyles.subtitle}>{props.title}</p>
+                    </div>
                 </div>
             </div>
         </Link>
