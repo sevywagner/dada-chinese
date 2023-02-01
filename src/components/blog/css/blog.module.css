@@ -44,3 +44,15 @@
 .date {
     font-family: 'Lato';
 }
+
+@media only screen and (max-width: 800px) {
+    .item {
+        width: 100%;
+        margin: 0;
+        margin-bottom: 5vh;
+    }
+
+    .root {
+        margin: 0;
+    }
+}

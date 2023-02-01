@@ -1,9 +1,13 @@
-header {
+.header {
   padding: 2vh;
   background-color: rgb(102, 0, 0);
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.mobile-header {
+  display: none;
 }
 
 .logo {
@@ -114,6 +118,19 @@ nav {
   color: white;
 }
 
+.more {
+  background-color: inherit;
+  border: none;
+}
+
+.in-nav-more {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: inherit;
+  border: none;
+}
+
 @keyframes dropdown {
   from {
     transform: translateX(10vh);
@@ -156,14 +173,35 @@ nav {
 }
 
 @media only screen and (max-width: 1000px) {
-  .logo {
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    height: auto;
+  .header {
+    display: none;
   }
 
-  nav {
-    display: none;
+  .mobile-header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 2vh;
+    background-color: rgb(102, 0, 0);
+  }
+
+  .mobile-nav {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: inherit;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  a {
+    margin-left: 4vh;
+  }
+
+  .sign-in {
+    margin-left: 0;
   }
 }

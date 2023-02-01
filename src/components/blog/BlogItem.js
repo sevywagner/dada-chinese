@@ -3,6 +3,8 @@ import mainStyles from './../main.module.css'
 import { Link } from 'react-router-dom';
 
 const BlogItem = (props) => {
+    const dateStringArray = props.date.split(' ');
+
     return (
         <Link className={styles.link} to={`/dada-chinese/blog-post/${props.id}`}>
             <div className={styles.item}>
@@ -11,7 +13,7 @@ const BlogItem = (props) => {
                 </div>
                 <div className={styles.right}>
                     <div className={styles.date}>
-                        <p>{props.date}</p>
+                        <p>{dateStringArray[1]} {dateStringArray[2]} {dateStringArray[3]}</p>
                     </div>
                     <div>
                         <p className={mainStyles.subtitle}>{props.title}</p>

@@ -4,8 +4,10 @@ import BlogItem from "./BlogItem";
 
 const BlogList = () => {
   const [blogPosts, setBlogPosts] = useState();
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
+    setLoading(true);
     fetch('http://localhost:8080/posts', {
         method: 'GET'
     }).then((response) => {
@@ -13,13 +15,15 @@ const BlogList = () => {
             return response.json();
         }
     }).then((blogs) => {
-        setBlogPosts(blogs.posts)
+      setLoading(false);
+      setBlogPosts(blogs.posts)
     }).catch(err => console(err));
   }, []);
 
   return (
     <div className={styles.root}>
         <div className={styles.list}>
+        {loading && <p>Loading...</p>}
         {blogPosts && blogPosts.map((post) => (
             <BlogItem
               key={post._id}
