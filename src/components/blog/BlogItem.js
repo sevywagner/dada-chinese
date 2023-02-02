@@ -6,7 +6,7 @@ const BlogItem = (props) => {
     const dateStringArray = props.date.split(' ');
 
     return (
-        <Link className={styles.link} to={`/dada-chinese/blog-post/${props.id}`}>
+        <Link className={styles.link} to={props.admin ? `/dada-chinese/edit-post/${props.id}` : `/dada-chinese/blog-post/${props.id}`}>
             <div className={styles.item}>
                 <div className={styles.left}>
                     <img src={props.imageUrl} />

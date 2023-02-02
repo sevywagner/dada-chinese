@@ -12,8 +12,10 @@ import SignIn from "../pages/SignIn";
 import Teacher from "../pages/Teacher";
 import BlogPost from "./blog/BlogPost";
 import Error from "../pages/Error";
-import Admin from "../pages/Admin";
-import NewBlog from "../pages/NewBlog";
+import Admin from "../pages/admin/Admin";
+import NewBlog from "../pages/admin/NewBlog";
+import AdminBlogList from "../pages/admin/AdminBlogList";
+import EditPostPage from "../pages/admin/EditPostPage";
 
 const Routing = () => {
     return (
@@ -25,6 +27,8 @@ const Routing = () => {
             <Route path='/dada-chinese/blog' element={<Blog />} />
             <Route path='/dada-chinese/blog-post/:postId' element={<BlogPost />} />
             <Route path='/dada-chinese/new-blog' element={<NewBlog />} />
+            <Route path='/dada-chinese/admin-blog' element={<AdminBlogList />} />
+            <Route path='/dada-chinese/edit-post/:postId' element={<EditPostPage />} />
 
             <Route path='/dada-chinese/members' element={<Members />} />
             <Route path='/dada-chinese/policy' element={<Policy />} />

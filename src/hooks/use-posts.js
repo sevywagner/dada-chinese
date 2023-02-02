@@ -1,18 +1,28 @@
-import { useState } from "react";
+import { useState, useCallback } from "react";
 
-const usePost = async () => {
-    const [posts, setPosts] = useState();
+const usePost = () => {
+    const [isLoading, setIsLoading] = useState(false);
+    const [posts, setPosts] = useState([]);
 
-    fetch('http://localhost:8080/posts').then((response) => {
-        if (response.ok) {
-            return response.json()
+    const fetchData = useCallback(async () => {
+        setIsLoading(true);
+        try {
+            const response = await fetch('http://localhost:8080/posts');
+            if (!response.ok) {
+                return;
+            }
+            const blog = await response.json();
+            setIsLoading(false);
+            setPosts(blog.posts);
+        } catch (err) {
+            console.log(err);
         }
-    }).then((blog) => {
-        setPosts(blog.posts);
-    }).catch(err => console.log(err));
+    }, []);
 
     return {
-        blogPosts: posts
+        isLoading,
+        blogPosts: posts,
+        fetchData
     }
 }
 

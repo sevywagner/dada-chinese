@@ -1,29 +1,20 @@
 import { useState, useEffect } from "react";
 import styles from "./css/blog.module.css";
 import BlogItem from "./BlogItem";
+import usePost from "../../hooks/use-posts";
 
 const BlogList = () => {
-  const [blogPosts, setBlogPosts] = useState();
   const [loading, setLoading] = useState(false);
+  const { isLoading, blogPosts, fetchData } = usePost();
 
   useEffect(() => {
-    setLoading(true);
-    fetch('http://localhost:8080/posts', {
-        method: 'GET'
-    }).then((response) => {
-        if (response.ok) {
-            return response.json();
-        }
-    }).then((blogs) => {
-      setLoading(false);
-      setBlogPosts(blogs.posts)
-    }).catch(err => console(err));
-  }, []);
+    fetchData();
+  }, [])
 
   return (
     <div className={styles.root}>
         <div className={styles.list}>
-        {loading && <p>Loading...</p>}
+        {isLoading && <p>Loading...</p>}
         {blogPosts && blogPosts.map((post) => (
             <BlogItem
               key={post._id}

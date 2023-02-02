@@ -1,5 +1,6 @@
-import { useRef } from "react";
+import { useRef, useEffect } from "react";
 import { useNavigate } from "react-router";
+import usePost from "../../hooks/use-posts";
 
 const Admin = () => {
     const usernameRef = useRef();

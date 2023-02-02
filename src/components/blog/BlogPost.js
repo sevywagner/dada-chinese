@@ -1,32 +1,24 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useParams } from "react-router";
 import mainStyles from './../main.module.css';
+import usePost from "../../hooks/use-posts";
 
 const BlogPost = () => {
     const params = useParams();
-    const [post, setPost] = useState();
-    const [loading, setLoading] = useState(false);
+    const { isLoading, blogPosts, fetchData } = usePost();
 
     useEffect(() => {
-        setLoading(true);
-        fetch('http://localhost:8080/posts', {
-            method: 'GET'
-        }).then((response) => {
-            if (response.ok) {
-                return response.json();
-            }
-        }).then((blog) => {
-            setLoading(false);
-            setPost(blog.posts.find((post) => post._id === params.postId));
-        }).catch(err => console(err));
-    }, []);
+        fetchData();
+    }, [])
 
+    const targetPost = blogPosts.find((p) => p._id === params.postId);
+    
     return (
         <div>
-            {loading && <p>Loading...</p>}
-            {post && <div>
-                <p className={mainStyles.title}>{post.title}</p>
-                <p className={mainStyles.pg}>{post.content}</p>
+            {isLoading && <p>Loading...</p>}
+            {targetPost && <div>
+                <p className={mainStyles.title}>{targetPost.title}</p>
+                <p className={mainStyles.pg}>{targetPost.content}</p>
             </div>}
         </div>
     );
