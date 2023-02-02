@@ -45,6 +45,21 @@
     font-family: 'Lato';
 }
 
+.delete {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.delete-button {
+    background-color: rgb(103, 0, 0);
+    padding: 2vh;
+    border: 1px solid black;
+    border-radius: 4vh;
+    font-family: 'proza libre';
+    color: white;
+}
+
 @media only screen and (max-width: 800px) {
     .item {
         width: 100%;
