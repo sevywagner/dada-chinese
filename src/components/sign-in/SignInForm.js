@@ -7,11 +7,11 @@ const SignInForm = ({ onSubmit }) => {
   const passwordInputRef = useRef();
 
   return (
-      <form onSubmit={onSubmit}>
+      <form className={styles.form} onSubmit={onSubmit}>
         <div className={styles.inputs}>
           <div className={styles.block}>
             <label>Email</label>
-            <input type="text" ref={emailInputRef} placeholder="example@example.com" />
+            <input type="text" ref={emailInputRef} />
           </div>
 
           <div className={styles.block}>

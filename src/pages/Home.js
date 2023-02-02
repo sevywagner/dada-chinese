@@ -3,7 +3,6 @@ import styles from './css/home.module.css';
 import mainStyles from './../components/main.module.css';
 import About from '../components/home/About';
 import Carousel from '../components/home/Carousel';
-import Impact from '../components/home/Impact';
 
 const Home = () => {
     return (
@@ -21,7 +20,6 @@ const Home = () => {
                     <About />
                 </div>
             </div>
-            <Impact />
         </div>
     );
 }
