@@ -7,7 +7,7 @@ const usePost = () => {
     const fetchData = useCallback(async () => {
         setIsLoading(true);
         try {
-            const response = await fetch('http://localhost:8080/posts');
+            const response = await fetch('https://dada-chinese-rest-api.herokuapp.com/posts');
             if (!response.ok) {
                 return;
             }

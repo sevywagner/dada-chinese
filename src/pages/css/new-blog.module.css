@@ -1,6 +1,8 @@
 .form {
     display: flex;
     flex-direction: column;
+    width: 80%;
+    margin: 10vh;
 }
 
 .wrap {
@@ -15,7 +17,8 @@
 .root {
     width: 100%;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
 }
 
 .center {

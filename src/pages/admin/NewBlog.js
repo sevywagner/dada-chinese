@@ -1,9 +1,14 @@
 import { useRef } from "react";
+import { useNavigate } from "react-router";
+
 import Button from "../../components/util/Button";
 import styles from "./../css/new-blog.module.css";
 import formStyles from "./../../components/sign-in/css/sign-in-form.module.css";
+import mainStyles from './../../components/main.module.css';
 
 const NewBlog = () => {
+  const navigate = useNavigate();
+
   const titleRef = useRef();
   const contentRef = useRef();
   const imageUrlRef = useRef();
@@ -12,7 +17,7 @@ const NewBlog = () => {
   const submitHandler = (event) => {
     event.preventDefault();
 
-    fetch("http://localhost:8080/posts", {
+    fetch("https://dada-chinese-rest-api.herokuapp.com/posts", {
       method: "POST",
       body: JSON.stringify({
         title: titleRef.current.value,
@@ -26,13 +31,15 @@ const NewBlog = () => {
     })
       .then((result) => {
         console.log(result);
+        navigate('/dada-chinese/blog');
       })
       .catch((err) => console.log(err));
   };
 
   return (
     <div className={styles.root}>
-      <form onSubmit={submitHandler}>
+      <p className={mainStyles.title}>New Blog Entry</p>
+      <form className={styles.form} onSubmit={submitHandler}>
         <div className={formStyles.block}>
           <label>Title</label>
           <input type="text" ref={titleRef} />

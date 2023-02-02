@@ -1,5 +1,5 @@
-import { useEffect, useRef, useState } from "react";
-import { useParams } from "react-router";
+import { useEffect, useRef } from "react";
+import { useParams, useNavigate } from "react-router";
 import usePost from "../../hooks/use-posts";
 
 import Button from "../../components/util/Button";
@@ -10,6 +10,7 @@ const EditPostPage = () => {
     const titleRef = useRef();
     const contentRef = useRef();
     const imageUrlRef = useRef();
+    const navigate = useNavigate();
     
     const params = useParams();
     const { isLoading, blogPosts, fetchData } = usePost();
@@ -48,6 +49,7 @@ const EditPostPage = () => {
             }
         }).then((result) => {
             console.log(result);
+            navigate('/dada-chinese/blog');
         });
     }
     
