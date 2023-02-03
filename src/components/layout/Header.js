@@ -63,7 +63,7 @@ const Header = () => {
           </button>
           <Link className={styles["nav-item"]} to="/dada-chinese">Home</Link>
           <Link className={styles["nav-item"]} to='/dada-chinese/our-classes'>Our Classes</Link>
-          <Link className={styles["nav-item"]} to="/dada-chinese/plans">Plans & Pricing</Link>
+          <Link className={styles["nav-item"]} to="/dada-chinese/textbooks">Textbooks</Link>
           <Link className={styles["nav-item"]} to="/dada-chinese/our-teachers">Our Teachers</Link>
           <Link className={styles["nav-item"]} to='/dada-chinese/contact'>Contact</Link>
           <Link className={styles["nav-item"]} to="/dada-chinese/blog">Blog</Link>
