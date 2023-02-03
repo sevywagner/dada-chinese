@@ -35,7 +35,7 @@ const EditPostPage = () => {
             imageUrl = imageUrlRef.current.value;
         }
 
-        fetch('https://dada-chinese-rest-api.herokuapp.com/posts', {
+        fetch('https://dada-chinese-rest-api.herokuapp.com/edit-post', {
             method: 'POST',
             body: JSON.stringify({
                 title,
