@@ -35,7 +35,7 @@ const EditPostPage = () => {
             imageUrl = imageUrlRef.current.value;
         }
 
-        fetch('http://localhost:8080/edit-post', {
+        fetch('https://dada-chinese-rest-api.herokuapp.com/posts', {
             method: 'POST',
             body: JSON.stringify({
                 title,
@@ -62,7 +62,7 @@ const EditPostPage = () => {
             {isLoading && <p>Loading...</p>}
             {targetPost && (
                 <div className={styles.root}>
-                    <form onSubmit={submitHandler}>
+                    <form className={styles.form} onSubmit={submitHandler}>
                         <div className={formStyles.block}>
                             <label>Title</label>
                             <input type="text" ref={titleRef} placeholder={targetPost.title} />

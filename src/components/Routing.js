@@ -1,4 +1,6 @@
-import { Routes, Route } from "react-router-dom";
+import { createBrowserRouter } from "react-router-dom";
+
+import Layout from "./layout/Layout";
 import Blog from "../pages/Blog";
 import Contact from "../pages/Contact";
 import Home from "../pages/Home";
@@ -17,36 +19,90 @@ import NewBlog from "../pages/admin/NewBlog";
 import AdminBlogList from "../pages/admin/AdminBlogList";
 import EditPostPage from "../pages/admin/EditPostPage";
 
-const Routing = () => {
-    return (
-        <Routes>
-            <Route path='/dada-chinese/' element={<Home />} />
-            <Route path='/dada-chinese/contact' element={<Contact />} />
-            <Route path='/dada-chinese/plans' element={<Plans />} />
+const router = createBrowserRouter([
+    {
+      path: '/dada-chinese',
+      element: <Layout />,
+      children: [
+        {
+          index: true,
+          element: <Home />
+        },
+        {
+          path: 'contact',
+          element: <Contact />,
+        },
+        {
+          path: 'plans',
+          element: <Plans />
+        },
+        //----- blog -----
+        {
+          path: 'blog',
+          element: <Blog />
+        },
+        {
+          path: 'blog-post/:postId',
+          element: <BlogPost />
+        },
+        {
+          path: 'new-blog',
+          element: <NewBlog />
+        },
+        {
+          path: 'admin-blog',
+          element: <AdminBlogList />
+        },
+        {
+          path: 'edit-post/:postId',
+          element: <EditPostPage />
+        },
+        {
+          path: 'admin',
+          element: <Admin />
+        },
+        // ...
+        {
+          path: 'members',
+          element: <Members />
+        },
+        {
+          path: 'policy',
+          element: <Policy />
+        },
+        //----- Sign in/up -----
+        {
+          path: 'sign-in',
+          element: <SignIn mode='login' />
+        },
+        {
+          path: 'sign-up',
+          element: <SignIn mode='register' />
+        },
+  
+        {
+          path: 'our-classes',
+          element: <OurClasses />
+        },
+        {
+          path: 'our-classes/:classId',
+          element: <OurClassesDetail />
+        },
+        //----- Teachers -----
+        {
+          path: 'our-teachers',
+          element: <OurTeachers />
+        },
+        {
+          path: 'our-teachers/:teacherName',
+          element: <Teacher />
+        }
+      ]
+    },
+    {
+      path: '/',
+      errorElement: <Error />,
+    }
+]);
 
-            <Route path='/dada-chinese/blog' element={<Blog />} />
-            <Route path='/dada-chinese/blog-post/:postId' element={<BlogPost />} />
-            <Route path='/dada-chinese/new-blog' element={<NewBlog />} />
-            <Route path='/dada-chinese/admin-blog' element={<AdminBlogList />} />
-            <Route path='/dada-chinese/edit-post/:postId' element={<EditPostPage />} />
-
-            <Route path='/dada-chinese/members' element={<Members />} />
-            <Route path='/dada-chinese/policy' element={<Policy />} />
-
-            <Route path='/dada-chinese/sign-in' element={<SignIn mode='login' />} />
-            <Route path='/dada-chinese/sign-up' element={<SignIn mode='register' />} />
-
-            <Route path='/dada-chinese/our-classes' element={<OurClasses />} />
-            <Route path='/dada-chinese/our-classes/:classId' element={<OurClassesDetail />} />
-
-            <Route path='/dada-chinese/our-teachers' element={<OurTeachers />} />
-            <Route path='/dada-chinese/our-teachers/:teacherName' element={<Teacher />} />
-
-            <Route path='/dada-chinese/admin' element={<Admin />} />
-
-            <Route path='/*' element={<Error />} />
-        </Routes>
-    );
-}
-
-export default Routing;
+export default router;

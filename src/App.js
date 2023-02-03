@@ -1,14 +1,13 @@
-import './App.css';
-import Routing from './components/Routing';
-import Layout from './components/layout/Layout';
 import { Fragment } from 'react';
+import { RouterProvider } from 'react-router-dom';
+
+import './App.css';
+import router from './components/Routing';
 
 function App() {
   return (
     <Fragment>
-      <Layout>
-        <Routing />
-      </Layout>
+      <RouterProvider router={router} />
     </Fragment>
   );
 }
