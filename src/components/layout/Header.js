@@ -38,6 +38,9 @@ const Header = () => {
           <Link className={styles["nav-item"]} to="/dada-chinese/blog">Blog</Link>
           <Link className={styles["nav-item"]} to="/dada-chinese/sign-up">Sign up</Link>
           <Link className={styles['sign-in']} to='/dada-chinese/sign-in'>Sign in</Link>
+          <button className={styles.cart}>
+            <img src={require('../../pictures/icons/cart.png')} />
+          </button>
         </nav>
       </header>
 
