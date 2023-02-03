@@ -1,0 +1,50 @@
+.root {
+    background-color: white;
+    border: 1px solid black;
+    margin: 5vh;
+    display: flex;
+    flex-direction: column;
+    border-radius: 2vh;
+    padding: 4vh;
+}
+
+.root:hover {
+    animation: hover .3s ease-out;
+    background-color: rgb(110, 0, 0);
+    color: white;
+}
+
+.image {
+    height: 40vh;
+}
+
+.image img {
+    height: 100%;
+    border-radius: 2vh;
+}
+
+.data {
+    display: flex;
+    flex-direction: column;
+    flex-direction: center;
+    align-items: center;
+    font-size: 2.3vh;
+    font-family: 'proza libre';
+}
+
+.title {
+    font-size: 3vh;
+    font-family: 'montserrat';
+}
+
+@keyframes hover {
+    from {
+        background-color: white;
+        color: black;
+    }
+
+    to {
+        background-color: rgb(110, 0, 0);
+        color: white;
+    }
+}

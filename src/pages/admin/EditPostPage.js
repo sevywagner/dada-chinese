@@ -1,21 +1,21 @@
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 import { useParams, useNavigate } from "react-router";
-import usePost from "../../hooks/use-posts";
+import { useLoaderData } from "react-router";
 
 import Button from "../../components/util/Button";
 import styles from "./../css/new-blog.module.css";
 import formStyles from "./../../components/sign-in/css/sign-in-form.module.css";
 
 const EditPostPage = () => {
+    const navigate = useNavigate();
+    const params = useParams();
+
     const titleRef = useRef();
     const contentRef = useRef();
     const imageUrlRef = useRef();
-    const navigate = useNavigate();
-    
-    const params = useParams();
-    const { isLoading, blogPosts, fetchData } = usePost();
-    
-    const targetPost = blogPosts.find((p) => p._id === params.postId);
+
+    const posts = useLoaderData();
+    const targetPost = posts.find((p) => p._id === params.postId);
     
     const submitHandler = (event) => {
         event.preventDefault();
@@ -52,15 +52,9 @@ const EditPostPage = () => {
             navigate('/dada-chinese/blog');
         });
     }
-    
-    useEffect(() => {
-        fetchData();
-    }, [])
 
     return (
         <div>
-            {isLoading && <p>Loading...</p>}
-            {targetPost && (
                 <div className={styles.root}>
                     <form className={styles.form} onSubmit={submitHandler}>
                         <div className={formStyles.block}>
@@ -80,7 +74,6 @@ const EditPostPage = () => {
                         </div>
                     </form>
                 </div>
-            )}
         </div>
     );
 }

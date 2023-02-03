@@ -1,23 +1,25 @@
 import { createBrowserRouter } from "react-router-dom";
+import { lazy, Suspense } from "react";
 
 import Layout from "./layout/Layout";
-import Blog from "../pages/Blog";
 import Contact from "../pages/Contact";
 import Home from "../pages/Home";
 import Members from "../pages/Members";
 import OurClasses from "../pages/OurClasses";
 import OurClassesDetail from "../pages/OurClassesDetail";
 import OurTeachers from "../pages/OurTeachers";
-import Plans from "../pages/Plans";
+import Textbooks from "../pages/Textbooks";
 import Policy from "../pages/Policy";
 import SignIn from "../pages/SignIn";
 import Teacher from "../pages/Teacher";
-import BlogPost from "./blog/BlogPost";
 import Error from "../pages/Error";
 import Admin from "../pages/admin/Admin";
 import NewBlog from "../pages/admin/NewBlog";
-import AdminBlogList from "../pages/admin/AdminBlogList";
-import EditPostPage from "../pages/admin/EditPostPage";
+
+const Blog = lazy(() => import('../pages/Blog'));
+const BlogPost = lazy(() => import('../pages/BlogPost'));
+const EditPostPage = lazy(() => import('../pages/admin/EditPostPage'));
+const AdminBlogList = lazy(() => import('../pages/admin/AdminBlogList'));
 
 const router = createBrowserRouter([
     {
@@ -33,17 +35,19 @@ const router = createBrowserRouter([
           element: <Contact />,
         },
         {
-          path: 'plans',
-          element: <Plans />
+          path: 'textbooks',
+          element: <Textbooks />
         },
         //----- blog -----
         {
           path: 'blog',
-          element: <Blog />
+          element: <Suspense><Blog /></Suspense>,
+          loader: () => import('./../pages/Blog').then(module => module.loader())
         },
         {
           path: 'blog-post/:postId',
-          element: <BlogPost />
+          element: <Suspense><BlogPost /></Suspense>,
+          loader: () => import('./../pages/Blog').then(module => module.loader())
         },
         {
           path: 'new-blog',
@@ -51,11 +55,13 @@ const router = createBrowserRouter([
         },
         {
           path: 'admin-blog',
-          element: <AdminBlogList />
+          element: <Suspense><AdminBlogList /></Suspense>,
+          loader: () => import('./../pages/Blog').then(module => module.loader())
         },
         {
           path: 'edit-post/:postId',
-          element: <EditPostPage />
+          element: <Suspense><EditPostPage /></Suspense>,
+          loader: () => import('./../pages/Blog').then(module => module.loader())
         },
         {
           path: 'admin',

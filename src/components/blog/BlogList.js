@@ -1,21 +1,11 @@
-import { useState, useEffect } from "react";
 import styles from "./css/blog.module.css";
 import BlogItem from "./BlogItem";
-import usePost from "../../hooks/use-posts";
 
-const BlogList = () => {
-  const [loading, setLoading] = useState(false);
-  const { isLoading, blogPosts, fetchData } = usePost();
-
-  useEffect(() => {
-    fetchData();
-  }, [])
-
+const BlogList = ({ posts }) => {
   return (
     <div className={styles.root}>
         <div className={styles.list}>
-        {isLoading && <p>Loading...</p>}
-        {blogPosts && blogPosts.map((post) => (
+        {posts && posts.map((post) => (
             <BlogItem
               key={post._id}
               id={post._id}
