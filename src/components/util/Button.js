@@ -9,7 +9,7 @@ const Button = styled.button`
     border-radius: 30px;
     background-color: rgb(102, 0, 0);
     color: white;
-    font-size: 3vh;
+    font-size: 2.5vh;
     font-family: 'avenir';
 
     &:hover {

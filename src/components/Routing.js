@@ -2,24 +2,24 @@ import { createBrowserRouter } from "react-router-dom";
 import { lazy, Suspense } from "react";
 
 import Layout from "./layout/Layout";
-import Contact from "../pages/Contact";
-import Home from "../pages/Home";
 import Members from "../pages/Members";
 import OurClasses from "../pages/OurClasses";
 import OurClassesDetail from "../pages/OurClassesDetail";
 import OurTeachers from "../pages/OurTeachers";
 import Textbooks from "../pages/Textbooks";
 import Policy from "../pages/Policy";
-import SignIn from "../pages/SignIn";
 import Teacher from "../pages/Teacher";
 import Error from "../pages/Error";
 import Admin from "../pages/admin/Admin";
-import NewBlog from "../pages/admin/NewBlog";
 
+const Home = lazy(() => import('../pages/Home'));
 const Blog = lazy(() => import('../pages/Blog'));
 const BlogPost = lazy(() => import('../pages/BlogPost'));
 const EditPostPage = lazy(() => import('../pages/admin/EditPostPage'));
 const AdminBlogList = lazy(() => import('../pages/admin/AdminBlogList'));
+const NewBlog = lazy(() => import('../pages/admin/NewBlog'));
+const SignIn = lazy(() => import('../pages/SignIn'));
+const Contact = lazy(() => import('../pages/Contact'));
 
 const router = createBrowserRouter([
     {
@@ -28,11 +28,11 @@ const router = createBrowserRouter([
       children: [
         {
           index: true,
-          element: <Home />
+          element: <Suspense><Home /></Suspense>
         },
         {
           path: 'contact',
-          element: <Contact />,
+          element: <Suspense><Contact /></Suspense>
         },
         {
           path: 'textbooks',
@@ -51,7 +51,7 @@ const router = createBrowserRouter([
         },
         {
           path: 'new-blog',
-          element: <NewBlog />
+          element: <Suspense><NewBlog /></Suspense>
         },
         {
           path: 'admin-blog',
@@ -79,11 +79,11 @@ const router = createBrowserRouter([
         //----- Sign in/up -----
         {
           path: 'sign-in',
-          element: <SignIn mode='login' />
+          element: <Suspense><SignIn mode='login' /></Suspense>
         },
         {
           path: 'sign-up',
-          element: <SignIn mode='register' />
+          element: <Suspense><SignIn mode='register' /></Suspense>
         },
   
         {

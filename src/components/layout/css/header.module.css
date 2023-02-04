@@ -129,8 +129,14 @@ nav {
   padding-right: 2vh;
 }
 
+.cart:hover {
+  animation: cart-hover .3s ease-out;
+  opacity: .6;
+}
+
 .cart img {
   height: 50%;
+  border-radius: 0vh;
 }
 
 .more {
@@ -193,12 +199,23 @@ nav {
   }
 }
 
-@media only screen and (max-width: 800px) {
-  .header {
+@keyframes cart-hover {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: .6;
+  }
+}
+
+@media only screen and (max-width: 1100px) {
+  .header-text {
     display: none;
   }
+}
 
-  .cart {
+@media only screen and (max-width: 845px) {
+  .header {
     display: none;
   }
 

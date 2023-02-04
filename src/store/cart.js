@@ -3,36 +3,33 @@ import { createSlice } from "@reduxjs/toolkit";
 const cartSlice = createSlice({
     name: 'cart',
     initialState: {
-        cart: [],
-        totalPrice: 0.00,
-        totalQty: 0
+        items: [],
+        totalPrice: 0.00
     },
     reducers: {
         addItem(state, action) {
-            const existingCartItemIndex = state.cart.findIndex((cartItem) => cartItem.id === action.payload);
+            const existingCartItemIndex = state.items.findIndex((cartItem) => cartItem.id === action.payload.id);
             
-            if (existingCartItemIndex) {
-                state.cart[existingCartItemIndex].quantity += 1;
+            if (existingCartItemIndex > -1) {
+                state.items[existingCartItemIndex].quantity += 1;
                 state.totalPrice += action.payload.price;
-                state.totalQty += 1;
                 return;
             }
 
-            state.cart.push(action.payload);
+            state.items.push(action.payload);
             state.totalPrice += action.payload.price;
-            state.totalQty += 1;
         },
         removeItem(state, action) {
-            const existingCartItemIndex = state.cart.findIndex((cartItem) => cartItem.id === action.payload);
-            
-            if (state.cart[existingCartItemIndex].length > 1) {
-                state.cart[existingCartItemIndex].quantity -= 1;
-                state.totalPrice -= state.cart[existingCartItemIndex].price;
-                state.totalQty -= 1;
+            const existingCartItemIndex = state.items.findIndex((cartItem) => cartItem.id === action.payload);
+
+            if (state.items[existingCartItemIndex].quantity > 1) {
+                state.items[existingCartItemIndex].quantity -= 1;
+                state.totalPrice -= state.items[existingCartItemIndex].price;
                 return;
             }
 
-            state.cart.filter((cartItem) => cartItem !== action.payload);
+            state.totalPrice -= state.items[existingCartItemIndex].price;
+            state.items = state.items.filter((item) => item.id !== action.payload);
         }
     }
 });

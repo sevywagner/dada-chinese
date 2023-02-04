@@ -37,6 +37,13 @@
     font-family: 'montserrat';
 }
 
+.add {
+    padding: 1vh;
+    border-radius: 3vh;
+    border: 1px solid black;
+    background-color: white;
+}
+
 @keyframes hover {
     from {
         background-color: white;

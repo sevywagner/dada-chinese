@@ -3,13 +3,19 @@ import { useLocation } from "react-router-dom";
 import { Link } from "react-router-dom";
 import styles from "./css/header.module.css";
 import { motion } from "framer-motion";
+import CartModal from "../cart/CartModal";
 
 const Header = () => {
   const [showNav, setShowNav] = useState(false);
+  const [showCart, setShowCart] = useState(false);
   const location = useLocation();
 
   const drawerHandler = () => {
     setShowNav((prevState) => !prevState);
+  }
+
+  const cartToggle = () => {
+    setShowCart((prevState) => !prevState);
   }
 
   useEffect(() => {
@@ -38,7 +44,7 @@ const Header = () => {
           <Link className={styles["nav-item"]} to="/dada-chinese/blog">Blog</Link>
           <Link className={styles["nav-item"]} to="/dada-chinese/sign-up">Sign up</Link>
           <Link className={styles['sign-in']} to='/dada-chinese/sign-in'>Sign in</Link>
-          <button className={styles.cart}>
+          <button onClick={cartToggle} className={styles.cart}>
             <img src={require('../../pictures/icons/cart.png')} />
           </button>
         </nav>
@@ -71,6 +77,7 @@ const Header = () => {
           <Link className={styles["nav-item"]} to='/dada-chinese/sign-in'>Sign in</Link>
         </motion.nav>}
       </header>
+      {showCart && <CartModal onClose={cartToggle} />}
     </>
   );
 };

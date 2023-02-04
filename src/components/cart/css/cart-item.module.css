@@ -1,0 +1,36 @@
+.item {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border: 1px solid black;
+    margin: 3vh;
+    border-radius: 4vh;
+    font-family: 'proza libre';
+}
+
+.example {
+    display: flex;
+    margin-left: 3vh;
+    margin-right: 3vh;
+    font-family: 'montserrat';
+    font-size: 3vh;
+}
+
+.section {
+    width: 33.33333%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.remove {
+    padding: 1.5vh;
+    border-radius: 4vh;
+    border: 1px solid black;
+    background-color: white;
+}
+
+.wrap {
+    display: flex;
+    justify-content: center;
+}

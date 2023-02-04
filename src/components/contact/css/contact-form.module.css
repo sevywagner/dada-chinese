@@ -1,3 +1,9 @@
+form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
 .contact {
     width: 40%;
     margin: 5vh;
@@ -15,6 +21,20 @@
 
 .label {
     text-align: left;
+}
+
+label {
+    font-size: 3vh;
+    font-family: 'montserrat';
+}
+
+input {
+    background-color: white;
+    border: none;
+    border: 1px solid black;
+    padding: 1.5vh;
+    margin: 2vh;
+    border-radius: 20px;
 }
 
 textarea {
@@ -37,6 +57,7 @@ textarea {
     font-size: 2.3vh;
     font-family: 'Proza Libre';
     margin: 4vh;
+    color: black;
 }
 
 .submit:hover {
