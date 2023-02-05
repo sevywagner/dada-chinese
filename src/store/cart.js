@@ -48,7 +48,7 @@ const cartSlice = createSlice({
                 state.items = state.items.filter((item) => item.id !== action.payload);
             }
 
-            fetch('http://localhost:8080/shop/update-cart', {
+            fetch('https://dada-chinese-rest-api.herokuapp.com/shop/update-cart', {
                 method: 'POST',
                 body: JSON.stringify({
                     cart: {
