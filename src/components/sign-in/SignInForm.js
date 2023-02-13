@@ -36,8 +36,8 @@ const SignInForm = () => {
       return response.json()
     }).then((data) => {
       console.log(data);
-      authCtx.loginHandler(data.token, data.expiration, data.isAdmin);
-      navigate('/dada-chinese')
+      authCtx.loginHandler(data.token, data.expiration);
+      navigate('/dada-chinese');
     }).catch((err) => {
       console.log(err.message);
     })

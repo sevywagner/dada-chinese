@@ -43,14 +43,12 @@ const AuthContextProvider = ({ children }) => {
     }
 
     const [token, setToken] = useState(initialToken);
-    const [isAdmin, setIsAdmin] = useState(false);
     const isLoggedIn = token ? true : false;
 
     const logoutHandler = () => {
         setToken(null);
         localStorage.removeItem('token');
         localStorage.removeItem('expiration');
-        setIsAdmin(false);
         
         if (logoutTimer) {
             clearTimeout(logoutTimer);
@@ -61,10 +59,9 @@ const AuthContextProvider = ({ children }) => {
         localStorage.setItem('token', token.toString());
         localStorage.setItem('expiration', expiration);
         setToken(token);
-        setIsAdmin(isAdmin);
         const remainingTime = getRemainingTime(expiration);
 
-        logoutTimer = setTimeout(loginHandler, remainingTime);
+        logoutTimer = setTimeout(logoutHandler, remainingTime);
     }
 
     const contextValues = {
