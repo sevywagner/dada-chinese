@@ -27,7 +27,8 @@ const cartSlice = createSlice({
                     },
                 }),
                 headers: {
-                    "Content-Type": "application/json"
+                    "Content-Type": "application/json",
+                    Authorization: 'Bearer ' + localStorage.getItem('token')
                 }
             }).then((result) => {
                 if (result.ok) {
@@ -38,14 +39,14 @@ const cartSlice = createSlice({
             }).catch(err => console.log(err));
         },
         removeItem(state, action) {
-            const existingCartItemIndex = state.items.findIndex((cartItem) => cartItem.id === action.payload);
+            const existingCartItemIndex = state.items.findIndex((cartItem) => cartItem.id === action.payload.cartItemId);
 
             if (state.items[existingCartItemIndex].quantity > 1) {
                 state.items[existingCartItemIndex].quantity -= 1;
                 state.totalPrice -= state.items[existingCartItemIndex].price;
             } else {
                 state.totalPrice -= state.items[existingCartItemIndex].price;
-                state.items = state.items.filter((item) => item.id !== action.payload);
+                state.items = state.items.filter((item) => item.id !== action.payload.cartItemId);
             }
 
             fetch('https://dada-chinese-rest-api.herokuapp.com/shop/update-cart', {
@@ -57,7 +58,8 @@ const cartSlice = createSlice({
                     },
                 }),
                 headers: {
-                    "Content-Type": "application/json"
+                    "Content-Type": "application/json",
+                    Authorization: 'Bearer ' + action.payload.token
                 }
             }).then((result) => {
                 if (result.ok) {

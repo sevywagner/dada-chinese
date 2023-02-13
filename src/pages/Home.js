@@ -3,6 +3,7 @@ import styles from './css/home.module.css';
 import mainStyles from './../components/main.module.css';
 import About from '../components/home/About';
 import Carousel from '../components/home/Carousel';
+import Calendar from '../components/home/Calendar';
 
 const Home = () => {
     return (
@@ -10,7 +11,7 @@ const Home = () => {
             <div className={styles.title}>
                 <p>Dada Chinese</p>
                 <p>欢迎</p>
-                <Link to='/dada-chinese/our-classes' className={mainStyles.book}>Book a Class</Link>
+                <a data-savvycal-embed className={mainStyles.book} href="https://savvycal.com/derrick/chat">Book a Class</a>
             </div>
             <div className={styles.row}>
                 <div className={mainStyles['half-width-block']}>

@@ -4,10 +4,13 @@ import { Link } from "react-router-dom";
 import styles from "./css/header.module.css";
 import { motion } from "framer-motion";
 import CartModal from "../cart/CartModal";
+import { useContext } from "react";
+import { authContext } from "../../store/context/auth-context";
 
 const Header = () => {
   const [showNav, setShowNav] = useState(false);
   const [showCart, setShowCart] = useState(false);
+  const authCtx = useContext(authContext);
   const location = useLocation();
 
   const drawerHandler = () => {
@@ -16,6 +19,10 @@ const Header = () => {
 
   const cartToggle = () => {
     setShowCart((prevState) => !prevState);
+  }
+
+  const logoutHandler = () => {
+    authCtx.logoutHandler();
   }
 
   useEffect(() => {
@@ -42,11 +49,12 @@ const Header = () => {
           </div>
           <Link className={styles["nav-item"]} to='/dada-chinese/contact'>Contact</Link>
           <Link className={styles["nav-item"]} to="/dada-chinese/blog">Blog</Link>
-          <Link className={styles["nav-item"]} to="/dada-chinese/sign-up">Sign up</Link>
-          <Link className={styles['sign-in']} to='/dada-chinese/sign-in'>Sign in</Link>
-          <button onClick={cartToggle} className={styles.cart}>
+          {!authCtx.isLoggedIn && <Link className={styles["nav-item"]} to="/dada-chinese/sign-up">Sign up</Link>}
+          {!authCtx.isLoggedIn && <Link className={styles['sign-in']} to='/dada-chinese/sign-in'>Sign in</Link>}
+          {authCtx.isLoggedIn && <button onClick={logoutHandler} className={styles['sign-in']}>Logout</button>}
+          {localStorage.getItem('token') && <button onClick={cartToggle} className={styles.cart}>
             <img src={require('../../pictures/icons/cart.png')} />
-          </button>
+          </button>}
         </nav>
       </header>
 

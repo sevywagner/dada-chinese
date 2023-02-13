@@ -1,11 +1,13 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import { authContext } from '../../store/context/auth-context';
 
 import styles from './css/blog.module.css';
 import mainStyles from './../main.module.css'
 
 const BlogItem = (props) => {
     const [result, setResult] = useState();
+    const authCtx = useContext(authContext);
     const navigate = useNavigate();
 
     const dateStringArray = props.date.split(' ');
@@ -21,7 +23,8 @@ const BlogItem = (props) => {
             method: 'POST',
             body: JSON.stringify({ postId: props.id }),
             headers: {
-                "Content-Type": "application/json"
+                "Content-Type": "application/json",
+                Authorization: 'Bearer ' + authCtx.token
             }
         }).then((response) => {
             if (response.ok) {

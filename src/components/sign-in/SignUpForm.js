@@ -52,7 +52,45 @@ const SignUpForm = ({ onSubmit }) => {
     valueChangeHandler: password2ChangeHandler,
     blurHandler: password2BlurHandler,
     reset: resetPassword2,
-  } = useInput((data) => data === password);
+  } = useInput((data) => data.trim() !== '');
+
+  const submitHandler = (event) => {
+    event.preventDefault();
+
+    if (nameIsValid && emailIsValid && passwordIsValid && password2IsValid) {
+      fetch('https://dada-chinese-rest-api.herokuapp.com/auth/signup', {
+        method: 'PUT',
+        body: JSON.stringify({
+          name,
+          email,
+          password,
+          confirmPassword: password2
+        }),
+        headers: {
+          "Content-Type": "application/json"
+        }
+      }).then((response) => {
+        if (!response.ok) {
+          throw new Error('Response error');
+        }
+        return response.json();
+      }).then((data) => {
+        console.log(data);
+      }).catch((err) => {
+        console.log(err);
+      });
+
+      resetName();
+      resetEmail();
+      resetPassword();
+      resetPassword2();
+    } else {
+      setError({
+        hasError: true,
+        message: 'Invalid input'
+      });
+    }
+  }
 
   const classNames = {
     name: nameHasError ? styles.invalid : "",
@@ -62,7 +100,9 @@ const SignUpForm = ({ onSubmit }) => {
   };
 
   return (
-      <form onSubmit={onSubmit}>
+    <>
+      {error.hasError && <p>{error.message}</p>}
+      <form onSubmit={submitHandler}>
 
         <label className={styles.label}>Name</label>
         <input
@@ -106,6 +146,7 @@ const SignUpForm = ({ onSubmit }) => {
 
         <Button className={styles.submit} type="submit">Submit</Button>
       </form>
+    </>
   );
 };
 

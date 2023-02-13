@@ -36,7 +36,7 @@ const EditPostPage = () => {
         }
 
         fetch('https://dada-chinese-rest-api.herokuapp.com/edit-post', {
-            method: 'POST',
+            method: 'PUT',
             body: JSON.stringify({
                 title,
                 imageUrl,
@@ -45,7 +45,8 @@ const EditPostPage = () => {
                 id: targetPost._id
             }),
             headers: {
-                "Content-Type": "application/json"
+                "Content-Type": "application/json",
+                Authorization: 'Bearer ' +  localStorage.getItem('token')
             }
         }).then((result) => {
             console.log(result);

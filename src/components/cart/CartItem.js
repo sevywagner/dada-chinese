@@ -1,13 +1,16 @@
 import { useDispatch } from 'react-redux';
-import { cartActions } from '../../store/cart';
+import { cartActions } from '../../store/redux/cart';
+import { useContext } from 'react';
+import { authContext } from '../../store/context/auth-context';
 
 import styles from './css/cart-item.module.css';
 
 const CartItem = (props) => {
+    const authCtx = useContext(authContext);
     const dispatch = useDispatch();
 
     const removeFromCartHandler = () => {
-        dispatch(cartActions.removeItem(props.id));
+        dispatch(cartActions.removeItem({ cartItemId: props.id, token: authCtx.token }));
     }
 
     return (

@@ -44,6 +44,21 @@
     background-color: white;
 }
 
+.login {
+    text-decoration: underline;
+    background-color: white;
+    padding: 3vh;
+    border-radius: 3vh;
+    border: 1px solid white;
+}
+
+.login:hover {
+    animation: login-hover .3s ease-in;
+    color: white;
+    text-decoration: underline;
+    background-color: inherit;
+}
+
 @keyframes hover {
     from {
         background-color: white;
@@ -53,5 +68,18 @@
     to {
         background-color: rgb(110, 0, 0);
         color: white;
+    }
+}
+
+@keyframes login-hover {
+    from {
+        background-color: white;
+        color: black;
+        text-decoration: underline;
+    }
+    to {
+        background-color: inherit;
+        color: white;
+        text-decoration: underline;
     }
 }

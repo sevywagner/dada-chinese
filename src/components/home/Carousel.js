@@ -4,13 +4,32 @@ import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
 const Carousel = () => {
+  let carouselTimer;
   const [pic, setPic] = useState(
     require("./../../pictures/carousel/pic1.jpeg")
   );
   const [counter, setCounter] = useState(2);
 
+  const nextHandler = () => {
+    if (carouselTimer) {
+      clearTimeout(carouselTimer);
+    }
+
+    if (counter === 6) {
+      setCounter(1);
+    } else {
+      setCounter((prevState) => prevState + 1);
+    }
+
+    setPic(require(`./../../pictures/carousel/pic${counter}.jpeg`));
+  }
+
+  const prevHandler = () => {
+
+  }
+
   useEffect(() => {
-    setTimeout(() => {
+    carouselTimer = setTimeout(() => {
       setPic(require(`./../../pictures/carousel/pic${counter}.jpeg`));
       if (counter === 6) {
         setCounter(1);
@@ -31,6 +50,14 @@ const Carousel = () => {
         >
           <img src={pic} />
         </motion.div>
+      </div>
+      <div className={styles['control-wrap']}>
+        <button className={styles.control} onClick={prevHandler}>
+            <img width="40" src={require('./../../pictures/icons/leftArrow.png')} />
+        </button>
+        <button className={styles.control} onClick={nextHandler}>
+          <img width="40" src={require('./../../pictures/icons/rightArrow.png')} />
+        </button>
       </div>
     </div>
   );

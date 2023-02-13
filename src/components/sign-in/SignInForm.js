@@ -1,13 +1,52 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
+import { useContext } from "react";
+import { authContext } from "../../store/context/auth-context";
+import { useNavigate } from "react-router";
 import styles from "./css/sign-in-form.module.css";
 import Button from "../util/Button";
 
-const SignInForm = ({ onSubmit }) => {
+const SignInForm = () => {
+  const [error, setError] = useState();
+  const navigate = useNavigate();
+  const authCtx = useContext(authContext);
+
   const emailInputRef = useRef();
   const passwordInputRef = useRef();
 
+  console.log(authCtx.isLoggedIn);
+
+  const submitHandler = (event) => {
+    event.preventDefault();
+
+    fetch('https://dada-chinese-rest-api.herokuapp.com/auth/login', {
+      method: 'POST',
+      body: JSON.stringify({
+        email: emailInputRef.current.value,
+        password: passwordInputRef.current.value
+      }),
+      headers: {
+        "Content-Type": "application/json"
+      }
+    }).then((response) => {
+      if (!response.ok) {
+        setError('Invalid Credentials');
+        throw new Error('Bad response');
+      }
+
+      return response.json()
+    }).then((data) => {
+      console.log(data);
+      authCtx.loginHandler(data.token, data.expiration, data.isAdmin);
+      navigate('/dada-chinese')
+    }).catch((err) => {
+      console.log(err.message);
+    })
+  }
+
   return (
-      <form className={styles.form} onSubmit={onSubmit}>
+    <>
+      <form className={styles.form} onSubmit={submitHandler}>
+        {error && <p>{error}</p>}
         <div className={styles.inputs}>
           <div className={styles.block}>
             <label>Email</label>
@@ -21,6 +60,7 @@ const SignInForm = ({ onSubmit }) => {
         </div>
         <Button type="submit">Log in</Button>
       </form>
+    </>
   );
 };
 
