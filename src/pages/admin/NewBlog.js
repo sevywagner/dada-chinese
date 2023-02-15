@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { useNavigate } from "react-router";
 
 import Button from "../../components/util/Button";
@@ -7,26 +7,26 @@ import formStyles from "./../../components/sign-in/css/sign-in-form.module.css";
 import mainStyles from './../../components/main.module.css';
 
 const NewBlog = () => {
+  const [file, setFile] = useState();
   const navigate = useNavigate();
 
   const titleRef = useRef();
   const contentRef = useRef();
   const imageUrlRef = useRef();
-  const dateRef = useRef();
 
   const submitHandler = (event) => {
     event.preventDefault();
 
+    const formData = new FormData();
+    formData.append('title', titleRef.current.value);
+    formData.append('content', contentRef.current.value);
+    formData.append('image', file);
+    formData.append('date', new Date().toDateString());
+
     fetch("https://dada-chinese-rest-api.herokuapp.com/posts", {
       method: "POST",
-      body: JSON.stringify({
-        title: titleRef.current.value,
-        content: contentRef.current.value,
-        imageUrl: imageUrlRef.current.value,
-        date: new Date(dateRef.current.value).toDateString(),
-      }),
+      body: formData,
       headers: {
-        "Content-Type": "application/json",
         Authorization: 'Bearer ' +  localStorage.getItem('token')
       },
     })
@@ -37,6 +37,12 @@ const NewBlog = () => {
       .catch((err) => console.log(err));
   };
 
+  const fileHandler = (event) => {
+    setFile(event.target.files[0]);
+  }
+
+  console.log(file);
+
   return (
     <div className={styles.root}>
       <p className={mainStyles.title}>New Blog Entry</p>
@@ -46,12 +52,8 @@ const NewBlog = () => {
           <input type="text" ref={titleRef} />
         </div>
         <div className={formStyles.block}>
-          <label>Image URL</label>
-          <input type="text" ref={imageUrlRef} />
-        </div>
-        <div className={formStyles.block}>
-          <label>Date</label>
-          <input type="date" ref={dateRef} />
+          <label>Image</label>
+          <input type="file" onChange={fileHandler.bind(this)} />
         </div>
         <div className={formStyles.block}>
           <label>Content</label>

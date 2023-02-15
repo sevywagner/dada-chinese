@@ -8,7 +8,7 @@ const OurTeachers = () => {
         <div className={styles.root}>
             <p className={mainStyles.title}>Our Teachers</p>
             <div className={styles.teachers}>
-                {bios.map((bio) => <TeacherItem imageUrl={bio.imageUrl} name={bio.name} id={bio.id} key={bio.key} />)}
+                {bios.map((bio) => <TeacherItem imageUrl={bio.imageUrl} name={bio.name} id={bio.id} key={bio.id} />)}
             </div>
         </div>
     );

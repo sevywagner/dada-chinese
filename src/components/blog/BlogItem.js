@@ -1,4 +1,4 @@
-import { useState, useContext } from 'react';
+import { useState, useContext, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { authContext } from '../../store/context/auth-context';
 
@@ -7,6 +7,7 @@ import mainStyles from './../main.module.css'
 
 const BlogItem = (props) => {
     const [result, setResult] = useState();
+    const [file, setFile] = useState();
     const authCtx = useContext(authContext);
     const navigate = useNavigate();
 
@@ -20,7 +21,7 @@ const BlogItem = (props) => {
         }
 
         fetch('https://dada-chinese-rest-api.herokuapp.com/delete-post', {
-            method: 'POST',
+            method: 'DELETE',
             body: JSON.stringify({ postId: props.id }),
             headers: {
                 "Content-Type": "application/json",
@@ -38,13 +39,29 @@ const BlogItem = (props) => {
         })
     }
 
+    useEffect(() => {
+        fetch(`https://dada-chinese-rest-api.herokuapp.com/${props.imageUrl}`, {
+            method: 'GET',
+            headers: {
+                "Content-Type": `image/${props.imageUrl.split('.')[1]}`
+            }
+        }).then((fileData) => {
+            return fileData.blob();
+        }).then((blob) => {
+            const url = URL.createObjectURL(blob);
+            setFile(url);
+        }).catch((err) => {
+            console.log(err);
+        })
+    }, []);
+
     return (
         <>
             {result && <p>{result}</p>}
             <Link className={styles.link} to={props.admin ? `/dada-chinese/edit-post/${props.id}` : `/dada-chinese/blog-post/${props.id}`}>
                 <div className={styles.item}>
                     <div className={styles.left}>
-                        <img src={props.imageUrl} />
+                        <img src={file} />
                     </div>
                     <div className={styles.right}>
                         <div className={styles.date}>
@@ -56,7 +73,11 @@ const BlogItem = (props) => {
                     </div>
                 </div>
             </Link>
-            {props.admin && <div className={styles.delete}><button className={styles['delete-button']} onClick={adminDeletePostHandler}>Delete Post</button></div>}
+            {props.admin && <div className={styles.delete}>
+                <button className={styles['delete-button']} onClick={adminDeletePostHandler}>
+                    Delete Post
+                </button>
+            </div>}
         </>
     );
 }
