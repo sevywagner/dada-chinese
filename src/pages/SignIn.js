@@ -2,14 +2,20 @@ import mainStyles from './../components/main.module.css';
 import styles from './css/sign-in.module.css';
 import SignInForm from '../components/sign-in/SignInForm';
 import SignUpForm from '../components/sign-in/SignUpForm';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { useLocation } from 'react-router';
 
 const SignIn = ({ mode }) => {
+    const location = useLocation();
     const [error, setError] = useState();
 
     const errorHandler = (errorMessage) => {
         setError(errorMessage);
     }
+
+    useEffect(() => {
+        setError(null);
+    }, [location.pathname]);
 
     return (
         <div className={styles.root}>
