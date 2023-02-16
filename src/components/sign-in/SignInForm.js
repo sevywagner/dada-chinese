@@ -13,10 +13,10 @@ const SignInForm = () => {
   const emailInputRef = useRef();
   const passwordInputRef = useRef();
 
-  console.log(authCtx.isLoggedIn);
-
   const submitHandler = (event) => {
     event.preventDefault();
+
+    let responseIsOk;
 
     fetch('https://dada-chinese-rest-api.herokuapp.com/auth/login', {
       method: 'POST',
@@ -29,13 +29,16 @@ const SignInForm = () => {
       }
     }).then((response) => {
       if (!response.ok) {
-        setError('Invalid Credentials');
-        throw new Error('Bad response');
+        responseIsOk = false;
+      } else {
+        responseIsOk = true;
       }
 
       return response.json()
     }).then((data) => {
-      console.log(data);
+      if (!responseIsOk) {
+        return setError(data.error);
+      }
       authCtx.loginHandler(data.token, data.expiration);
       navigate('/dada-chinese');
     }).catch((err) => {

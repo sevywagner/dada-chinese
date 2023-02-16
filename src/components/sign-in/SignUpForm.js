@@ -1,14 +1,11 @@
-import { useState } from "react";
+import { useNavigate } from "react-router";
 import useInput from "../../hooks/use-input";
 import Button from "../util/Button";
 import styles from './css/sign-in-form.module.css';
 
-const SignUpForm = ({ onSubmit }) => {
-  const [error, setError] = useState({
-    hasError: false,
-    message: ''
-  });
-  
+const SignUpForm = ({ errorHandler }) => {
+  const navigate = useNavigate();
+
   const {
     value: name,
     isValid: nameIsValid,
@@ -34,16 +31,7 @@ const SignUpForm = ({ onSubmit }) => {
     valueChangeHandler: passwordChangeHandler,
     blurHandler: passwordBlurHandler,
     reset: resetPassword,
-  } = useInput(
-    (data) =>
-      data.trim().length >= 8 &&
-      (data.includes("!") ||
-        data.includes("@") ||
-        data.includes(".") ||
-        data.includes("/") ||
-        data.includes("(") ||
-        data.includes(")"))
-  );
+  } = useInput((data) => data.trim().length >= 8);
 
   const {
     value: password2,
@@ -57,7 +45,24 @@ const SignUpForm = ({ onSubmit }) => {
   const submitHandler = (event) => {
     event.preventDefault();
 
+    if (!nameIsValid) {
+      errorHandler('Please enter a valid email');
+      return;
+    }
+
+    if (!emailIsValid) {
+      errorHandler('Please enter a valid email');
+      return;
+    }
+
+    if (!passwordIsValid) {
+      errorHandler('Please enter a valid password');
+      return;
+    }
+
+    
     if (nameIsValid && emailIsValid && passwordIsValid && password2IsValid) {
+      let responseIsOk;
       fetch('https://dada-chinese-rest-api.herokuapp.com/auth/signup', {
         method: 'PUT',
         body: JSON.stringify({
@@ -71,24 +76,29 @@ const SignUpForm = ({ onSubmit }) => {
         }
       }).then((response) => {
         if (!response.ok) {
-          throw new Error('Response error');
+          responseIsOk = false;
+        } else {
+          responseIsOk = true;
         }
+
         return response.json();
       }).then((data) => {
-        console.log(data);
+        if (!responseIsOk) {
+          return errorHandler(data.error);
+        } else {
+          resetName();
+          resetEmail();
+          resetPassword();
+          resetPassword2();
+          errorHandler(null);
+          navigate('/dada-chinese/sign-in');
+        }
       }).catch((err) => {
         console.log(err);
       });
 
-      resetName();
-      resetEmail();
-      resetPassword();
-      resetPassword2();
     } else {
-      setError({
-        hasError: true,
-        message: 'Invalid input'
-      });
+      errorHandler('Invalid Credentials');
     }
   }
 
@@ -101,7 +111,6 @@ const SignUpForm = ({ onSubmit }) => {
 
   return (
     <>
-      {error.hasError && <p>{error.message}</p>}
       <form onSubmit={submitHandler}>
 
         <label className={styles.label}>Name</label>
@@ -112,6 +121,7 @@ const SignUpForm = ({ onSubmit }) => {
           onBlur={nameBlurHandler}
           value={name}
           name="name"
+          placeholder="Full name"
         />
 
         <label className={styles.label}>Email</label>
@@ -122,22 +132,24 @@ const SignUpForm = ({ onSubmit }) => {
           onBlur={emailBlurHandler}
           value={email}
           name="email"
+          placeholder="test@test.com"
         />
 
         <label className={styles.label}>Set password</label>
         <input
           className={classNames.password}
-          type="text"
+          type="password"
           onChange={passwordChangeHandler}
           onBlur={passwordBlurHandler}
           value={password}
           name="password"
+          placeholder="Must be 8 characters and include a number"
         />
 
         <label className={styles.label}>Confirm password</label>
         <input
           className={classNames.password}
-          type="text"
+          type="password"
           onChange={password2ChangeHandler}
           onBlur={password2BlurHandler}
           value={password2}
