@@ -30,14 +30,13 @@ const EditPostPage = () => {
 
     const formData = new FormData();
     formData.append("title", title);
-    if (file) {
-        formData.append("image", file);
-    } else {
-        formData.append("imageUrl", targetPost.imageUrl);
-    }
+    formData.append("imageUrl", targetPost.imageUrl);
+    formData.append("image", file);
     formData.append("content", contentRef.current.value);
     formData.append("date", targetPost.date);
     formData.append("id", targetPost._id);
+
+    let responseIsOk;
 
     fetch("https://dada-chinese-rest-api.herokuapp.com/edit-post", {
       method: "PUT",
@@ -46,8 +45,17 @@ const EditPostPage = () => {
         Authorization: "Bearer " + localStorage.getItem("token"),
       },
     }).then((result) => {
-      console.log(result);
-      navigate("/dada-chinese/blog");
+      if (!result.ok) {
+        responseIsOk = false;
+      } else {
+        responseIsOk = true;
+        navigate("/dada-chinese/blog");
+      }
+      return result.json();
+    }).then((data) => {
+      console.log(data.error);
+    }).catch((err) => {
+      console.log(err);
     });
   };
 
