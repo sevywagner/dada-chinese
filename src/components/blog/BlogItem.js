@@ -25,7 +25,7 @@ const BlogItem = (props) => {
             body: JSON.stringify({ postId: props.id }),
             headers: {
                 "Content-Type": "application/json",
-                Authorization: 'Bearer ' + authCtx.token
+                Authorization: 'Bearer ' + localStorage.getItem('token')
             }
         }).then((response) => {
             if (response.ok) {
