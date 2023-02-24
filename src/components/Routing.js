@@ -11,6 +11,7 @@ import Policy from "../pages/Policy";
 import Teacher from "../pages/Teacher";
 import Error from "../pages/Error";
 import Admin from "../pages/admin/Admin";
+import FAQ from "../pages/FAQ";
 
 const Home = lazy(() => import('../pages/Home'));
 const Blog = lazy(() => import('../pages/Blog'));
@@ -85,7 +86,7 @@ const router = createBrowserRouter([
           path: 'sign-up',
           element: <Suspense><SignIn mode='register' /></Suspense>
         },
-  
+        //------ Classes ------
         {
           path: 'our-classes',
           element: <OurClasses />
@@ -93,6 +94,10 @@ const router = createBrowserRouter([
         {
           path: 'our-classes/:classId',
           element: <OurClassesDetail />
+        },
+        {
+          path: 'faq',
+          element: <FAQ />
         },
         //----- Teachers -----
         {

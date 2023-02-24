@@ -11,6 +11,7 @@ const OurClasses = () => {
             key={c.id}
             linkPath={`/dada-chinese/our-classes/${c.id}`}
             name={c.name}
+            subtitles={c.subtitles}
             imageUrl={c.imageUrl}
             price={c.price}
           />

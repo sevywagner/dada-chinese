@@ -1,0 +1,28 @@
+.qa {
+    padding: 10vh;
+    padding-left: 30vh;
+    padding-right: 30vh;
+}
+
+.wrap {
+    padding: 4vh;
+    margin: 4vh;
+    background-color: white;
+    border-radius: 3vh;
+    box-shadow: 10px 10px 30px black;
+}
+
+.question {
+    color: rgb(117, 0, 0);
+    font-size: 4vh;
+    font-family: 'montserrat';
+}
+
+.answer {
+    font-family: 'avenir';
+    font-size: 3vh;
+}
+
+.contact {
+    color: rgb(142, 2, 2);
+}

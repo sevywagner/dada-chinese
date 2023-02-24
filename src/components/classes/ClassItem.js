@@ -12,6 +12,7 @@ const ClassItem = (props) => {
                     </div>
                     <div className={styles.data}>
                         <p className={mainStyles.subtitle}>{props.name}</p>
+                        {props.subtitles.map((subtitle) => <p className={styles.subtitle} key={Math.random()}>{subtitle}</p>)}
                         <hr />
                         <p className={styles.price}>${props.price}</p>
                     </div>

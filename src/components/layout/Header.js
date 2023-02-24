@@ -43,8 +43,9 @@ const Header = () => {
           <div className={styles.subnav}>
             <Link className={styles["nav-item"]} to='/dada-chinese/our-classes'>Our Classes</Link>
             <div className={styles['subnav-content']}>
-              <Link className={styles["subnav-item"]} to="/dada-chinese/textbooks">Textbooks</Link>
               <Link className={styles["subnav-item"]} to="/dada-chinese/our-teachers">Our Teachers</Link>
+              <Link className={styles["subnav-item"]} to="/dada-chinese/textbooks">Textbooks</Link>
+              <Link className={styles["subnav-item"]} to="/dada-chinese/faq">FAQ</Link>
             </div>
           </div>
           <Link className={styles["nav-item"]} to='/dada-chinese/contact'>Contact</Link>
