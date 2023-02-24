@@ -1,9 +1,9 @@
 {
   "files": {
-    "main.css": "/dada-chinese/static/css/main.ff38922a.css",
-    "main.js": "/dada-chinese/static/js/main.a64879ce.js",
-    "static/css/844.cde1bc27.chunk.css": "/dada-chinese/static/css/844.cde1bc27.chunk.css",
-    "static/js/844.e28aa351.chunk.js": "/dada-chinese/static/js/844.e28aa351.chunk.js",
+    "main.css": "/dada-chinese/static/css/main.779f62eb.css",
+    "main.js": "/dada-chinese/static/js/main.af4827d5.js",
+    "static/css/755.b55e72e7.chunk.css": "/dada-chinese/static/css/755.b55e72e7.chunk.css",
+    "static/js/755.a17eab5e.chunk.js": "/dada-chinese/static/js/755.a17eab5e.chunk.js",
     "static/css/190.b24efcd7.chunk.css": "/dada-chinese/static/css/190.b24efcd7.chunk.css",
     "static/js/190.f16e143c.chunk.js": "/dada-chinese/static/js/190.f16e143c.chunk.js",
     "static/js/676.f3283004.chunk.js": "/dada-chinese/static/js/676.f3283004.chunk.js",
@@ -30,10 +30,10 @@
     "static/media/studying.jpeg": "/dada-chinese/static/media/studying.16b16f4556bd3d11bec4.jpeg",
     "static/media/studying2.avif": "/dada-chinese/static/media/studying2.55a84622f7ee8679abf6.avif",
     "index.html": "/dada-chinese/index.html",
-    "main.ff38922a.css.map": "/dada-chinese/static/css/main.ff38922a.css.map",
-    "main.a64879ce.js.map": "/dada-chinese/static/js/main.a64879ce.js.map",
-    "844.cde1bc27.chunk.css.map": "/dada-chinese/static/css/844.cde1bc27.chunk.css.map",
-    "844.e28aa351.chunk.js.map": "/dada-chinese/static/js/844.e28aa351.chunk.js.map",
+    "main.779f62eb.css.map": "/dada-chinese/static/css/main.779f62eb.css.map",
+    "main.af4827d5.js.map": "/dada-chinese/static/js/main.af4827d5.js.map",
+    "755.b55e72e7.chunk.css.map": "/dada-chinese/static/css/755.b55e72e7.chunk.css.map",
+    "755.a17eab5e.chunk.js.map": "/dada-chinese/static/js/755.a17eab5e.chunk.js.map",
     "190.b24efcd7.chunk.css.map": "/dada-chinese/static/css/190.b24efcd7.chunk.css.map",
     "190.f16e143c.chunk.js.map": "/dada-chinese/static/js/190.f16e143c.chunk.js.map",
     "676.f3283004.chunk.js.map": "/dada-chinese/static/js/676.f3283004.chunk.js.map",
@@ -49,7 +49,7 @@
     "980.2b6092a3.chunk.js.map": "/dada-chinese/static/js/980.2b6092a3.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.ff38922a.css",
-    "static/js/main.a64879ce.js"
+    "static/css/main.779f62eb.css",
+    "static/js/main.af4827d5.js"
   ]
 }
