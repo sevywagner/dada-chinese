@@ -8,10 +8,17 @@ const Teacher = () => {
     const bio = bios.find((bio) => bio.name === params.teacherName);
 
     return (
-        <div>
+        <div className={styles.root}>
             <p className={mainStyles.title}>About {bio.name}</p>
-            <div className={styles['pg-wrapper']}>
-                <p className={mainStyles.pg}>{bio.bodyPg}</p>
+            <div className={styles.wrap}>
+                <div className={styles['pg-wrapper']}>
+                    <div className={styles.pic}>
+                        <img src={require(`./../pictures/teachers/${bio.imageUrl}.jpg`)} />
+                    </div>
+                    <div className={styles.pg}>
+                        <p className={mainStyles.pg}>{bio.bodyPg}</p>
+                    </div>
+                </div>
             </div>
         </div>
     );

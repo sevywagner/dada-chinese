@@ -12,6 +12,7 @@ import Teacher from "../pages/Teacher";
 import Error from "../pages/Error";
 import Admin from "../pages/admin/Admin";
 import FAQ from "../pages/FAQ";
+import ResetPassword from "../pages/ResetPassword";
 
 const Home = lazy(() => import('../pages/Home'));
 const Blog = lazy(() => import('../pages/Blog'));
@@ -85,6 +86,14 @@ const router = createBrowserRouter([
         {
           path: 'sign-up',
           element: <Suspense><SignIn mode='register' /></Suspense>
+        },
+        {
+          path: 'reset-password',
+          element: <ResetPassword mode="email" />,
+        },
+        {
+          path: 'reset-password/:token',
+          element: <ResetPassword mode="password" />
         },
         //------ Classes ------
         {

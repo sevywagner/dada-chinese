@@ -14,7 +14,7 @@ const Home = () => {
                 <a data-savvycal-embed className={mainStyles.book} href="https://savvycal.com/derrick/chat">Book a Class</a>
             </div>
             <div className={styles.row}>
-                <div className={mainStyles['half-width-block']}>
+                <div className={styles.carousel}>
                     <Carousel />
                 </div>
                 <div className={mainStyles['half-width-block']}>

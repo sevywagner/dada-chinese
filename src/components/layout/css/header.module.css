@@ -261,4 +261,13 @@ nav {
   .sign-in {
     margin-left: 0;
   }
+
+  .mobile-logout {
+    margin-left: 4vh;
+    color: white;
+    font-family: 'Proza Libre';
+    font-size: 2.5vh;
+    background-color: inherit;
+    border: none;
+  }
 }

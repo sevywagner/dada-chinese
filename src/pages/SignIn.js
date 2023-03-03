@@ -4,6 +4,7 @@ import SignInForm from '../components/sign-in/SignInForm';
 import SignUpForm from '../components/sign-in/SignUpForm';
 import { useEffect, useState } from 'react';
 import { useLocation } from 'react-router';
+import { Link } from 'react-router-dom';
 
 const SignIn = ({ mode }) => {
     const location = useLocation();
@@ -22,10 +23,13 @@ const SignIn = ({ mode }) => {
             <div className={styles['elevate']}>
                 <p className={mainStyles.title}>Sign {mode === 'register' ? 'up' : 'in'}</p>
                 {error && <p>{error}</p>}
-                {mode === 'login' && 
-                    <div className={styles.form}>
-                        <SignInForm errorHandler={errorHandler} />
-                    </div>
+                {mode === 'login' &&
+                    <>
+                        <div className={styles.form}>
+                            <SignInForm errorHandler={errorHandler} />
+                        </div>
+                        <Link to='/dada-chinese/reset-password'>Reset Password</Link>
+                    </>
                 }
                 {mode === 'register' &&
                     <div className={styles.form}>

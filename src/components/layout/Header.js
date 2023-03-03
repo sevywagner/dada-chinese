@@ -82,8 +82,14 @@ const Header = () => {
           <Link className={styles["nav-item"]} to="/dada-chinese/our-teachers">Our Teachers</Link>
           <Link className={styles["nav-item"]} to='/dada-chinese/contact'>Contact</Link>
           <Link className={styles["nav-item"]} to="/dada-chinese/blog">Blog</Link>
-          <Link className={styles["nav-item"]} to="/dada-chinese/sign-up">Sign up</Link>
-          <Link className={styles["nav-item"]} to='/dada-chinese/sign-in'>Sign in</Link>
+          {!authCtx.isLoggedIn && <Link className={styles["nav-item"]} to="/dada-chinese/sign-up">Sign up</Link>}
+          {!authCtx.isLoggedIn && <Link className={styles['nav-item']} to='/dada-chinese/sign-in'>Sign in</Link>}
+          {localStorage.getItem('token') && <div className={styles.wrap}>
+            <button onClick={cartToggle} className={styles.cart}>
+              <img src={require('../../pictures/icons/cart.png')} />
+            </button>
+            <button onClick={logoutHandler} className={styles['mobile-logout']}>Logout</button>
+          </div>}
         </motion.nav>}
       </header>
       {showCart && <CartModal onClose={cartToggle} />}

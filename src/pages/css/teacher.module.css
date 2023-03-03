@@ -1,4 +1,30 @@
 .pg-wrapper {
-    margin-left: 10vh;
-    margin-right: 10vh
+    margin-right: 10vh;
+    display: flex;
+    align-items: center;
 }
+
+.wrap {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+}
+
+.pic {
+    width: 100%;
+    padding-left: 10vh;
+    padding-right: 10vh;
+}
+
+.pic img {
+    width: 100%;
+    float: left;
+}
+
+/* p img {
+    width: 14%;
+    float: left;
+    margin-right: 3vh;
+    margin-bottom: 3vh;
+} */

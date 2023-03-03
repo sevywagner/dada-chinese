@@ -34,3 +34,14 @@
     display: flex;
     justify-content: center;
 }
+
+@media only screen and (max-width: 800px) {
+    .example {
+        margin: 0;
+    }
+
+    .item {
+        margin: 2vh;
+        padding: 2vh;
+    }
+}
