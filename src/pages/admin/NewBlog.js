@@ -13,6 +13,7 @@ const NewBlog = () => {
   const titleRef = useRef();
   const contentRef = useRef();
   const imageUrlRef = useRef();
+  const videoUrlRef = useRef();
 
   const submitHandler = (event) => {
     event.preventDefault();
@@ -21,6 +22,7 @@ const NewBlog = () => {
     formData.append('title', titleRef.current.value);
     formData.append('content', contentRef.current.value);
     formData.append('image', file);
+    formData.append('videoUrl', videoUrlRef.current.value);
     formData.append('date', new Date().toDateString());
 
     fetch("https://dada-chinese-rest-api.herokuapp.com/posts", {
@@ -54,6 +56,10 @@ const NewBlog = () => {
         <div className={formStyles.block}>
           <label>Image</label>
           <input type="file" onChange={fileHandler.bind(this)} />
+        </div>
+        <div className={formStyles.block}>
+          <label>Video Url</label>
+          <input type="text" ref={videoUrlRef} />
         </div>
         <div className={formStyles.block}>
           <label>Content</label>

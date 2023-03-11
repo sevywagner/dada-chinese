@@ -1,0 +1,11 @@
+.video {
+    display: flex;
+    justify-content: center;
+}
+
+.video-padding {
+    padding: 4vh;
+    margin: 4vh;
+    border-radius: 3vh;
+    background-color: rgb(85, 0, 0);
+}

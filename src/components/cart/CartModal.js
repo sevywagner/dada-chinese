@@ -1,7 +1,8 @@
 import ReactDOM from 'react-dom';
 import { useSelector } from 'react-redux';
-import Button from '../util/Button';
+import { Link } from 'react-router-dom';
 
+import Button from '../util/Button';
 import mainStyles from './../main.module.css';
 import styles from './css/cart-modal.module.css';
 import CartItem, { ExampleItem } from './CartItem';
@@ -30,7 +31,7 @@ const Interface = (props) => {
                 </div>
                 <div className={mainStyles.wrap}>
                     <Button onClick={props.onClose}>Close</Button>
-                    {cart.items.length !== 0 && <Button onClick={props.onClose}>Proceed to Checkout</Button>}
+                    {cart.items.length !== 0 && <Link to='/dada-chinese/checkout'><Button onClick={props.onClose}>Proceed to Checkout</Button></Link>}
                 </div>
             </div>
         </div>

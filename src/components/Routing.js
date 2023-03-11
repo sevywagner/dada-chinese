@@ -13,6 +13,8 @@ import Error from "../pages/Error";
 import Admin from "../pages/admin/Admin";
 import FAQ from "../pages/FAQ";
 import ResetPassword from "../pages/ResetPassword";
+import Checkout from "../pages/Checkout";
+import OrderConfirmation from "../pages/OrderConfirmation";
 
 const Home = lazy(() => import('../pages/Home'));
 const Blog = lazy(() => import('../pages/Blog'));
@@ -116,6 +118,15 @@ const router = createBrowserRouter([
         {
           path: 'our-teachers/:teacherName',
           element: <Teacher />
+        },
+        //----- Cart -----
+        {
+          path: 'checkout',
+          element: <Checkout />
+        },
+        {
+          path: 'order-confirmation',
+          element: <OrderConfirmation />
         }
       ]
     },

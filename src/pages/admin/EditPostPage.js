@@ -13,6 +13,7 @@ const EditPostPage = () => {
 
   const titleRef = useRef();
   const contentRef = useRef();
+  const videoUrlRef = useRef();
 
   const posts = useLoaderData();
   const targetPost = posts.find((p) => p._id === params.postId);
@@ -28,10 +29,13 @@ const EditPostPage = () => {
       title = titleRef.current.value;
     }
 
+    console.log(videoUrlRef.current.value);
+
     const formData = new FormData();
     formData.append("title", title);
     formData.append("imageUrl", targetPost.imageUrl);
     formData.append("image", file);
+    formData.append('videoUrl', !videoUrlRef.current.value ? targetPost.videoUrl : videoUrlRef.current.value);
     formData.append("content", contentRef.current.value);
     formData.append("date", targetPost.date);
     formData.append("id", targetPost._id);
@@ -74,6 +78,10 @@ const EditPostPage = () => {
           <div className={formStyles.block}>
             <label>Image</label>
             <input type="file" onChange={fileHandler.bind(this)} />
+          </div>
+          <div className={formStyles.block}>
+            <label>Video Url</label>
+            <input type="text" ref={videoUrlRef} />
           </div>
           <div className={formStyles.block}>
             <label>Content</label>
