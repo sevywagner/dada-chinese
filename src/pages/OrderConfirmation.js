@@ -26,7 +26,7 @@ const OrderConfirmation = () => {
         let address = aptNumRef.current.value.trim() !== '' ? addressRef.current.value + ' Apt #: ' + aptNumRef.current.value : addressRef.current.value;
         let error = false;
         
-        fetch('http://localhost:8080/shop/new-order', {
+        fetch('https://dada-chinese-rest-api.herokuapp.com/shop/new-order', {
             method: 'PUT',
             body: JSON.stringify({ items: cart.items, totalPrice: cart.totalPrice, address: address }),
             headers: {
@@ -45,7 +45,7 @@ const OrderConfirmation = () => {
                 return;
             } else {
                 console.log(data.message);
-                fetch('http://localhost:8080/shop/order-email', {
+                fetch('https://dada-chinese-rest-api.herokuapp.com/shop/order-email', {
                     method: 'POST',
                     body: JSON.stringify({ cartItems: cart.items }),
                     headers: {
