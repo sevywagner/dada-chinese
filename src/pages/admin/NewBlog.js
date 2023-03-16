@@ -8,6 +8,7 @@ import mainStyles from './../../components/main.module.css';
 
 const NewBlog = () => {
   const [file, setFile] = useState();
+  const [error, setError] = useState();
   const navigate = useNavigate();
 
   const titleRef = useRef();
@@ -25,18 +26,28 @@ const NewBlog = () => {
     formData.append('videoUrl', videoUrlRef.current.value);
     formData.append('date', new Date().toDateString());
 
-    fetch("https://dada-chinese-rest-api.herokuapp.com/posts", {
+    let hasError = false;
+
+    fetch("http://localhost:8080/posts", {
       method: "POST",
       body: formData,
       headers: {
         Authorization: 'Bearer ' +  localStorage.getItem('token')
       },
-    })
-      .then((result) => {
-        console.log(result);
+    }).then((result) => {
+      if (!result.ok) {
+        hasError = true;
+      }
+
+      return result.json();
+    }).then((data) => {
+      if (hasError) {
+        setError(data.error);
+      } else {
+        console.log(data.message);
         navigate('/dada-chinese/blog');
-      })
-      .catch((err) => console.log(err));
+      }
+    }).catch((err) => console.log(err));
   };
 
   const fileHandler = (event) => {
@@ -48,6 +59,7 @@ const NewBlog = () => {
   return (
     <div className={styles.root}>
       <p className={mainStyles.title}>New Blog Entry</p>
+      {error && <p className={mainStyles.error}>{error}</p>}
       <form className={styles.form} onSubmit={submitHandler}>
         <div className={formStyles.block}>
           <label>Title</label>

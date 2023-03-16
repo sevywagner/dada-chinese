@@ -28,7 +28,7 @@ const SignIn = ({ mode }) => {
                         <div className={styles.form}>
                             <SignInForm errorHandler={errorHandler} />
                         </div>
-                        <Link to='/dada-chinese/reset-password'>Reset Password</Link>
+                        <Link className={styles.reset} to='/dada-chinese/reset-password'>Reset Password</Link>
                     </>
                 }
                 {mode === 'register' &&
