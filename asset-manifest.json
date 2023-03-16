@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/dada-chinese/static/css/main.f87d28b7.css",
-    "main.js": "/dada-chinese/static/js/main.5d81027a.js",
+    "main.js": "/dada-chinese/static/js/main.1142c471.js",
     "static/css/755.693f7ffa.chunk.css": "/dada-chinese/static/css/755.693f7ffa.chunk.css",
     "static/js/755.d36fb014.chunk.js": "/dada-chinese/static/js/755.d36fb014.chunk.js",
     "static/css/190.b24efcd7.chunk.css": "/dada-chinese/static/css/190.b24efcd7.chunk.css",
@@ -13,7 +13,7 @@
     "static/css/619.b24efcd7.chunk.css": "/dada-chinese/static/css/619.b24efcd7.chunk.css",
     "static/js/619.7d2e4f63.chunk.js": "/dada-chinese/static/js/619.7d2e4f63.chunk.js",
     "static/css/134.8a5776c1.chunk.css": "/dada-chinese/static/css/134.8a5776c1.chunk.css",
-    "static/js/134.853b8e84.chunk.js": "/dada-chinese/static/js/134.853b8e84.chunk.js",
+    "static/js/134.a2bc55d2.chunk.js": "/dada-chinese/static/js/134.a2bc55d2.chunk.js",
     "static/css/7.76c03208.chunk.css": "/dada-chinese/static/css/7.76c03208.chunk.css",
     "static/js/7.efa8882c.chunk.js": "/dada-chinese/static/js/7.efa8882c.chunk.js",
     "static/js/4.84cd6a8a.chunk.js": "/dada-chinese/static/js/4.84cd6a8a.chunk.js",
@@ -31,7 +31,7 @@
     "static/media/studying2.avif": "/dada-chinese/static/media/studying2.55a84622f7ee8679abf6.avif",
     "index.html": "/dada-chinese/index.html",
     "main.f87d28b7.css.map": "/dada-chinese/static/css/main.f87d28b7.css.map",
-    "main.5d81027a.js.map": "/dada-chinese/static/js/main.5d81027a.js.map",
+    "main.1142c471.js.map": "/dada-chinese/static/js/main.1142c471.js.map",
     "755.693f7ffa.chunk.css.map": "/dada-chinese/static/css/755.693f7ffa.chunk.css.map",
     "755.d36fb014.chunk.js.map": "/dada-chinese/static/js/755.d36fb014.chunk.js.map",
     "190.b24efcd7.chunk.css.map": "/dada-chinese/static/css/190.b24efcd7.chunk.css.map",
@@ -43,13 +43,13 @@
     "619.b24efcd7.chunk.css.map": "/dada-chinese/static/css/619.b24efcd7.chunk.css.map",
     "619.7d2e4f63.chunk.js.map": "/dada-chinese/static/js/619.7d2e4f63.chunk.js.map",
     "134.8a5776c1.chunk.css.map": "/dada-chinese/static/css/134.8a5776c1.chunk.css.map",
-    "134.853b8e84.chunk.js.map": "/dada-chinese/static/js/134.853b8e84.chunk.js.map",
+    "134.a2bc55d2.chunk.js.map": "/dada-chinese/static/js/134.a2bc55d2.chunk.js.map",
     "7.76c03208.chunk.css.map": "/dada-chinese/static/css/7.76c03208.chunk.css.map",
     "7.efa8882c.chunk.js.map": "/dada-chinese/static/js/7.efa8882c.chunk.js.map",
     "4.84cd6a8a.chunk.js.map": "/dada-chinese/static/js/4.84cd6a8a.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.f87d28b7.css",
-    "static/js/main.5d81027a.js"
+    "static/js/main.1142c471.js"
   ]
 }
