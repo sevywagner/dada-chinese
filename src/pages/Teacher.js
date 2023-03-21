@@ -9,15 +9,13 @@ const Teacher = () => {
 
     return (
         <div className={styles.root}>
-            <p className={mainStyles.title}>About {bio.name}</p>
             <div className={styles.wrap}>
-                <div className={styles['pg-wrapper']}>
-                    <div className={styles.pic}>
-                        <img src={require(`./../pictures/teachers/${bio.imageUrl}.jpg`)} />
-                    </div>
-                    <div className={styles.pg}>
-                        <p className={mainStyles.pg}>{bio.bodyPg}</p>
-                    </div>
+                <div className={styles.pic}>
+                    <img src={require(`./../pictures/teachers/${bio.imageUrl}.jpg`)} alt="JingYi Bio" />
+                </div>
+                <div className={styles.pg}>
+                    <p className={mainStyles.title}>About {bio.name}</p>
+                    <p className={mainStyles.pg}>{bio.bodyPg}</p>
                 </div>
             </div>
         </div>

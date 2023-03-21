@@ -27,6 +27,17 @@
     flex-direction: row;
 }
 
+.quote-section {
+    background-color: rgb(102, 0, 0);
+    color: white;
+    padding: 5vh;
+}
+
+.section-one {
+    display: flex;
+    align-items: center;
+}
+
 @media only screen and (max-width: 800px) {
     .row {
         flex-direction: column;

@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router";
 import Button from "../components/util/Button";
@@ -80,7 +80,7 @@ const OrderConfirmation = () => {
                 navigate('/dada-chinese/');
             }, 5000);
         }
-    }, [hasOrdered]);
+    }, [hasOrdered, navigate]);
 
     return (
         <div>

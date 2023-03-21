@@ -12,9 +12,6 @@ import Teacher from "../pages/Teacher";
 import Error from "../pages/Error";
 import Admin from "../pages/admin/Admin";
 import FAQ from "../pages/FAQ";
-import ResetPassword from "../pages/ResetPassword";
-import Checkout from "../pages/Checkout";
-import OrderConfirmation from "../pages/OrderConfirmation";
 
 const Home = lazy(() => import('../pages/Home'));
 const Blog = lazy(() => import('../pages/Blog'));
@@ -24,6 +21,9 @@ const AdminBlogList = lazy(() => import('../pages/admin/AdminBlogList'));
 const NewBlog = lazy(() => import('../pages/admin/NewBlog'));
 const SignIn = lazy(() => import('../pages/SignIn'));
 const Contact = lazy(() => import('../pages/Contact'));
+const ResetPassword = lazy(() => import('../pages/ResetPassword'));
+const Checkout = lazy(() => import('../pages/Checkout'));
+const OrderConfirmation = lazy(() => import('../pages/OrderConfirmation'));
 
 const router = createBrowserRouter([
     {
@@ -91,11 +91,11 @@ const router = createBrowserRouter([
         },
         {
           path: 'reset-password',
-          element: <ResetPassword mode="email" />,
+          element: <Suspense><ResetPassword mode="email" /></Suspense>,
         },
         {
           path: 'reset-password/:token',
-          element: <ResetPassword mode="password" />
+          element: <Suspense><ResetPassword mode="password" /></Suspense>
         },
         //------ Classes ------
         {
@@ -122,11 +122,11 @@ const router = createBrowserRouter([
         //----- Cart -----
         {
           path: 'checkout',
-          element: <Checkout />
+          element: <Suspense><Checkout /></Suspense>
         },
         {
           path: 'order-confirmation',
-          element: <OrderConfirmation />
+          element: <Suspense><OrderConfirmation /></Suspense>
         }
       ]
     },

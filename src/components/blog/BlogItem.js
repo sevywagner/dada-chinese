@@ -1,6 +1,5 @@
-import { useState, useContext, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { authContext } from '../../store/context/auth-context';
 
 import styles from './css/blog.module.css';
 import mainStyles from './../main.module.css'
@@ -8,7 +7,6 @@ import mainStyles from './../main.module.css'
 const BlogItem = (props) => {
     const [result, setResult] = useState();
     const [file, setFile] = useState();
-    const authCtx = useContext(authContext);
     const navigate = useNavigate();
 
     const dateStringArray = props.date.split(' ');
@@ -53,7 +51,7 @@ const BlogItem = (props) => {
         }).catch((err) => {
             console.log(err);
         })
-    }, []);
+    });
 
     return (
         <>
@@ -61,7 +59,7 @@ const BlogItem = (props) => {
             <Link className={styles.link} to={props.admin ? `/dada-chinese/edit-post/${props.id}` : `/dada-chinese/blog-post/${props.id}`}>
                 <div className={styles.item}>
                     <div className={styles.left}>
-                        <img src={file} />
+                        <img src={file} alt="blog" />
                     </div>
                     <div className={styles.right}>
                         <div className={styles.date}>

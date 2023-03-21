@@ -57,7 +57,11 @@ const EditPostPage = () => {
       }
       return result.json();
     }).then((data) => {
-      console.log(data.error);
+      if (responseIsOk) {
+        console.log(data.message);
+      } else {
+        console.log(data.error);
+      }
     }).catch((err) => {
       console.log(err);
     });

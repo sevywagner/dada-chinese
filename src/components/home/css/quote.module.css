@@ -1,0 +1,17 @@
+.wrap {
+    width: 70%;
+    background-color: rgb(93, 0, 0);
+    border-radius: 4vh;
+    margin: 3vh;
+    line-height: 5vh;
+    padding: 5vh;
+    padding-left: 10vh;
+    padding-right: 10vh;
+}
+
+.speaker {
+    font-family: 'lato';
+    font-size: 4vh;
+    font-style: italic;
+    text-align: center;
+}

@@ -13,7 +13,6 @@ const NewBlog = () => {
 
   const titleRef = useRef();
   const contentRef = useRef();
-  const imageUrlRef = useRef();
   const videoUrlRef = useRef();
 
   const submitHandler = (event) => {

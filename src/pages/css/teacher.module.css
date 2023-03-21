@@ -1,25 +1,28 @@
-.pg-wrapper {
-    margin-right: 10vh;
-    display: flex;
-    align-items: center;
-}
-
 .wrap {
     display: flex;
     flex-direction: row;
     align-items: center;
     width: 100%;
+    padding-top: 5vh;
+    background-color: rgb(75, 0, 0);
+}
+
+.pg {
+    width: 70%;
+    color: white;
+    font-family: 'avenir';
 }
 
 .pic {
-    width: 100%;
-    padding-left: 10vh;
-    padding-right: 10vh;
+    width: 30%;
+    margin-left: 2vh;
+    padding-bottom: 4vh;
 }
 
 .pic img {
     width: 100%;
     float: left;
+    border-radius: 3vh;
 }
 
 /* p img {
