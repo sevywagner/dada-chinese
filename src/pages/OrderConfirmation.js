@@ -6,6 +6,7 @@ import { cartActions } from "../store/redux/cart";
 
 import mainStyles from './../components/main.module.css';
 import styles from './css/checkout.module.css';
+import formStyles from './../components/contact/css/contact-form.module.css';
 
 const OrderConfirmation = () => {
     const [hasOrdered, setHasOrdered] = useState(false);

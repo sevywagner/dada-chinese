@@ -1,0 +1,8 @@
+.item {
+    text-align: center;
+    font-family: 'avenir';
+    width: 25%;
+    border: 1px solid black;
+    border-radius: 2vh;
+    margin: 4vh;
+}

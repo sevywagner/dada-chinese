@@ -24,6 +24,7 @@ const Contact = lazy(() => import('../pages/Contact'));
 const ResetPassword = lazy(() => import('../pages/ResetPassword'));
 const Checkout = lazy(() => import('../pages/Checkout'));
 const OrderConfirmation = lazy(() => import('../pages/OrderConfirmation'));
+const Orders = lazy(() => import('./../pages/admin/Orders'));
 
 const router = createBrowserRouter([
     {
@@ -127,6 +128,11 @@ const router = createBrowserRouter([
         {
           path: 'order-confirmation',
           element: <Suspense><OrderConfirmation /></Suspense>
+        },
+        {
+          path: 'orders',
+          element: <Suspense><Orders /></Suspense>,
+          loader: () => import('./../pages/admin/Orders').then((module) => module.loader())
         }
       ]
     },

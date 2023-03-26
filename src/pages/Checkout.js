@@ -18,14 +18,18 @@ const Checkout = () => {
     return (
         <div>
             <p className={mainStyles.title}>Checkout</p>
-            {cart.items.map((item) => (
-                <CheckoutCartItem 
-                    key={item.title}
-                    title={item.title} 
-                    price={item.price} 
-                    quantity={item.quantity} 
-                />
-            ))}
+            <div className={styles['list-wrap']}>
+                <CheckoutCartItem title='Item' quantity='Quantity' />
+                {cart.items.map((item) => (
+                    <CheckoutCartItem 
+                        key={item.title}
+                        title={item.title} 
+                        price={item.price} 
+                        quantity={item.quantity} 
+                    />
+                ))}
+            </div>
+            <p className={mainStyles.title}>Total Price: {cart.totalPrice}</p>
             <div className={styles.wrap}>
                 {!showPaypal ? <Button onClick={toggleCheckout}>Checkout</Button> : <Paypal totalAmount={cart.totalPrice} />}
             </div>

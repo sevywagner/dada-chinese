@@ -4,7 +4,7 @@ const CheckoutCartItem = ({ title, price, quantity }) => {
     return (
         <div className={styles.item}>
             <p className={styles.title}>{title}</p>
-            <p className={styles.price}>${price}</p>
+            {price ? <p className={styles.price}>${price}</p> : <p className={styles.price}>Price</p>}
             <p className={styles.quantity}>{quantity}</p>
         </div>
     );
