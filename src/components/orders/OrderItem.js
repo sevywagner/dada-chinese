@@ -12,6 +12,7 @@ const OrderItem = ({ order }) => {
                 <p>Quantity: {item.quantity}</p>
             </div>)}
             <p>Total Price: {order.totalPrice}</p>
+            <p>{order.date}</p>
         </div>
     );
 }
