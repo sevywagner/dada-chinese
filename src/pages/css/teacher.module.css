@@ -31,3 +31,24 @@
     margin-right: 3vh;
     margin-bottom: 3vh;
 } */
+
+@media only screen and (max-width: 800px) {
+    .wrap {
+        flex-direction: column;
+    }
+
+    .pic {
+        width: 80%;
+        float: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .pg {
+        width: 100%;
+    }
+
+    .pic {
+        order: 2;
+    }
+}

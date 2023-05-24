@@ -16,6 +16,7 @@ const OurClasses = () => {
               subtitles={c.subtitles}
               imageUrl={c.imageUrl}
               price={c.price}
+              bulletPoints={c.bulletPoints}
             />
           ))}
         </div>

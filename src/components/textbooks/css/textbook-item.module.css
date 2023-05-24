@@ -6,21 +6,39 @@
     flex-direction: column;
     border-radius: 2vh;
     padding: 4vh;
+    width: 40vh;
+}
+
+.root:hover > .image > .two {
+    animation: move-image 1s ease-in-out;
+    display: block;
+    
 }
 
 .root:hover {
     animation: hover .3s ease-out;
     background-color: rgb(110, 0, 0);
     color: white;
+    width: 65vh;
 }
 
 .image {
     height: 40vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.two {
+    display: none;
 }
 
 .image img {
     height: 100%;
-    border-radius: 2vh;
+    width: min-content;
+    /* border-radius: 2vh; */
+    margin: 2vh;
 }
 
 .data {
@@ -38,7 +56,9 @@
 }
 
 .add {
-    padding: 1vh;
+    font-family: 'Avenir';
+    font-size: 2vh;
+    padding: 1.7vh;
     border-radius: 3vh;
     border: 1px solid black;
     background-color: white;
@@ -57,6 +77,26 @@
     color: white;
     text-decoration: underline;
     background-color: inherit;
+}
+
+.text {
+    text-align: center;
+}
+
+.more {
+    font-family: 'Avenir';
+    font-size: 2vh;
+    padding: 1.5vh;
+    margin: 1vh;
+    border-radius: 2vh;
+    border: 1px solid black;
+    background-color: white;
+}
+
+.root:hover > .data > .more {
+    background-color: rgb(110, 0, 0);
+    border: 1px solid white;
+    color: white;
 }
 
 @keyframes hover {
@@ -81,5 +121,53 @@
         background-color: inherit;
         color: white;
         text-decoration: underline;
+    }
+}
+
+@keyframes move-image {
+    from {
+        opacity: 0;
+        transform: translateX(-10vh);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0vh);
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .root {
+        width: 100%;
+        border: none;
+        background-color: whitesmoke;
+    }
+
+    .root:hover {
+        animation: hover 0s ease-out;
+        background-color: whitesmoke;
+        color: black;
+        width: 100%;
+    }
+
+    .root:hover > .image > .two {
+        animation: move-image 0s ease-in-out;
+        display: none;
+    }
+
+    .more {
+        font-family: 'Avenir';
+        font-size: 2vh;
+        padding: 1.5vh;
+        margin: 1vh;
+        border-radius: 2vh;
+        background-color: rgb(110, 0, 0);
+        border: 1px solid white;
+        color: white;
+    }
+
+
+    .text {
+        width: 75%;
     }
 }

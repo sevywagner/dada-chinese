@@ -6,3 +6,11 @@
     border-radius: 2vh;
     margin: 4vh;
 }
+
+@media only screen and (max-width: 800px) {
+    .item {
+        width: 100%;
+        margin: 0px;
+        padding: 0px;
+    }
+}
