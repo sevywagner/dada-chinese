@@ -30,7 +30,7 @@
 
 .control-wrap {
     width: 100%;
-    border: 1px solid black;
+    /* border: 1px solid black; */
     border-radius: 3vh;
     display: flex;
     justify-content: space-around;

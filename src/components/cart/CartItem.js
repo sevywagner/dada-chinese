@@ -17,7 +17,7 @@ const CartItem = (props) => {
         <>
             <div className={styles.item}>
                 <div className={styles.section}>
-                    <p>{props.title}</p>
+                    <p className={styles['item-title']}>{props.title}</p>
                 </div>
                 <div className={styles.section}>
                     <p>${props.price.toFixed(2)}</p>

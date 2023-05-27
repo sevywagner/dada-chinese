@@ -4,6 +4,7 @@ import About from '../components/home/About';
 import Carousel from '../components/home/Carousel';
 import QuoteSection from '../components/home/QuoteSection';
 import { PopupButton } from 'react-calendly'
+import Qa from '../components/home/Qa';
 
 const Home = () => {
     return (
@@ -35,6 +36,7 @@ const Home = () => {
                 </div>
             </section>
             <QuoteSection />
+            <Qa />
         </div>
     );
 }

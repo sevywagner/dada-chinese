@@ -27,7 +27,7 @@ const Interface = (props) => {
                 </div>
                 <div className={styles.total}>
                     <p>Total Price</p>
-                    <p>{cart.totalPrice.toFixed(2)}</p>
+                    <p>${cart.totalPrice.toFixed(2)}</p>
                 </div>
                 <div className={mainStyles.wrap}>
                     <Button onClick={props.onClose}>Close</Button>
