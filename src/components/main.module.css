@@ -72,4 +72,8 @@
         flex-direction: column;
         align-items: center;
     }
+
+    .subtitle {
+        font-size: 3.3vh;
+    }
 }

@@ -2,20 +2,67 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-}
-
-.select {
-    padding: 3vh;
-    margin: 4vh;
-    width: 60%;
-    border-radius: 5vh;
-    font-size: 3vh;
-    font-family: 'montserrat';
+    margin: 5vh;
 }
 
 .answer {
     font-family: 'proza libre';
     font-size: 3vh;
-    text-align: center;
-    margin: 10vh;
+    animation: answer .3s ease-in-out;
+}
+
+.question {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'lato';
+    font-size: 3.8vh;
+}
+
+.button {
+    background-color: whitesmoke;
+    border: none;
+}
+
+.button-pressed {
+    background-color: whitesmoke;
+    border: none;
+    animation: reveal .3s ease-in-out;
+    transform: rotate(90deg);
+}
+
+.items {
+    width: 70%;
+}
+
+@keyframes reveal {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(90deg);
+    }
+}
+
+@keyframes answer {
+    from {
+        opacity: 0;
+        transform: translate(-5vh);
+    }
+    to {
+        opacity: 1;
+        transform: translate(0vh);
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .items {
+        width: 100%;
+    }
+
+    .root {
+        margin: 1vh;
+    }
 }
