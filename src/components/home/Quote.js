@@ -5,7 +5,7 @@ const Quote = ({ quote, speaker }) => {
     return (
         <div className={mainStyles.wrap}>
             <div className={styles.wrap}>
-                <p className={mainStyles.subtitle}>"{quote}"</p>
+                <p className={styles.quote}>"{quote}"</p>
                 <p className={styles.speaker}>~{speaker}</p>
             </div>
         </div>

@@ -10,7 +10,7 @@ const QaItem = (props) => {
 
     return (
         <>
-            <div className={styles.question}>
+            <div onClick={toggleButton} className={styles.question}>
                 <p>{props.question}</p>
 
                 {buttonState && <button onClick={toggleButton} className={styles['button-pressed']}>

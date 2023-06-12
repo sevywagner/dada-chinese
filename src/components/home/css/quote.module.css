@@ -1,5 +1,5 @@
 .wrap {
-    width: 70%;
+    width: 50%;
     background-color: rgb(93, 0, 0);
     border-radius: 4vh;
     margin: 3vh;
@@ -10,10 +10,16 @@
 }
 
 .speaker {
-    font-family: 'lato';
-    font-size: 4vh;
+    font-family: 'comfortaa';
+    font-size: 3vh;
     font-style: italic;
     text-align: center;
+}
+
+.quote {
+    text-align: center;
+    font-family: 'quicksand';
+    font-size: 3vh;
 }
 
 @media only screen and (max-width: 600px) {

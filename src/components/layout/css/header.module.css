@@ -159,6 +159,29 @@ nav {
   align-items: center;
 }
 
+/* .cart-wrap {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+} */
+
+.quantity {
+  position: absolute;
+  top: 0;
+  right: 2vh;
+  float: right;
+  padding: 1vh;
+  border-radius: 3vh;
+  margin: 0;
+}
+
+.quantity p {
+  background-color: rgb(255, 255, 255);
+  padding: 1vh;
+  border-radius: 6vh;
+  /* color: white; */
+}
+
 @keyframes dropdown {
   from {
     transform: translateX(10vh);

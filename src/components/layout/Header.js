@@ -1,4 +1,5 @@
-import { useState, useEffect, ReactDOM } from "react";
+import { useState, useEffect } from "react";
+import { useSelector } from "react-redux";
 import { useLocation } from "react-router-dom";
 import { Link } from "react-router-dom";
 import styles from "./css/header.module.css";
@@ -12,6 +13,7 @@ const Header = () => {
   const [showCart, setShowCart] = useState(false);
   const authCtx = useContext(authContext);
   const location = useLocation();
+  const cart = useSelector((state) => state.cart);
 
   const drawerHandler = () => {
     setShowNav((prevState) => !prevState);
@@ -43,9 +45,9 @@ const Header = () => {
           <div className={styles.subnav}>
             <Link className={styles["nav-item"]} to='/dada-chinese/our-classes'>Our Classes</Link>
             <div className={styles['subnav-content']}>
+              <Link className={styles["subnav-item"]} to='/dada-chinese/our-classes'>Classes</Link>
               <Link className={styles["subnav-item"]} to="/dada-chinese/our-teachers">Our Teachers</Link>
               <Link className={styles["subnav-item"]} to="/dada-chinese/textbooks">Textbooks</Link>
-              <Link className={styles["subnav-item"]} to="/dada-chinese/faq">FAQ</Link>
             </div>
           </div>
           <Link className={styles["nav-item"]} to='/dada-chinese/contact'>Contact</Link>
@@ -53,10 +55,15 @@ const Header = () => {
           {!authCtx.isLoggedIn && <Link className={styles["nav-item"]} to="/dada-chinese/sign-up">Sign up</Link>}
           {!authCtx.isLoggedIn && <Link className={styles['sign-in']} to='/dada-chinese/sign-in'>Sign in</Link>}
           {authCtx.isLoggedIn && <button onClick={logoutHandler} className={styles['sign-in']}>Logout</button>}
-          {localStorage.getItem('token') && <button onClick={cartToggle} className={styles.cart}>
-            <img src={require('../../pictures/icons/cart.png')} />
-          </button>}
+          <div className={styles['cart-wrap']}>
+            <button onClick={cartToggle} className={styles.cart}>
+              <img src={require('../../pictures/icons/cart.png')} />
+            </button>
+          </div>
         </nav>
+        {cart.totalQuantity !== 0 && <div className={styles.quantity}>
+          <p>{cart.totalQuantity}</p>
+        </div>}
       </header>
 
 

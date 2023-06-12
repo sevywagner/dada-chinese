@@ -1,11 +1,8 @@
-import { useState } from 'react';
 import styles from './css/qa.module.css';
 import mainStyles from './../main.module.css';
 import QaItem from './QaItem';
 
 const Qa = () => {
-    const [index, setIndex] = useState();
-
     const qa = [
         {
             q: 'How old does my child have to be to learn Chinese?',
@@ -29,14 +26,9 @@ const Qa = () => {
         }
     ];
 
-    const questionChangeHandler = (event) => {
-        setIndex(event.target.value);
-        console.log(event.target.value);
-    }
-
     return (
         <div className={styles.root}>
-            <p className={mainStyles.title}>Faq</p>
+            <p className={mainStyles.title}>FAQ</p>
             <div className={styles.items}>
                 {qa.map((qAndA) => <QaItem key={qAndA.q} question={qAndA.q} answer={qAndA.a} />)}
             </div>

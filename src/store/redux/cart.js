@@ -4,7 +4,8 @@ const cartSlice = createSlice({
     name: 'cart',
     initialState: {
         items: [],
-        totalPrice: 0.00
+        totalPrice: 0.00,
+        totalQuantity: 0
     },
     reducers: {
         addItem(state, action) {
@@ -13,9 +14,11 @@ const cartSlice = createSlice({
             if (existingCartItemIndex > -1) {
                 state.items[existingCartItemIndex].quantity += 1;
                 state.totalPrice += action.payload.price;
+                state.totalQuantity++;
             } else {
                 state.items.push(action.payload);
                 state.totalPrice += action.payload.price;
+                state.totalQuantity++;
             }
 
             fetch('https://dada-chinese-rest-api.herokuapp.com/shop/update-cart', {
@@ -38,15 +41,30 @@ const cartSlice = createSlice({
                 console.log(data);
             }).catch(err => console.log(err));
         },
+        addItemAsGuest(state, action) {
+            const existingCartItemIndex = state.items.findIndex((cartItem) => cartItem.id === action.payload.id);
+            
+            if (existingCartItemIndex > -1) {
+                state.items[existingCartItemIndex].quantity += 1;
+                state.totalPrice += action.payload.price;
+                state.totalQuantity++;
+            } else {
+                state.items.push(action.payload);
+                state.totalPrice += action.payload.price;
+                state.totalQuantity++;
+            }
+        },
         removeItem(state, action) {
             const existingCartItemIndex = state.items.findIndex((cartItem) => cartItem.id === action.payload.cartItemId);
 
             if (state.items[existingCartItemIndex].quantity > 1) {
                 state.items[existingCartItemIndex].quantity -= 1;
                 state.totalPrice -= state.items[existingCartItemIndex].price;
+                state.totalQuantity--;
             } else {
                 state.totalPrice -= state.items[existingCartItemIndex].price;
                 state.items = state.items.filter((item) => item.id !== action.payload.cartItemId);
+                state.totalQuantity--;
             }
 
             fetch('https://dada-chinese-rest-api.herokuapp.com/shop/update-cart', {
@@ -68,6 +86,19 @@ const cartSlice = createSlice({
             }).then((data) => {
                 console.log(data);
             }).catch(err => console.log(err));
+        },
+        removeItemAsGuest(state, action) {
+            const existingCartItemIndex = state.items.findIndex((cartItem) => cartItem.id === action.payload.cartItemId);
+
+            if (state.items[existingCartItemIndex].quantity > 1) {
+                state.items[existingCartItemIndex].quantity -= 1;
+                state.totalPrice -= state.items[existingCartItemIndex].price;
+                state.totalQuantity--;
+            } else {
+                state.totalPrice -= state.items[existingCartItemIndex].price;
+                state.items = state.items.filter((item) => item.id !== action.payload.cartItemId);
+                state.totalQuantity--;
+            }
         },
         setCart(state, action) {
             state.items = action.payload.items;

@@ -13,12 +13,21 @@ const TextbookItem = () => {
     const existingItem = cart.items.find((item) => item.id === 't1');
 
     const addToCartHandler = () => {
-        dispatch(cartActions.addItem({
-            id: 't1',
-            title: 'Mastering Chinese Vol. 1',
-            price: 10.00,
-            quantity: 1
-        }));
+        if (localStorage.getItem('token')) {
+            dispatch(cartActions.addItem({
+                id: 't1',
+                title: 'Mastering Chinese Vol. 1',
+                price: 10.00,
+                quantity: 1
+            }));
+        } else {
+            dispatch(cartActions.addItemAsGuest({
+                id: 't1',
+                title: 'Mastering Chinese Vol. 1',
+                price: 10.00,
+                quantity: 1
+            }));
+        }
     }
 
     const textToggle = () => {
@@ -76,7 +85,7 @@ const TextbookItem = () => {
                     </p>}
                     <p>$10.00</p>
                     <button onClick={textToggle} className={styles.more}>More Info</button>
-                    {localStorage.getItem('token') ? <button className={styles.add} onClick={addToCartHandler}>Add to Cart</button> : <Link className={styles.login} to='/dada-chinese/sign-in'>Login to add to cart</Link>}
+                    <button className={styles.add} onClick={addToCartHandler}>Add to Cart</button>
                     {existingItem && localStorage.getItem('token') && <p>{existingItem.quantity} in cart</p>}
                 </div>
             </div>
