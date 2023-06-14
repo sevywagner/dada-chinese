@@ -23,7 +23,7 @@ function App() {
             return result.json();
         }
       }).then((sessionCart) => {
-        dispatch(cartActions.setCart({ items: sessionCart.items, totalPrice: sessionCart.totalPrice }));
+        dispatch(cartActions.setCart({ items: sessionCart.items, totalPrice: sessionCart.totalPrice, totalQuantity: sessionCart.totalQuantity }));
       }).catch((err) => console.log(err));
     }
   }, [authCtx.isLoggedIn])

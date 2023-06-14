@@ -18,7 +18,7 @@ const BlogItem = (props) => {
             return;
         }
 
-        fetch('https://dada-chinese-rest-api.herokuapp.com/delete-post', {
+        fetch('http://localhost:8080/delete-post', {
             method: 'DELETE',
             body: JSON.stringify({ postId: props.id }),
             headers: {
@@ -37,29 +37,13 @@ const BlogItem = (props) => {
         })
     }
 
-    useEffect(() => {
-        fetch(`https://dada-chinese-rest-api.herokuapp.com/${props.imageUrl}`, {
-            method: 'GET',
-            headers: {
-                "Content-Type": `image/${props.imageUrl.split('.')[1]}`
-            }
-        }).then((fileData) => {
-            return fileData.blob();
-        }).then((blob) => {
-            const url = URL.createObjectURL(blob);
-            setFile(url);
-        }).catch((err) => {
-            console.log(err);
-        })
-    });
-
     return (
         <>
             {result && <p>{result}</p>}
             <Link className={styles.link} to={props.admin ? `/dada-chinese/edit-post/${props.id}` : `/dada-chinese/blog-post/${props.id}`}>
                 <div className={styles.item}>
                     <div className={styles.left}>
-                        <img src={file} alt="blog" />
+                        <img src={props.imageWebContentLink} alt="blog" />
                     </div>
                     <div className={styles.right}>
                         <div className={styles.date}>

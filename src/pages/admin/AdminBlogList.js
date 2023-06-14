@@ -10,6 +10,9 @@ const EditBlog = () => {
     return (
         <>
             <p className={mainStyles.title}>Edit Blog Entry</p>
+            <div className={mainStyles.wrap}>
+                <a className={styles.auth} href="http://localhost:8080/auth/google">Authenticate yourself</a>
+            </div>
             <div className={styles.root}>
                 <div className={styles.list}>
                 {posts.map((post) => (
@@ -17,7 +20,7 @@ const EditBlog = () => {
                         key={post._id}
                         id={post._id}
                         title={post.title}
-                        imageUrl={post.imageUrl}
+                        imageWebContentLink={post.imageWebContentLink}
                         content={post.content}
                         date={post.date}
                         admin={true}

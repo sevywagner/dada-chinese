@@ -13,6 +13,7 @@ const OurClasses = () => {
           {classes.map((c) => (
             <ClassItem
               key={c.id}
+              id={c.id}
               linkPath={`/dada-chinese/our-classes/${c.id}`}
               name={c.name}
               subtitles={c.subtitles}

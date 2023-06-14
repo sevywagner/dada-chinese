@@ -1,7 +1,7 @@
 import { PayPalButtons, PayPalScriptProvider } from "@paypal/react-paypal-js";
 import { useNavigate } from "react-router";
 
-const Paypal = ({ totalAmount }) => {
+const Paypal = ({ totalAmount, onApprove }) => {
     const navigate = useNavigate();
 
     const createOrderHandler = (data, actions) => {
@@ -17,6 +17,7 @@ const Paypal = ({ totalAmount }) => {
 
     const approveHandler = (data, actions) => {
         return actions.order.capture().then((order) => {
+            onApprove();
             navigate('/dada-chinese/order-confirmation');
         }).catch((err) => {
             console.log(err);

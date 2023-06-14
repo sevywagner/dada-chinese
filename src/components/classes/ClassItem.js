@@ -39,7 +39,7 @@ const ClassItem = (props) => {
                         {props.subtitles.map((subtitle) => <p className={styles.subtitle} key={Math.random()}>{subtitle}</p>)}
                         <div className={styles.line}><hr /></div>
                     <div className={styles.data}>
-                        {props.bulletPoints.map((bullet) => <li><img src={require('./../../pictures/icons/checkCircle.png')} />{bullet}</li>)}
+                        {props.bulletPoints.map((bullet) => <li key={Math.random()}><img src={require('./../../pictures/icons/checkCircle.png')} />{bullet}</li>)}
                     </div>
                 </div>
             </div>

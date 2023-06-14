@@ -26,7 +26,8 @@ const cartSlice = createSlice({
                 body: JSON.stringify({
                     cart: {
                         items: state.items,
-                        totalPrice: state.totalPrice
+                        totalPrice: state.totalPrice,
+                        totalQuantity: state.totalQuantity
                     },
                 }),
                 headers: {
@@ -72,7 +73,8 @@ const cartSlice = createSlice({
                 body: JSON.stringify({
                     cart: {
                         items: state.items,
-                        totalPrice: state.totalPrice
+                        totalPrice: state.totalPrice,
+                        totalQuantity: state.totalQuantity
                     },
                 }),
                 headers: {
@@ -103,17 +105,20 @@ const cartSlice = createSlice({
         setCart(state, action) {
             state.items = action.payload.items;
             state.totalPrice = action.payload.totalPrice;
+            state.totalQuantity = action.payload.totalQuantity;
         },
         resetCart(state, action) {
             state.items = [];
             state.totalPrice = 0.00;
+            state.totalQuantity = 0;
 
             fetch('https://dada-chinese-rest-api.herokuapp.com/shop/update-cart', {
                 method: 'POST',
                 body: JSON.stringify({
                     cart: {
                         items: state.items,
-                        totalPrice: state.totalPrice
+                        totalPrice: state.totalPrice,
+                        totalQuantity: state.totalQuantity
                     },
                 }),
                 headers: {
@@ -127,6 +132,11 @@ const cartSlice = createSlice({
             }).then((data) => {
                 console.log(data);
             }).catch(err => console.log(err));
+        },
+        resetCartAsGuest(state, action) {
+            state.items = [];
+            state.totalPrice = 0.00;
+            state.totalQuantity = 0;
         }
     }
 });

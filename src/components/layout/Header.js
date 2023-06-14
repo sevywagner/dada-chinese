@@ -61,7 +61,7 @@ const Header = () => {
             </button>
           </div>
         </nav>
-        {cart.totalQuantity !== 0 && <div className={styles.quantity}>
+        {cart.totalQuantity !== 0 && <div onClick={cartToggle} className={styles.quantity}>
           <p>{cart.totalQuantity}</p>
         </div>}
       </header>

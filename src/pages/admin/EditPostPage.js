@@ -4,6 +4,7 @@ import { useLoaderData } from "react-router";
 
 import Button from "../../components/util/Button";
 import styles from "./../css/new-blog.module.css";
+import mainStyles from './../../components/main.module.css';
 import formStyles from "./../../components/sign-in/css/sign-in-form.module.css";
 
 const EditPostPage = () => {
@@ -33,7 +34,7 @@ const EditPostPage = () => {
 
     const formData = new FormData();
     formData.append("title", title);
-    formData.append("imageUrl", targetPost.imageUrl);
+    formData.append("imageWebContentLink", targetPost.imageWebContentLink);
     formData.append("image", file);
     formData.append('videoUrl', !videoUrlRef.current.value ? targetPost.videoUrl : videoUrlRef.current.value);
     formData.append("content", contentRef.current.value);
@@ -42,7 +43,7 @@ const EditPostPage = () => {
 
     let responseIsOk;
 
-    fetch("https://dada-chinese-rest-api.herokuapp.com/edit-post", {
+    fetch("http://localhost:8080/edit-post", {
       method: "PUT",
       body: formData,
       headers: {
@@ -74,6 +75,7 @@ const EditPostPage = () => {
   return (
     <div>
       <div className={styles.root}>
+        <p className={mainStyles.title}>Edit Blog</p>
         <form className={styles.form} onSubmit={submitHandler}>
           <div className={formStyles.block}>
             <label>Title</label>

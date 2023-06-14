@@ -10,7 +10,7 @@ const BlogList = ({ posts }) => {
               key={post._id}
               id={post._id}
               title={post.title}
-              imageUrl={post.imageUrl}
+              imageWebContentLink={post.imageWebContentLink}
               content={post.content}
               date={post.date}
             />
