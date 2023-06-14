@@ -27,7 +27,7 @@ const NewBlog = () => {
 
     let hasError = false;
 
-    fetch("http://localhost:8080/posts", {
+    fetch("https://dada-chinese-rest-api.herokuapp.com/posts", {
       method: "POST",
       body: formData,
       headers: {
@@ -58,7 +58,7 @@ const NewBlog = () => {
   return (
     <div className={styles.root}>
       <p className={mainStyles.title}>New Blog Entry</p>
-      <a href="http://localhost:8080/auth/google">Authenticate yourself</a>
+      <a href="https://dada-chinese-rest-api.herokuapp.com/auth/google">Authenticate yourself</a>
       {error && <p className={mainStyles.error}>{error}</p>}
       <form className={styles.form} onSubmit={submitHandler}>
         <div className={formStyles.block}>

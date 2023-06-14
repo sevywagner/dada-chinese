@@ -18,7 +18,7 @@ const BlogItem = (props) => {
             return;
         }
 
-        fetch('http://localhost:8080/delete-post', {
+        fetch('https://dada-chinese-rest-api.herokuapp.com/delete-post', {
             method: 'DELETE',
             body: JSON.stringify({ postId: props.id }),
             headers: {

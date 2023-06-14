@@ -11,7 +11,7 @@ const EditBlog = () => {
         <>
             <p className={mainStyles.title}>Edit Blog Entry</p>
             <div className={mainStyles.wrap}>
-                <a className={styles.auth} href="http://localhost:8080/auth/google">Authenticate yourself</a>
+                <a className={styles.auth} href="https://dada-chinese-rest-api.herokuapp.com/auth/google">Authenticate yourself</a>
             </div>
             <div className={styles.root}>
                 <div className={styles.list}>

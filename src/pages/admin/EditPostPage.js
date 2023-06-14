@@ -43,7 +43,7 @@ const EditPostPage = () => {
 
     let responseIsOk;
 
-    fetch("http://localhost:8080/edit-post", {
+    fetch("https://dada-chinese-rest-api.herokuapp.com/edit-post", {
       method: "PUT",
       body: formData,
       headers: {

@@ -24,7 +24,7 @@ const Checkout = () => {
         let address = aptNumRef.current.value.trim() !== '' ? addressRef.current.value + ' Apt #: ' + aptNumRef.current.value : addressRef.current.value;
         let error = false;
         
-        fetch('http://localhost:8080/shop/new-order', {
+        fetch('https://dada-chinese-rest-api.herokuapp.com/shop/new-order', {
             method: 'PUT',
             body: JSON.stringify({ items: cart.items, totalPrice: cart.totalPrice, address: address }),
             headers: {
