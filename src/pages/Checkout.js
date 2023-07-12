@@ -25,8 +25,8 @@ const Checkout = () => {
             address = aptNumRef.current.value.trim() !== '' ? addressRef.current.value + ' Apt #: ' + aptNumRef.current.value : addressRef.current.value;
         }
         let error = false;
-        let url = 'http://localhost:8080/shop/new-order';
-        let guestUrl = 'http://localhost:8080/shop/new-order-guest';
+        let url = 'https://dada-chinese-rest-api.herokuapp.com/shop/new-order';
+        let guestUrl = 'https://dada-chinese-rest-api.herokuapp.com/shop/new-order-guest';
         const email = emailRef.current.value || null;
 
         let body = JSON.stringify({ 
@@ -66,8 +66,8 @@ const Checkout = () => {
                 setHasError(data.error);
                 return;
             } else {
-                url = 'http://localhost:8080/shop/order-email';
-                guestUrl = 'http://localhost:8080/shop/order-email-guest'
+                url = 'https://dada-chinese-rest-api.herokuapp.com/shop/order-email';
+                guestUrl = 'https://dada-chinese-rest-api.herokuapp.com/shop/order-email-guest'
                 body = JSON.stringify({ cartItems: cart.items });
                 guestBody = JSON.stringify({ 
                     cartItems: cart.items,
