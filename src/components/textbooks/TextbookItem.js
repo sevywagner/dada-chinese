@@ -17,14 +17,14 @@ const TextbookItem = () => {
             dispatch(cartActions.addItem({
                 id: 't1',
                 title: 'Mastering Chinese Vol. 1',
-                price: 10.00,
+                price: 45.00,
                 quantity: 1
             }));
         } else {
             dispatch(cartActions.addItemAsGuest({
                 id: 't1',
                 title: 'Mastering Chinese Vol. 1',
-                price: 10.00,
+                price: 45.00,
                 quantity: 1
             }));
         }
@@ -83,7 +83,7 @@ const TextbookItem = () => {
                         课堂教学的各种需求；（6）配备了大量切合需要、完整齐备的教学内容和材料，为学生
                         学习和教师教学提供了极大的方便。
                     </p>}
-                    <p>$10.00</p>
+                    <p>$45.00</p>
                     <button onClick={textToggle} className={styles.more}>More Info</button>
                     <button className={styles.add} onClick={addToCartHandler}>Add to Cart</button>
                     {existingItem && localStorage.getItem('token') && <p>{existingItem.quantity} in cart</p>}

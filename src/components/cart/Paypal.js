@@ -1,7 +1,10 @@
 import { PayPalButtons, PayPalScriptProvider } from "@paypal/react-paypal-js";
 import { useNavigate } from "react-router";
+import { cartActions } from "../../store/redux/cart";
+import { useDispatch } from "react-redux";
 
 const Paypal = ({ totalAmount, onApprove }) => {
+    const dispatch = useDispatch();
     const navigate = useNavigate();
 
     const createOrderHandler = (data, actions) => {
@@ -19,6 +22,7 @@ const Paypal = ({ totalAmount, onApprove }) => {
         return actions.order.capture().then((order) => {
             onApprove();
             navigate('/dada-chinese/order-confirmation');
+            dispatch(cartActions.resetCart({ guest: localStorage.getItem('token') === null }));
         }).catch((err) => {
             console.log(err);
         });

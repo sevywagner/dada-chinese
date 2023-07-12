@@ -1,7 +1,7 @@
 const classes = [
     {
         id: 'c1',
-        imageUrl: 'studying.jpeg',
+        imageUrl: 'Dada and Me.jpg',
         name: 'Dada and me',
         subtitles: [
             'Online Class (3-6 years old)',
@@ -16,7 +16,7 @@ const classes = [
     },
     {
         id: 'c2',
-        imageUrl: 'teacher.jpg',
+        imageUrl: 'Dada and We.jpg',
         name: 'Dada and we',
         subtitles: [
             'Online group lesson (5-8 years old)',
@@ -33,7 +33,7 @@ const classes = [
     },
     {
         id: 'c3',
-        imageUrl: 'studying3.jpg',
+        imageUrl: 'Dadada.jpg',
         name: 'Dadada',
         subtitles: [
             'Remote learning and more'

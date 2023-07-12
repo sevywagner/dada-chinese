@@ -17,3 +17,10 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+@media (prefers-color-scheme: dark) {
+  #icon-light {
+    display: none;
+  }
+}

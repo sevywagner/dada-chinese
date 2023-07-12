@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <link rel="icon" id="favicon" href="favicon2.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
     <meta
@@ -13,6 +13,13 @@
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
 
     <script type="text/javascript">
+      const favicon = document.getElementById('favicon');
+      const isDark = window.matchMedia('(prefers-color-scheme: dark)');
+
+      if (!isDark.matches) {
+        favicon.href = 'favicon.ico';
+      }
+
       (function (l) {
         if (l.search[1] === "/") {
           var decoded = l.search

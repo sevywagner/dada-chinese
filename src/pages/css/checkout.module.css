@@ -5,19 +5,97 @@
 }
 
 .form {
-    width: 40%;
+    display: flex;
+    justify-content: center;
+}
+
+.section {
+    width: 80vh;
+}
+
+.subtitle {
+    font-size: 4vh;
+    font-family: 'quicksand'
+}
+
+.total {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.total__text {
+    color: white;
+    font-size: 3vh;
+    font-family: 'Quicksand';
+    text-align: center;
+}
+
+.summary {
+    color: white;
+    font-size: 4vh;
+    font-family: 'Montserrat';
 }
 
 .list-wrap {
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-color: rgb(78, 0, 0);
+    width: 40vh;
+    height: fit-content;
+    padding: 10vh;
+    border-radius: 5vh;
+    border: 1px solid black;
+    margin-right: 3vh;
+}
+
+.box-wrap {
+    display: flex;
+    justify-content: center;
     background-color: white;
-    width: 50%;
+    padding: 10vh;
     border-radius: 5vh;
     border: 1px solid black;
 }
 
+.input {
+    border-radius: 0;
+    margin: 0;
+    width: 95%;
+    height: 100%;
+    border: none;
+    font-size: 2.4vh;
+}
+
+fieldset {
+    padding: none;
+    margin: 2vh;
+}
+
+legend {
+    font-family: 'Montserrat';
+    font-size: 2.6vh;
+}
+
+.input:focus {
+    outline: none;
+}
+
+.input:focus ~ fieldset {
+    animation: border-change .3s ease-in;
+    border-color: red;
+}
+
 @media only screen and (max-width: 800px) {
     .wrap {}
+}
+
+@keyframes border-change {
+    from {
+        border-color: black;
+    }
+    to {  
+        border-color: red;
+    }
 }

@@ -112,31 +112,28 @@ const cartSlice = createSlice({
             state.totalPrice = 0.00;
             state.totalQuantity = 0;
 
-            fetch('https://dada-chinese-rest-api.herokuapp.com/shop/update-cart', {
-                method: 'POST',
-                body: JSON.stringify({
-                    cart: {
-                        items: state.items,
-                        totalPrice: state.totalPrice,
-                        totalQuantity: state.totalQuantity
-                    },
-                }),
-                headers: {
-                    "Content-Type": "application/json",
-                    Authorization: 'Bearer ' + localStorage.getItem('token')
-                }
-            }).then((result) => {
-                if (result.ok) {
-                    return result.json();
-                }
-            }).then((data) => {
-                console.log(data);
-            }).catch(err => console.log(err));
-        },
-        resetCartAsGuest(state, action) {
-            state.items = [];
-            state.totalPrice = 0.00;
-            state.totalQuantity = 0;
+            if (action.guest === false) {
+                fetch('https://dada-chinese-rest-api.herokuapp.com/shop/update-cart', {
+                    method: 'POST',
+                    body: JSON.stringify({
+                        cart: {
+                            items: state.items,
+                            totalPrice: state.totalPrice,
+                            totalQuantity: state.totalQuantity
+                        },
+                    }),
+                    headers: {
+                        "Content-Type": "application/json",
+                        Authorization: 'Bearer ' + localStorage.getItem('token')
+                    }
+                }).then((result) => {
+                    if (result.ok) {
+                        return result.json();
+                    }
+                }).then((data) => {
+                    console.log(data);
+                }).catch(err => console.log(err));
+            }
         }
     }
 });

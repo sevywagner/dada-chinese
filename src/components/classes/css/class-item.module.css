@@ -33,6 +33,7 @@
     flex-direction: column;
     align-items: center;
     background-color: white;
+    overflow: hidden;
 }
 
 a {
@@ -41,12 +42,12 @@ a {
 }
 
 .pic img {
-    width: 100%;
+    height: 100%;
     border-bottom: 1px solid black;
 }
 
 .pic {
-    width: 100%;
+    height: 40vh
 }
 
 .data {

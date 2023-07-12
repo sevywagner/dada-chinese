@@ -19,9 +19,9 @@ const ClassItem = (props) => {
         <>
             <div className={styles.wrap}>
                 <div className={styles.item}>
-                    {/* <div className={styles.pic}>
-                        <img src={require(`./../../pictures/titlePics/${props.imageUrl}`)} />
-                    </div> */}
+                    <div className={styles.pic}>
+                        <img src={require(`./../../pictures/classes/${props.imageUrl}`)} />
+                    </div>
                     <p className={mainStyles.subtitle}>{props.name}</p>
                     {props.book === 'calendly' && <PopupButton 
                         className={styles.book} 

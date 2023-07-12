@@ -41,15 +41,15 @@ const Carousel = () => {
 
   return (
     <div className={styles.root}>
-      <div className={styles.carousel}>
-        <motion.div
-          key={counter}
-          initial={{ transform: "translateX(50vh)", opacity: 0 }}
-          animate={{ transform: "translateX(0vh)", opacity: 1 }}
-          exit={{ transform: "translateX(-30vh)" }}
-        >
-          <img src={pic} />
-        </motion.div>
+        <div className={styles.carousel}>
+          <motion.div
+            key={counter}
+            initial={{ transform: "translateX(50vh)", opacity: 0 }}
+            animate={{ transform: "translateX(0vh)", opacity: 1 }}
+            exit={{ transform: "translateX(-30vh)" }}
+          >
+            <img src={pic} />
+          </motion.div>
       </div>
       <div className={styles['control-wrap']}>
         <button className={styles.control} onClick={prevHandler}>

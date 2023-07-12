@@ -14,7 +14,7 @@ const BlogPost = () => {
       <div>
         <p className={mainStyles.title}>{targetPost.title}</p>
         <p className={mainStyles.pg}>{targetPost.content}</p>
-        {targetPost.videoUrl && <div className={styles.video}>
+        {targetPost.videoUrl !== 'null' && <div className={styles.video}>
             <div className={styles['video-padding']}>
                 <iframe
                     width="560"

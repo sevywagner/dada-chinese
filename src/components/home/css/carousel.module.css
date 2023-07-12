@@ -6,15 +6,21 @@
     margin: 5vh;
 }
 
+.wrap {
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+}
+
 .carousel {
     height: 50vh;
-    width: 100%;
+    width: 80vh;
     padding: 10vh;
     border-radius: 20px;
     display: flex;
     justify-content: center;
     overflow: hidden;
-    height: 50vh;
+    /* transform: translateX(12.5vh); */
 }
 
 .root img {
