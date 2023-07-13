@@ -16,7 +16,7 @@
       const favicon = document.getElementById('favicon');
       const isDark = window.matchMedia('(prefers-color-scheme: dark)');
 
-      if (!isDark.matches) {
+      if (isDark.matches) {
         favicon.href = 'favicon.ico';
       }
 

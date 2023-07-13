@@ -7,25 +7,16 @@ const Paypal = ({ totalAmount, onApprove }) => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
-    const createOrderHandler = (data, actions) => {
-        return actions.order.create({
-            purchase_units: [{
-                description: 'Purchase from Dada Chinese Webstore',
-                amount: {
-                    value: '' + totalAmount
-                }
-            }]
+    const createSubscriptionHandler = (data, actions) => {
+        return actions.subscription.create({
+            plan_id: 'P-4RU74068SC498771DMSXCTCY'
         });
     }
 
     const approveHandler = (data, actions) => {
-        return actions.order.capture().then((order) => {
-            onApprove();
-            navigate('/dada-chinese/order-confirmation');
-            dispatch(cartActions.resetCart({ guest: localStorage.getItem('token') === null }));
-        }).catch((err) => {
-            console.log(err);
-        });
+        onApprove();
+        navigate('/dada-chinese/order-confirmation');
+        dispatch(cartActions.resetCart({ guest: localStorage.getItem('token') === null }));
     }
 
     const errorHandler = (error) => {
@@ -36,8 +27,9 @@ const Paypal = ({ totalAmount, onApprove }) => {
         <PayPalScriptProvider options={{
             "client-id": "AcNOytnjExuv-KS5qOHxR49tPBcnhrcmbiMx1rhUqpiy7YsFFwavvM65ZsMyM6RGs7PicM8vKqQyfdrj"
         }}>
-            <PayPalButtons createOrder={createOrderHandler} onApprove={approveHandler} onError={errorHandler} />
+            <PayPalButtons createSubscription={createSubscriptionHandler} onApprove={approveHandler} onError={errorHandler} />
         </PayPalScriptProvider>
+        
     );
 }
 
