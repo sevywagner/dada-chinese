@@ -28,4 +28,5 @@
 .quantity {
     color: white;
     position: relative;
+    /* transform: translateX(-5vh); */
 }

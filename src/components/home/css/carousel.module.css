@@ -24,14 +24,17 @@
 }
 
 .root img {
-    transition: all .75s;
+    /* transition: all .75s; */
     border-radius: 20px;
-    max-height: 100%;
+    height: 100%;
+    width: 100%;
 }
 
 .control {
     background-color: inherit;
     border: none;
+    height: 7vh;
+    width: 10vh;
 }
 
 .control-wrap {

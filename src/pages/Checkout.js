@@ -153,6 +153,25 @@ const Checkout = () => {
                             <div className={styles.wrap}>
                                 {!showPaypal ? <Button>Pay</Button> : <Paypal onApprove={submitHandler} totalAmount={cart.totalPrice} />}
                             </div>
+                            <div id="paypal-button-container"></div>
+
+                            {/* {window.paypal.Buttons({
+                                style: {
+                                    shape: 'rect',
+                                    color: 'blue',
+                                    layout: 'horizontal',
+                                    label: 'subscribe',
+                                    tagline: true
+                                },
+                                createSubscription: function(data, actions) {
+                                    return actions.subscription.create({
+                                    'plan_id': '<Plan-id>'
+                                    });
+                                },
+                                onApprove: function(data, actions) {
+                                    alert(data.subscriptionID);
+                                }
+                            }).render('#paypal-button-container')} */}
                         </form>
                     </div>
                 </div>

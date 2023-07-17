@@ -25,6 +25,7 @@
 .row {
     display: flex;
     flex-direction: row;
+    align-items: center;
 }
 
 .quote-section {
@@ -36,6 +37,14 @@
 .section-one {
     display: flex;
     align-items: center;
+}
+
+.button {
+    background-color: inherit;
+    color: white;
+    border: none;
+    font-size: 4vh;
+    font-family: 'Quicksand';
 }
 
 @media only screen and (max-width: 800px) {

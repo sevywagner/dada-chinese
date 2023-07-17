@@ -13,6 +13,7 @@ const Interface = (props) => {
     return (
         <div className={styles.root}>
             <div className={styles.modal}>
+                <button className={styles.close} onClick={props.onClose}><img height='30' src={require('./../../pictures/icons/close.png')} /></button>
                 <p className={mainStyles.title}>Cart</p>
                 <hr />
                 <div className={styles.list}>
@@ -30,7 +31,6 @@ const Interface = (props) => {
                     <p>${cart.totalPrice.toFixed(2)}</p>
                 </div>
                 <div className={mainStyles.wrap}>
-                    <Button onClick={props.onClose}>Close</Button>
                     {cart.items.length !== 0 && <Link to='/dada-chinese/checkout'><Button onClick={props.onClose}>Proceed to Checkout</Button></Link>}
                 </div>
             </div>
