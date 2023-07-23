@@ -1,0 +1,30 @@
+.root {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 5vh;
+}
+
+.title {
+    font-size: 3vh;
+    font-family: 'Comfortaa';
+}
+
+.text {
+    width: 15vh;
+    text-align: center;
+}
+
+.error {
+    width: 15vh;
+    text-align: center;
+    background-color: rgba(187, 1, 1, 0.531);
+    color: white;
+}

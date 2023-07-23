@@ -13,7 +13,7 @@ function App() {
 
   useEffect(() => {
     if (localStorage.getItem('token')) {
-      fetch('https://dada-chinese-rest-api.herokuapp.com/shop/get-cart', {
+      fetch('http://localhost:8080/shop/get-cart', {
         method: 'GET',
         headers: {
           Authorization: 'Bearer ' + localStorage.getItem('token')
@@ -23,7 +23,18 @@ function App() {
             return result.json();
         }
       }).then((sessionCart) => {
-        dispatch(cartActions.setCart({ items: sessionCart.items, totalPrice: sessionCart.totalPrice, totalQuantity: sessionCart.totalQuantity }));
+        let creditPrice = parseInt(sessionCart.cart.totalPrice) - parseInt(sessionCart.credit);
+        if (sessionCart.cart.totalPrice < sessionCart.credit) {
+          creditPrice = 0;
+        }
+        dispatch(cartActions.setCart({ 
+          items: sessionCart.cart.items, 
+          totalPrice: sessionCart.cart.totalPrice, 
+          totalQuantity: sessionCart.cart.totalQuantity,
+          credit: parseInt(sessionCart.credit),
+          creditPrice
+        }));
+
       }).catch((err) => console.log(err));
     }
   }, [authCtx.isLoggedIn])

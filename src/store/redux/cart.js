@@ -5,7 +5,9 @@ const cartSlice = createSlice({
     initialState: {
         items: [],
         totalPrice: 0.00,
-        totalQuantity: 0
+        totalQuantity: 0,
+        credit: 0,
+        creditPrice: 0
     },
     reducers: {
         addItem(state, action) {
@@ -106,6 +108,8 @@ const cartSlice = createSlice({
             state.items = action.payload.items;
             state.totalPrice = action.payload.totalPrice;
             state.totalQuantity = action.payload.totalQuantity;
+            state.credit = action.payload.credit;
+            state.creditPrice = action.payload.creditPrice;
         },
         resetCart(state, action) {
             state.items = [];
@@ -134,7 +138,7 @@ const cartSlice = createSlice({
                     console.log(data);
                 }).catch(err => console.log(err));
             }
-        }
+        },
     }
 });
 

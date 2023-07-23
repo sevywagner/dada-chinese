@@ -63,7 +63,7 @@ const SignUpForm = ({ errorHandler }) => {
     
     if (nameIsValid && emailIsValid && passwordIsValid && password2IsValid) {
       let responseIsOk;
-      fetch('https://dada-chinese-rest-api.herokuapp.com/auth/signup', {
+      fetch('http://localhost:8080/auth/signup', {
         method: 'PUT',
         body: JSON.stringify({
           name,
