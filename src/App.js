@@ -13,7 +13,7 @@ function App() {
 
   useEffect(() => {
     if (localStorage.getItem('token')) {
-      fetch('http://localhost:8080/shop/get-cart', {
+      fetch('https://dada-chinese-rest-api.herokuapp.com/shop/get-cart', {
         method: 'GET',
         headers: {
           Authorization: 'Bearer ' + localStorage.getItem('token')

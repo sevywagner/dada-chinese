@@ -22,7 +22,7 @@ const Credit = () => {
             return;
         }
 
-        const response = await fetch('http://localhost:8080/shop/add-credit', {
+        const response = await fetch('https://dada-chinese-rest-api.herokuapp.com/shop/add-credit', {
             method: 'POST',
             body: JSON.stringify({ credit: amount }),
             headers: {
