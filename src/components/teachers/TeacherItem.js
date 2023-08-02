@@ -5,7 +5,8 @@ const TeacherItem = (props) => {
     return (
         <Link to={`/dada-chinese/our-teachers/${props.name}`}>
             <div className={styles.item}>
-                <p className={styles.title}>JingYi</p>
+                <img src={require(`./../../pictures/teachers/${props.imageUrl}.jpg`)} />
+                <p className={styles.title}>{props.name}</p>
             </div>
         </Link>
     );

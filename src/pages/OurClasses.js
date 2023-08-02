@@ -26,7 +26,6 @@ const OurClasses = () => {
           ))}
         </div>
       </div>
-      <Credit />
       <QuoteSection />
     </>
   );

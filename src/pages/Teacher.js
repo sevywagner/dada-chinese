@@ -15,7 +15,7 @@ const Teacher = () => {
                 </div>
                 <div className={styles.pg}>
                     <p className={mainStyles.title}>About {bio.name}</p>
-                    <p className={mainStyles.pg}>{bio.bodyPg}</p>
+                    <p className={styles.text}>{bio.bodyPg}</p>
                 </div>
             </div>
         </div>

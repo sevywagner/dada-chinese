@@ -84,3 +84,43 @@ a {
 .line {
     width: 70%;
 }
+
+.four-classes {
+    font-family: 'quicksand';
+    font-size: 2vh;
+}
+
+.info {
+    border: 1px solid black;
+    padding: 1vh;
+    padding-right: 2vh;
+    padding-left: 2vh;
+    border-radius: 5vh;
+    font-size: 2.4vh;
+}
+
+.info:hover {
+    animation: hover .3s ease-in;
+    background-color: black;
+    color: white;
+}
+
+.info:hover ~ .info__text {
+    display: block;
+}
+
+.info__text {
+    display: none;
+}
+
+@keyframes hover {
+    from {
+        background-color: white;
+        color: black;
+    }
+
+    to {
+        background-color: black;
+        color: white;
+    }
+}

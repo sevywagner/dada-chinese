@@ -2,10 +2,13 @@ import { useState } from "react";
 import useInput from "../../hooks/use-input";
 import Button from "../util/Button";
 import Paypal from "./Paypal";
+import { useDispatch } from "react-redux";
 import styles from './css/credit.module.css';
 import formStyles from './../contact/css/contact-form.module.css';
+import { cartActions } from "../../store/redux/cart";
 
 const Credit = () => {
+    const dispatch = useDispatch();
     const [show, setShow] = useState(false);
 
     const {
@@ -36,6 +39,7 @@ const Credit = () => {
         amountReset();
 
         console.log(data);
+        dispatch(cartActions.updateCredit(parseInt(amount)));
     }
 
     const toggleHandler = () => {

@@ -11,7 +11,7 @@ const classes = [
             'Features songs, rhymes, games, stories, etc.',
             'Fun and practical content'
         ],
-        price: 20.00,
+        price: 80.00,
         book: 'cart'
     },
     {
@@ -28,7 +28,7 @@ const classes = [
             'Learn through meaningful conversations',
             'Engaging with experienced teacher and similar level peers'
         ],
-        price: 30.00,
+        price: 120.00,
         book: 'cart'
     },
     {
@@ -43,7 +43,7 @@ const classes = [
             '1 on 1 attention for faster improvement and better result',
             'Tailored lesson plans based on students learning style'
         ],
-        price: 50.00,
+        price: '60 - 100',
         book: 'calendly'
     },
 ];

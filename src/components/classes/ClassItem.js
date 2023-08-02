@@ -23,19 +23,28 @@ const ClassItem = (props) => {
                         <img src={require(`./../../pictures/classes/${props.imageUrl}`)} />
                     </div>
                     <p className={mainStyles.subtitle}>{props.name}</p>
-                    {props.book === 'calendly' && <PopupButton 
-                        className={styles.book} 
-                        text='Book a Class' 
-                        url='https://calendly.com/bettywangjy/60min?month=2023-05' 
-                        rootElement={document.getElementById('root')}
-                        prefill={{
-                            customAnswers: {
-                                a1: props.name
-                            }
-                        }}
-                    />}
-                    {props.book === 'cart' && <button onClick={addToCart} className={styles.book}>Add to Cart</button>}
-                    <p className={styles.price}>${props.price}</p>
+                    <div className={mainStyles.wrap}>
+                        {props.book === 'calendly' && <PopupButton 
+                            className={styles.book} 
+                            text='Book a Class' 
+                            url='https://calendly.com/bettywangjy/60min?month=2023-05' 
+                            rootElement={document.getElementById('root')}
+                            prefill={{
+                                customAnswers: {
+                                    a1: props.name
+                                }
+                            }}
+                        />}
+                        {props.book === 'calendly' && <>
+                            <p className={styles.info}>
+                                i
+                            </p>
+                            <p className={styles['info__text']}>blah blah blah</p>
+                        </>}
+                    </div>
+                    {props.book === 'cart' && <button onClick={addToCart} className={styles.book}>Purchase 1 Month</button>}
+                    <p className={styles.price}>${props.price} {props.book !== 'calendly' ? '/ month' : ' / class'}</p>
+                    {props.book === 'cart' && <p className={styles['four-classes']}>(4 classes)</p>}
                         {props.subtitles.map((subtitle) => <p className={styles.subtitle} key={Math.random()}>{subtitle}</p>)}
                         <div className={styles.line}><hr /></div>
                     <div className={styles.data}>

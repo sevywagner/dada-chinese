@@ -15,7 +15,7 @@ const Carousel = () => {
       clearTimeout(carouselTimer);
     }
 
-    if (counter === 6) {
+    if (counter === 13) {
       setCounter(1);
     } else {
       setCounter((prevState) => prevState + 1);
@@ -25,13 +25,23 @@ const Carousel = () => {
   }
 
   const prevHandler = () => {
+    if (carouselTimer) {
+      clearTimeout(carouselTimer);
+    }
 
+    if (counter === 1) {
+      setCounter(13);
+    } else {
+      setCounter((prevState) => prevState - 1);
+    }
+
+    setPic(require(`./../../pictures/carousel/pic${counter}.jpeg`));
   }
 
   useEffect(() => {
     carouselTimer = setTimeout(() => {
       setPic(require(`./../../pictures/carousel/pic${counter}.jpeg`));
-      if (counter === 6) {
+      if (counter === 13) {
         setCounter(1);
       } else {
         setCounter((prevState) => prevState + 1);

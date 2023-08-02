@@ -37,7 +37,7 @@ function App() {
 
       }).catch((err) => console.log(err));
     }
-  }, [authCtx.isLoggedIn])
+  }, [authCtx.isLoggedIn, localStorage.getItem('token')])
 
   useEffect(() => {
     if (localStorage.getItem('token')) {

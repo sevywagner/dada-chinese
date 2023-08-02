@@ -107,6 +107,7 @@ const Checkout = () => {
                     console.log(data);
                     navigate('/dada-chinese/order-confirmation');
                     dispatch(cartActions.resetCart({ guest: localStorage.getItem('token') === null }));
+                    dispatch(cartActions.updateCredit((cart.totalPrice - cart.creditPrice) - ((cart.totalPrice - cart.creditPrice) * 2)));
                 }).catch((err) => {
                     setHasError(err.message);
                     console.log(err);
@@ -194,7 +195,7 @@ const Checkout = () => {
                                 </fieldset>
                             </>}
                             {(localStorage.getItem('token') && textbook === -1) && <p className={mainStyles.title}>Thank you for choosing Dada Chinese!</p>}
-                            <button onClick={creditHandler}>{usingCredit ? 'Don\'t u' : 'U'}se Credit</button>
+                            {/* {localStorage.getItem('token') && cart.credit > 0 && <button className={styles.credit} onClick={creditHandler}>{usingCredit ? 'Don\'t u' : 'U'}se Credit</button>} */}
                             <div className={styles.wrap}>
                                 {!showPaypal ? <Button onClick={toggleCheckout}>Pay</Button> : totalPrice !== 0 && <Paypal onApprove={submitHandler} totalAmount={totalPrice} />}
                                 {totalPrice === 0 && <Button onClick={submitHandler}>Continue</Button>}

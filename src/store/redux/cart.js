@@ -139,6 +139,10 @@ const cartSlice = createSlice({
                 }).catch(err => console.log(err));
             }
         },
+        updateCredit(state, action) {
+            state.credit += action.payload;
+            state.creditPrice = state.totalPrice - action.payload;
+        }
     }
 });
 

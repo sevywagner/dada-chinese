@@ -87,6 +87,18 @@ legend {
     border-color: red;
 }
 
+.credit {
+    font-size: 3vh;
+    background-color: inherit;
+    border: none;
+    font-family: 'Quicksand';
+}
+
+.credit:hover {
+    animation: hover .4s ease-in;
+    color: rgb(137, 0, 0);
+}
+
 @media only screen and (max-width: 800px) {
     .wrap {}
 }
@@ -97,5 +109,15 @@ legend {
     }
     to {  
         border-color: red;
+    }
+}
+
+@keyframes hover {
+    from {
+        color: black;
+    }
+
+    to {
+        color: rgb(137, 0, 0);
     }
 }
