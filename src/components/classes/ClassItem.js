@@ -36,13 +36,15 @@ const ClassItem = (props) => {
                             }}
                         />}
                         {props.book === 'calendly' && <>
-                            <p className={styles.info}>
-                                i
-                            </p>
-                            <p className={styles['info__text']}>blah blah blah</p>
+                            <div className={styles['info__wrap']}>
+                                <p className={styles.info}>
+                                    i
+                                </p>
+                                <p className={styles['info__text']}>The price of an one on one class is to be detirmined by the level of the class. We will reach out to you after booking.</p>
+                            </div>
                         </>}
                     </div>
-                    {props.book === 'cart' && <button onClick={addToCart} className={styles.book}>Purchase 1 Month</button>}
+                    {props.book === 'cart' && <button onClick={addToCart} className={styles.book}>Add to Cart</button>}
                     <p className={styles.price}>${props.price} {props.book !== 'calendly' ? '/ month' : ' / class'}</p>
                     {props.book === 'cart' && <p className={styles['four-classes']}>(4 classes)</p>}
                         {props.subtitles.map((subtitle) => <p className={styles.subtitle} key={Math.random()}>{subtitle}</p>)}

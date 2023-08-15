@@ -28,7 +28,7 @@ const Orders = lazy(() => import('./../pages/admin/Orders'));
 
 const router = createBrowserRouter([
     {
-      path: '/dada-chinese',
+      path: '/',
       element: <Layout />,
       children: [
         {
