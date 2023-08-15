@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/dada-chinese/static/css/main.af054bef.css",
-    "main.js": "/dada-chinese/static/js/main.717313ee.js",
+    "main.css": "/dada-chinese/static/css/main.3cc0e1d6.css",
+    "main.js": "/dada-chinese/static/js/main.1386824e.js",
     "static/css/942.1f96cb86.chunk.css": "/dada-chinese/static/css/942.1f96cb86.chunk.css",
     "static/js/942.2179ae9e.chunk.js": "/dada-chinese/static/js/942.2179ae9e.chunk.js",
     "static/css/190.b24efcd7.chunk.css": "/dada-chinese/static/css/190.b24efcd7.chunk.css",
@@ -47,8 +47,8 @@
     "static/media/会通封面1.jpeg": "/dada-chinese/static/media/会通封面1.f5d745673879141125fb.jpeg",
     "static/media/checkCircle.png": "/dada-chinese/static/media/checkCircle.a5259c875782a455aa99.png",
     "index.html": "/dada-chinese/index.html",
-    "main.af054bef.css.map": "/dada-chinese/static/css/main.af054bef.css.map",
-    "main.717313ee.js.map": "/dada-chinese/static/js/main.717313ee.js.map",
+    "main.3cc0e1d6.css.map": "/dada-chinese/static/css/main.3cc0e1d6.css.map",
+    "main.1386824e.js.map": "/dada-chinese/static/js/main.1386824e.js.map",
     "942.1f96cb86.chunk.css.map": "/dada-chinese/static/css/942.1f96cb86.chunk.css.map",
     "942.2179ae9e.chunk.js.map": "/dada-chinese/static/js/942.2179ae9e.chunk.js.map",
     "190.b24efcd7.chunk.css.map": "/dada-chinese/static/css/190.b24efcd7.chunk.css.map",
@@ -73,7 +73,7 @@
     "275.b9e6eaf4.chunk.js.map": "/dada-chinese/static/js/275.b9e6eaf4.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.af054bef.css",
-    "static/js/main.717313ee.js"
+    "static/css/main.3cc0e1d6.css",
+    "static/js/main.1386824e.js"
   ]
 }
