@@ -34,26 +34,26 @@ const Header = () => {
   return (
     <>
       <header className={styles.header}>
-        <Link to='/dada-chinese/'>
+        <Link to='/'>
           <div className={styles.logo}>
             <img src={require('./../../pictures/logos/White Logo HD.png')} />
             <p className={styles['header-text']}>Dada Chinese</p>
           </div>
         </Link>
         <nav>
-          <Link className={styles["nav-item"]} to="/dada-chinese">Home</Link>
+          <Link className={styles["nav-item"]} to="/">Home</Link>
           <div className={styles.subnav}>
-            <Link className={styles["nav-item"]} to='/dada-chinese/our-classes'>Our Classes</Link>
+            <Link className={styles["nav-item"]} to='/our-classes'>Our Classes</Link>
             <div className={styles['subnav-content']}>
-              <Link className={styles["subnav-item"]} to='/dada-chinese/our-classes'>Classes</Link>
-              <Link className={styles["subnav-item"]} to="/dada-chinese/our-teachers">Our Teachers</Link>
-              <Link className={styles["subnav-item"]} to="/dada-chinese/textbooks">Textbooks</Link>
+              <Link className={styles["subnav-item"]} to='/our-classes'>Classes</Link>
+              <Link className={styles["subnav-item"]} to="/our-teachers">Our Teachers</Link>
+              <Link className={styles["subnav-item"]} to="/textbooks">Textbooks</Link>
             </div>
           </div>
-          <Link className={styles["nav-item"]} to='/dada-chinese/contact'>Contact</Link>
-          <Link className={styles["nav-item"]} to="/dada-chinese/blog">Blog</Link>
-          {!authCtx.isLoggedIn && <Link className={styles["nav-item"]} to="/dada-chinese/sign-up">Sign up</Link>}
-          {!authCtx.isLoggedIn && <Link className={styles['sign-in']} to='/dada-chinese/sign-in'>Sign in</Link>}
+          <Link className={styles["nav-item"]} to='/contact'>Contact</Link>
+          <Link className={styles["nav-item"]} to="/blog">Blog</Link>
+          {!authCtx.isLoggedIn && <Link className={styles["nav-item"]} to="/sign-up">Sign up</Link>}
+          {!authCtx.isLoggedIn && <Link className={styles['sign-in']} to='/sign-in'>Sign in</Link>}
           {authCtx.isLoggedIn && <button onClick={logoutHandler} className={styles['sign-in']}>Logout</button>}
           <div className={styles['cart-wrap']}>
             <button onClick={cartToggle} className={styles.cart}>
@@ -83,14 +83,14 @@ const Header = () => {
           <button className={styles['in-nav-more']} onClick={drawerHandler}>
             <img height="100" src={require('./../../pictures/icons/more.png')} />
           </button>
-          <Link className={styles["nav-item"]} to="/dada-chinese">Home</Link>
-          <Link className={styles["nav-item"]} to='/dada-chinese/our-classes'>Our Classes</Link>
-          <Link className={styles["nav-item"]} to="/dada-chinese/textbooks">Textbooks</Link>
-          <Link className={styles["nav-item"]} to="/dada-chinese/our-teachers">Our Teachers</Link>
-          <Link className={styles["nav-item"]} to='/dada-chinese/contact'>Contact</Link>
-          <Link className={styles["nav-item"]} to="/dada-chinese/blog">Blog</Link>
-          {!authCtx.isLoggedIn && <Link className={styles["nav-item"]} to="/dada-chinese/sign-up">Sign up</Link>}
-          {!authCtx.isLoggedIn && <Link className={styles['nav-item']} to='/dada-chinese/sign-in'>Sign in</Link>}
+          <Link className={styles["nav-item"]} to="/">Home</Link>
+          <Link className={styles["nav-item"]} to='/our-classes'>Our Classes</Link>
+          <Link className={styles["nav-item"]} to="/textbooks">Textbooks</Link>
+          <Link className={styles["nav-item"]} to="/our-teachers">Our Teachers</Link>
+          <Link className={styles["nav-item"]} to='/contact'>Contact</Link>
+          <Link className={styles["nav-item"]} to="/blog">Blog</Link>
+          {!authCtx.isLoggedIn && <Link className={styles["nav-item"]} to="/dada-cinese/sign-up">Sign up</Link>}
+          {!authCtx.isLoggedIn && <Link className={styles['nav-item']} to='/sign-in'>Sign in</Link>}
           {localStorage.getItem('token') && <div className={styles.wrap}>
             <button onClick={cartToggle} className={styles.cart}>
               <img src={require('../../pictures/icons/cart.png')} />
