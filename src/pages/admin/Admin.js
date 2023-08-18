@@ -14,7 +14,7 @@ const Admin = () => {
         }
 
         if (passwordRef.current.value === '12345678') {
-            navigate('/dada-chinese/new-blog');
+            navigate('/new-blog');
         } else {
             return;
         }

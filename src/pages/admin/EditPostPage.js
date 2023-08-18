@@ -54,7 +54,7 @@ const EditPostPage = () => {
         responseIsOk = false;
       } else {
         responseIsOk = true;
-        navigate("/dada-chinese/blog");
+        navigate("/blog");
       }
       return result.json();
     }).then((data) => {

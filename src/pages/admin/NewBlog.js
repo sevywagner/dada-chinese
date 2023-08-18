@@ -44,7 +44,7 @@ const NewBlog = () => {
         setError(data.error);
       } else {
         console.log(data.message);
-        navigate('/dada-chinese/blog');
+        navigate('/blog');
       }
     }).catch((err) => console.log(err));
   };
