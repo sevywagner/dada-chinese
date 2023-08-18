@@ -40,7 +40,7 @@ const SignInForm = () => {
         return setError(data.error);
       }
       authCtx.loginHandler(data.token, data.expiration);
-      navigate('/dada-chinese');
+      navigate('/');
     }).catch((err) => {
       console.log(err.message);
     })

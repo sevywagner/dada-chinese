@@ -91,7 +91,7 @@ const SignUpForm = ({ errorHandler }) => {
           resetPassword();
           resetPassword2();
           errorHandler(null);
-          navigate('/dada-chinese/sign-in');
+          navigate('/sign-in');
         }
       }).catch((err) => {
         console.log(err);

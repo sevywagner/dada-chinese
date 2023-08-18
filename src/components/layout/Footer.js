@@ -22,7 +22,7 @@ const Footer = () => {
             />
           </a>
         </div>
-        <p className={styles['foot-note']}>&copy; Dada Chinese - <Link to='/dada-chinese/policy'>Privacy Policy</Link></p>
+        <p className={styles['foot-note']}>&copy; Dada Chinese - <Link to='/policy'>Privacy Policy</Link></p>
       </footer>
     </>
   );

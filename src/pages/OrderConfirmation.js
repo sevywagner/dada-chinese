@@ -8,7 +8,7 @@ const OrderConfirmation = () => {
 
     useEffect(() => {
         setTimeout(() => {
-            navigate('/dada-chinese/');
+            navigate('/');
         }, 5000);
     }, [navigate]);
 

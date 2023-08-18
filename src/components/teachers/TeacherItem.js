@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const TeacherItem = (props) => {
     return (
-        <Link to={`/dada-chinese/our-teachers/${props.name}`}>
+        <Link to={`/our-teachers/${props.name}`}>
             <div className={styles.item}>
                 <img src={require(`./../../pictures/teachers/${props.imageUrl}.jpg`)} />
                 <p className={styles.title}>{props.name}</p>

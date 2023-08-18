@@ -17,7 +17,7 @@ const FAQ = () => {
                 </div>
                 <div className={styles.wrap}>
                     <p className={styles.question}>I have a million questions. Who should I reach out to?</p>
-                    <p className={styles.answer}>You can always email us about your inquiries, expectations, questions, stories, feedback, complaints, etc. If you don't already have our email address feel free to contact us through our <Link to='/dada-chinese/contact' className={styles.contact}>Contact Form</Link></p>
+                    <p className={styles.answer}>You can always email us about your inquiries, expectations, questions, stories, feedback, complaints, etc. If you don't already have our email address feel free to contact us through our <Link to='/contact' className={styles.contact}>Contact Form</Link></p>
                 </div>
             </div>
         </div>

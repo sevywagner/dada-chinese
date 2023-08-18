@@ -29,7 +29,7 @@ const Paypal = ({ totalAmount, onApprove }) => {
             const { payer } = details;
             console.log(payer);
             onApprove();
-            navigate('/dada-chinese/order-confirmation');
+            navigate('/order-confirmation');
             dispatch(cartActions.resetCart({ guest: localStorage.getItem('token') === null }));
         });
     }

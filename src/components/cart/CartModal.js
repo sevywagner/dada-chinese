@@ -31,7 +31,7 @@ const Interface = (props) => {
                     <p>${cart.totalPrice.toFixed(2)}</p>
                 </div>
                 <div className={mainStyles.wrap}>
-                    {cart.items.length !== 0 && <Link to='/dada-chinese/checkout'><Button onClick={props.onClose}>Proceed to Checkout</Button></Link>}
+                    {cart.items.length !== 0 && <Link to='/checkout'><Button onClick={props.onClose}>Proceed to Checkout</Button></Link>}
                 </div>
             </div>
         </div>

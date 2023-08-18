@@ -105,7 +105,7 @@ const Checkout = () => {
                     return response.json();
                 }).then((data) => {
                     console.log(data);
-                    navigate('/dada-chinese/order-confirmation');
+                    navigate('/order-confirmation');
                     dispatch(cartActions.resetCart({ guest: localStorage.getItem('token') === null }));
                     dispatch(cartActions.updateCredit((cart.totalPrice - cart.creditPrice) - ((cart.totalPrice - cart.creditPrice) * 2)));
                 }).catch((err) => {

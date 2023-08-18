@@ -15,7 +15,7 @@ const OurClasses = () => {
             <ClassItem
               key={c.id}
               id={c.id}
-              linkPath={`/dada-chinese/our-classes/${c.id}`}
+              linkPath={`/our-classes/${c.id}`}
               name={c.name}
               subtitles={c.subtitles}
               imageUrl={c.imageUrl}

@@ -30,7 +30,7 @@ const BlogItem = (props) => {
                 return response.json();
             }
         }).then((data) => {
-            navigate('/dada-chinese/blog');
+            navigate('/blog');
         }).catch((err) => {
             console.log(err);
             setResult(err.message);
@@ -40,7 +40,7 @@ const BlogItem = (props) => {
     return (
         <>
             {result && <p>{result}</p>}
-            <Link className={styles.link} to={props.admin ? `/dada-chinese/edit-post/${props.id}` : `/dada-chinese/blog-post/${props.id}`}>
+            <Link className={styles.link} to={props.admin ? `/edit-post/${props.id}` : `/blog-post/${props.id}`}>
                 <div className={styles.item}>
                     <div className={styles.left}>
                         <img src={props.imageWebContentLink} alt="blog" />

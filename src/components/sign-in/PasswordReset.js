@@ -36,7 +36,7 @@ const PasswordReset = () => {
                 setError(data.error);
             } else {
                 console.log(data.message);
-                navigate('/dada-chinese/sign-in');
+                navigate('/sign-in');
             }
         }).catch((err) => {
             console.log(err);
