@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunkdada_chinese=self.webpackChunkdada_chinese||[]).push([[328],{6328:function(e,n,s){s.r(n);var a=s(2791),c=s(7689),i=s(3264),t=s(184);n.default=function(){var e=(0,c.s0)();return(0,a.useEffect)((function(){setTimeout((function(){e("/dada-chinese/")}),5e3)}),[e]),(0,t.jsx)("div",{children:(0,t.jsx)("p",{className:i.Z.title,children:"Your order has been placed!"})})}}}]);
-//# sourceMappingURL=328.2017fede.chunk.js.map

@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkdada_chinese=self.webpackChunkdada_chinese||[]).push([[328],{6328:function(e,n,s){s.r(n);var c=s(2791),a=s(7689),t=s(3264),u=s(184);n.default=function(){var e=(0,a.s0)();return(0,c.useEffect)((function(){setTimeout((function(){e("/")}),5e3)}),[e]),(0,u.jsx)("div",{children:(0,u.jsx)("p",{className:t.Z.title,children:"Your order has been placed!"})})}}}]);
+//# sourceMappingURL=328.3da0c07e.chunk.js.map
