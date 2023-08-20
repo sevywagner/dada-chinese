@@ -78,7 +78,7 @@ const Checkout = () => {
                 setHasError(data.error);
                 return;
             } else {
-                console.log(data);
+                dispatch(cartActions.resetCart());
             }
         }).catch((err) => {
             setHasError(err.message);
