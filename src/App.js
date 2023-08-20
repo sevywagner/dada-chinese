@@ -23,16 +23,10 @@ function App() {
             return result.json();
         }
       }).then((sessionCart) => {
-        let creditPrice = parseInt(sessionCart.cart.totalPrice) - parseInt(sessionCart.credit);
-        if (sessionCart.cart.totalPrice < sessionCart.credit) {
-          creditPrice = 0;
-        }
         dispatch(cartActions.setCart({ 
           items: sessionCart.cart.items, 
           totalPrice: sessionCart.cart.totalPrice, 
           totalQuantity: sessionCart.cart.totalQuantity,
-          credit: parseInt(sessionCart.credit),
-          creditPrice
         }));
 
       }).catch((err) => console.log(err));

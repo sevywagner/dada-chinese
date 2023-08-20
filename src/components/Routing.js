@@ -25,11 +25,14 @@ const ResetPassword = lazy(() => import('../pages/ResetPassword'));
 const Checkout = lazy(() => import('../pages/Checkout'));
 const OrderConfirmation = lazy(() => import('../pages/OrderConfirmation'));
 const Orders = lazy(() => import('./../pages/admin/Orders'));
+const Order = lazy(() => import('./../pages/Order'));
+const UserOrders = lazy(() => import('./../pages/UserOrders'));
 
 const router = createBrowserRouter([
     {
       path: '/',
       element: <Layout />,
+      errorElement: <Error />,
       children: [
         {
           index: true,
@@ -129,13 +132,18 @@ const router = createBrowserRouter([
           path: 'orders',
           element: <Suspense><Orders /></Suspense>,
           loader: () => import('./../pages/admin/Orders').then((module) => module.loader())
+        },
+        {
+          path: 'orders/:orderId',
+          element: <Suspense><Order /></Suspense>,
+        },
+        {
+          path: 'my-orders',
+          element: <Suspense><UserOrders /></Suspense>,
+          loader: () => import('./../pages/UserOrders').then((module) => module.loader())
         }
       ]
     },
-    {
-      path: '/',
-      errorElement: <Error />,
-    }
 ]);
 
 export default router;

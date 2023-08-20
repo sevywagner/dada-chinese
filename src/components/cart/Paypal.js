@@ -40,7 +40,7 @@ const Paypal = ({ totalAmount, onApprove }) => {
 
     return (
         <PayPalScriptProvider options={{
-            "client-id": "AcNOytnjExuv-KS5qOHxR49tPBcnhrcmbiMx1rhUqpiy7YsFFwavvM65ZsMyM6RGs7PicM8vKqQyfdrj"
+            "client-id": "AXHIEMZTDEWyn9VV0mTVL0tYu5u-ikyUQBpNur2j1frAoZoGIajecrgwZ-iCoEe_jHU1b2Ya_jlmAaUc"
         }}>
             <PayPalButtons createOrder={createOrderHandler} onApprove={approveHandler} onError={errorHandler} />
         </PayPalScriptProvider>

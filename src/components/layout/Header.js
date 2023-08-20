@@ -54,6 +54,7 @@ const Header = () => {
           <Link className={styles["nav-item"]} to="/blog">Blog</Link>
           {!authCtx.isLoggedIn && <Link className={styles["nav-item"]} to="/sign-up">Sign up</Link>}
           {!authCtx.isLoggedIn && <Link className={styles['sign-in']} to='/sign-in'>Sign in</Link>}
+          {authCtx.isLoggedIn && <Link className={styles['nav-item']} to='/my-orders'>My Orders</Link>}
           {authCtx.isLoggedIn && <button onClick={logoutHandler} className={styles['sign-in']}>Logout</button>}
           <div className={styles['cart-wrap']}>
             <button onClick={cartToggle} className={styles.cart}>

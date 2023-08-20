@@ -3,7 +3,6 @@ import styles from "./css/our-classes.module.css";
 import mainStyles from './../components/main.module.css';
 import classes from "../components/classes/dummy-classes";
 import QuoteSection from "../components/home/QuoteSection";
-import Credit from "../components/cart/Credit";
 
 const OurClasses = () => {
   return (

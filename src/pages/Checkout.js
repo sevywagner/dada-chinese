@@ -15,7 +15,6 @@ const Checkout = () => {
 
     const [showPaypal, setShowPaypal] = useState(false);
     const [hasError, setHasError] = useState();
-    const [usingCredit, setUsingCredit] = useState(false);
     const [totalPrice, setTotalPrice] = useState(cart.totalPrice);
 
     const textbook = cart.items.findIndex((item) => item.id === 't1');
@@ -43,7 +42,8 @@ const Checkout = () => {
 
         let body = JSON.stringify({ 
             items: cart.items, 
-            totalPrice: cart.totalPrice
+            totalPrice: cart.totalPrice,
+            address
         });
 
         let guestBody = JSON.stringify({ 
@@ -78,40 +78,7 @@ const Checkout = () => {
                 setHasError(data.error);
                 return;
             } else {
-                url = 'https://dada-chinese-rest-api.herokuapp.com/shop/order-email';
-                guestUrl = 'https://dada-chinese-rest-api.herokuapp.com/shop/order-email-guest'
-                body = JSON.stringify({ cartItems: cart.items });
-                guestBody = JSON.stringify({ 
-                    cartItems: cart.items,
-                    email: email,
-                });
-                console.log(data.message);
-                fetch(localStorage.getItem('token') !== null ? url : guestUrl, {
-                    method: 'POST',
-                    body: localStorage.getItem('token') !== null ? body : guestBody,
-                    headers: localStorage.getItem('token') !== null ? headers : guestHeaders
-                }).then().catch();
-            }
-        }).then(() => {
-            if (usingCredit) {
-                fetch('https://dada-chinese-rest-api.herokuapp.com/shop/use-credit', {
-                    method: 'POST',
-                    body: JSON.stringify({ creditUsed: cart.totalPrice - cart.creditPrice }),
-                    headers: {
-                        'Content-Type': 'Application/json',
-                        Authorization: 'Bearer ' + localStorage.getItem('token')
-                    }
-                }).then((response) => {
-                    return response.json();
-                }).then((data) => {
-                    console.log(data);
-                    navigate('/order-confirmation');
-                    dispatch(cartActions.resetCart({ guest: localStorage.getItem('token') === null }));
-                    dispatch(cartActions.updateCredit((cart.totalPrice - cart.creditPrice) - ((cart.totalPrice - cart.creditPrice) * 2)));
-                }).catch((err) => {
-                    setHasError(err.message);
-                    console.log(err);
-                })
+                console.log(data);
             }
         }).catch((err) => {
             setHasError(err.message);
@@ -128,18 +95,6 @@ const Checkout = () => {
         }
         setShowPaypal((prevState) => !prevState);
     }
-
-    const creditHandler = () => {
-        setUsingCredit((prevState) => !prevState);
-    }
-
-    useEffect(() => {
-        if (usingCredit) {
-            setTotalPrice(cart.creditPrice);
-        } else {
-            setTotalPrice(cart.totalPrice);
-        }
-    }, [usingCredit]);
 
     useEffect(() => {
         setTotalPrice(cart.totalPrice);
@@ -195,7 +150,6 @@ const Checkout = () => {
                                 </fieldset>
                             </>}
                             {(localStorage.getItem('token') && textbook === -1) && <p className={mainStyles.title}>Thank you for choosing Dada Chinese!</p>}
-                            {/* {localStorage.getItem('token') && cart.credit > 0 && <button className={styles.credit} onClick={creditHandler}>{usingCredit ? 'Don\'t u' : 'U'}se Credit</button>} */}
                             <div className={styles.wrap}>
                                 {!showPaypal ? <Button onClick={toggleCheckout}>Pay</Button> : totalPrice !== 0 && <Paypal onApprove={submitHandler} totalAmount={totalPrice} />}
                                 {totalPrice === 0 && <Button onClick={submitHandler}>Continue</Button>}

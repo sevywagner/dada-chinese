@@ -3,7 +3,7 @@ import BlogList from '../components/blog/BlogList';
 import { useLoaderData } from 'react-router-dom';
 
 const Blog = () => {
-    const blogPosts = useLoaderData();
+    const blogPosts = useLoaderData().reverse();
 
     return (
         <div>

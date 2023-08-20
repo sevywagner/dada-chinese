@@ -1,0 +1,38 @@
+.root {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.list-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(78, 0, 0);
+    width: 60vh;
+    height: fit-content;
+    padding: 10vh;
+    border-radius: 5vh;
+    border: 1px solid black;
+    margin-right: 3vh;
+    margin: 10vh;
+}
+
+.summary {
+    color: white;
+    font-size: 4vh;
+    font-family: 'Montserrat';
+}
+
+.total {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.total__text {
+    color: white;
+    font-size: 3vh;
+    font-family: 'Quicksand';
+    text-align: center;
+}
