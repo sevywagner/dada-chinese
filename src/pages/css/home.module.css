@@ -6,11 +6,12 @@
     background-image: url('./../../pictures/bg.jpeg');
     background-size: cover;
     background-repeat: no-repeat;
-    height: 90vh;
+    height: 80vh;
     padding: 2vh;
     overflow-y: scroll;
     scroll-behavior: smooth;
     scroll-snap-type: y mandatory;
+    overflow-y: hidden;
 }
 
 .carousel {
@@ -45,6 +46,12 @@
     border: none;
     font-size: 4vh;
     font-family: 'Quicksand';
+}
+
+.under-title {
+    font-size: 4vh;
+    font-family: 'Montserrat';
+    /* transform: translateY(-5vh); */
 }
 
 @media only screen and (max-width: 800px) {

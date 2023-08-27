@@ -40,7 +40,11 @@ const ClassItem = (props) => {
                                 <p className={styles.info}>
                                     i
                                 </p>
-                                <p className={styles['info__text']}>The price of an one on one class is to be detirmined by the level of the class. We will reach out to you after booking.</p>
+                                <p className={styles['info__text']}>
+                                    The price of an one-on-one class is determined by
+                                    the level, location and frequency of the class. We will discuss during the free trial lesson. Please
+                                    provide any information that might be helpful for the initial class.
+                                </p>
                             </div>
                         </>}
                     </div>

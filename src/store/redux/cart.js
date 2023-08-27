@@ -106,22 +106,20 @@ const cartSlice = createSlice({
             state.items = action.payload.items;
             state.totalPrice = action.payload.totalPrice;
             state.totalQuantity = action.payload.totalQuantity;
-            state.credit = action.payload.credit;
-            state.creditPrice = action.payload.creditPrice;
         },
         resetCart(state, action) {
             state.items = [];
             state.totalPrice = 0.00;
             state.totalQuantity = 0;
 
-            if (action.guest === false) {
-                fetch('https://dada-chinese-rest-api.herokuapp.com/shop/update-cart', {
+            if (localStorage.getItem('token')) {
+                fetch('http://localhost:8080/shop/update-cart', {
                     method: 'POST',
                     body: JSON.stringify({
                         cart: {
-                            items: state.items,
-                            totalPrice: state.totalPrice,
-                            totalQuantity: state.totalQuantity
+                            items: [],
+                            totalPrice: 0,
+                            totalQuantity: 0.00
                         },
                     }),
                     headers: {

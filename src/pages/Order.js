@@ -43,7 +43,7 @@ const Order = () => {
                         <p className={styles['total__text']}>${order.totalPrice}</p>
                     </div>
                 </div>
-                <p className={mainStyles.subtitle}>{order.address}</p>
+                {order.address && <p className={mainStyles.subtitle}>{order.address}</p>}
                 <p className={mainStyles.subtitle}>{order.userEmail}</p>
             </div>}
         </>

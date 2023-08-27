@@ -1,0 +1,23 @@
+.root {
+    width: 90%;
+}
+
+.control__wrap {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.control {
+    width: 10vh;
+    background-color: inherit;
+    border: none;
+}
+
+.control img {
+    width: 100%;
+}
+
+.hide {
+    display: none;
+}

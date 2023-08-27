@@ -23,6 +23,14 @@ const Qa = () => {
         {
             q: 'Does my child need to know Chinese before enrolling in your class?',
             a: 'We have classes for children in any level from zero knowledge to advanced Chinese proficiency.'
+        },
+        {
+            q: 'What is your cancellation policy?',
+            a: 'If you cancel a class 48 hours in advance you are elligable for a full refund, otherwise there will not be a refund but depending on the teacher\'s availability you can schedule a makeup session.'
+        },
+        {
+            q: 'I have a million questions. Who should I reach out to?',
+            a: 'You can always email us about your inquiries, expectations, questions, stories, feedback, complaints, etc. If you don\'t already have our email address feel free to contact us through our contact form.'
         }
     ];
 

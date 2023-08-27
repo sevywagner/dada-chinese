@@ -65,8 +65,6 @@ const AuthContextProvider = ({ children }) => {
     }
 
     const getTokenValidity = () => {
-        const expiration = tokenData.remainingTime;
-
         const remainingTime = getRemainingTime(localStorage.getItem('expiration'));
 
         if (remainingTime > 3600) {

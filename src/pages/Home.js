@@ -11,18 +11,14 @@ const Home = () => {
         <div className={styles.root}>
             <div className={styles.title}>
                 <p>Dada Chinese</p>
+                <p className={styles['under-title']}>Live Chinese class for kids, parents, and language lovers</p>
                 <p>欢迎</p>
                 {/* <a data-savvycal-embed className={mainStyles.book} href="https://savvycal.com/derrick/chat">Book a Class</a> */}
                 <PopupButton 
                     className={mainStyles.book} 
-                    text='Book a Class' 
+                    text='Free Trial Lesson' 
                     url='https://calendly.com/bettywangjy/60min?month=2023-05' 
                     rootElement={document.getElementById('root')}
-                    prefill={{
-                        customAnswers: {
-                            a1: 'If this is your first class visit the "Our Classes" page and select a class'
-                        }
-                    }}
                 />
             </div>
             <section>

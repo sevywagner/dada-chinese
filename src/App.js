@@ -39,8 +39,10 @@ function App() {
       if (!tokenIsValid) {
         authCtx.logoutHandler();
       }
+    } else {
+      authCtx.logoutHandler();
     }
-  }, []);
+  }, [localStorage.getItem('token')]);
 
   return <RouterProvider router={router} />;
 }
