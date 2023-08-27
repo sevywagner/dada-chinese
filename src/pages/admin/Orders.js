@@ -12,7 +12,7 @@ const Orders = () => {
     const [orders, setOrders] = useState(initialOrders);
 
     const nextHandler = async () => {
-        const response = await fetch('http://localhost:8080/shop/user-orders', {
+        const response = await fetch('https://dada-chinese-rest-api.herokuapp.com/shop/user-orders', {
             method: 'POST',
             body: JSON.stringify({ pageNum: currentPage + 1 }),
             headers: {
@@ -26,7 +26,7 @@ const Orders = () => {
     }
     
     const previousHandler = async () => {
-        const response = await fetch('http://localhost:8080/shop/user-orders', {
+        const response = await fetch('https://dada-chinese-rest-api.herokuapp.com/shop/user-orders', {
             method: 'POST',
             body: JSON.stringify({ pageNum: currentPage - 1 }),
             headers: {
@@ -55,7 +55,7 @@ const Orders = () => {
 
 export const loader = async () => {
     try {
-        const response = await fetch('http://localhost:8080/shop/orders', {
+        const response = await fetch('https://dada-chinese-rest-api.herokuapp.com/shop/orders', {
             method: 'POST',
             body: JSON.stringify({ pageNum: 1 }),
             headers: {

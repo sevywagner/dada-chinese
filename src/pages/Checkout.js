@@ -33,8 +33,8 @@ const Checkout = () => {
             address = aptNumRef.current.value.trim() !== '' ? addressRef.current.value + ' Apt #: ' + aptNumRef.current.value : addressRef.current.value;
         }
         let error = false;
-        let url = 'http://localhost:8080/shop/new-order';
-        let guestUrl = 'http://localhost:8080/shop/new-order-guest';
+        let url = 'https://dada-chinese-rest-api.herokuapp.com/shop/new-order';
+        let guestUrl = 'https://dada-chinese-rest-api.herokuapp.com/shop/new-order-guest';
         let email = null;
         if (!localStorage.getItem('token')) {
             email = emailRef.current.value;
