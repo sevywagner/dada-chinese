@@ -36,12 +36,13 @@ const classes = [
         imageUrl: 'Dadada.jpg',
         name: 'Dadada',
         subtitles: [
-            'Remote learning and more'
+            '1 - 1 tutoring'
         ],
         bulletPoints: [
             'For individuals with personal goals',
             '1 on 1 attention for faster improvement and better result',
-            'Tailored lesson plans based on students learning style'
+            'Tailored lesson plans based on students learning style',
+            'Flexible schedule suitable for busy individuals'
         ],
         price: '60 - 100',
         book: 'calendly'
