@@ -16,11 +16,7 @@ const ClassItem = (props) => {
     }
 
     const addToCartHandler = (time) => {
-        if (localStorage.getItem('token')) {
-            dispatch(cartActions.addItem({ id: props.id, title: props.name, price: props.price, time, quantity: 1 }));
-        } else {
-            dispatch(cartActions.addItemAsGuest({ id: props.id, title: props.name, price: props.price, time, quantity: 1 }));
-        }
+        dispatch(cartActions.addItem({ id: props.id, title: props.name, price: props.price, time, quantity: 1 }));
         toggleShowModal();
     }
 

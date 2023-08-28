@@ -10,11 +10,7 @@ const CartItem = (props) => {
     const dispatch = useDispatch();
 
     const removeFromCartHandler = () => {
-        if (localStorage.getItem('token')) {
-            dispatch(cartActions.removeItem({ id: props.id, token: authCtx.token, time: props.time }));
-        } else {
-            dispatch(cartActions.removeItemAsGuest({ cartItemId: props.id }));
-        }
+        dispatch(cartActions.removeItem({ id: props.id, time: props.time }));
     }
 
     return (

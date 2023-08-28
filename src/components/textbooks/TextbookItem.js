@@ -13,21 +13,12 @@ const TextbookItem = () => {
     const existingItem = cart.items.find((item) => item.id === 't1');
 
     const addToCartHandler = () => {
-        if (localStorage.getItem('token')) {
-            dispatch(cartActions.addItem({
-                id: 't1',
-                title: 'Mastering Chinese Vol. 1',
-                price: 45.00,
-                quantity: 1
-            }));
-        } else {
-            dispatch(cartActions.addItemAsGuest({
-                id: 't1',
-                title: 'Mastering Chinese Vol. 1',
-                price: 45.00,
-                quantity: 1
-            }));
-        }
+        dispatch(cartActions.addItem({
+            id: 't1',
+            title: 'Mastering Chinese Vol. 1',
+            price: 45.00,
+            quantity: 1
+        }));
     }
 
     const textToggle = () => {
