@@ -11,7 +11,7 @@ const CartItem = (props) => {
 
     const removeFromCartHandler = () => {
         if (localStorage.getItem('token')) {
-            dispatch(cartActions.removeItem({ cartItemId: props.id, token: authCtx.token }));
+            dispatch(cartActions.removeItem({ id: props.id, token: authCtx.token, time: props.time }));
         } else {
             dispatch(cartActions.removeItemAsGuest({ cartItemId: props.id }));
         }

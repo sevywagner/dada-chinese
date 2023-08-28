@@ -1,6 +1,7 @@
 const classes = [
     {
         id: 'c1',
+        mongoId: '64eac850d5dd91c5ae3596ab',
         imageUrl: 'Dada and Me.jpg',
         name: 'Dada and me',
         subtitles: [
@@ -16,6 +17,7 @@ const classes = [
     },
     {
         id: 'c2',
+        mongoId: '64eac865db9cf515f60e6b51',
         imageUrl: 'Dada and We.jpg',
         name: 'Dada and we',
         subtitles: [
@@ -33,6 +35,7 @@ const classes = [
     },
     {
         id: 'c3',
+        mongoId: '64eac87954c33473712348b5',
         imageUrl: 'Dadada.jpg',
         name: 'Dadada',
         subtitles: [

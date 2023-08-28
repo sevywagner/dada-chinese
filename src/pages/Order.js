@@ -32,10 +32,11 @@ const Order = () => {
                     <p className={styles.summary}>Summary</p>
                     {order.items.map((item) => (
                         <CheckoutCartItem 
-                        key={item.title}
-                        title={item.title} 
-                        price={item.price} 
-                        quantity={item.quantity} 
+                            key={item.title}
+                            title={item.title} 
+                            price={item.price} 
+                            quantity={item.quantity}
+                            time={item.time}
                         />
                         ))}
                     <div className={styles.total}>

@@ -9,7 +9,7 @@ const cartSlice = createSlice({
     },
     reducers: {
         addItem(state, action) {
-            const existingCartItemIndex = state.items.findIndex((cartItem) => cartItem.id === action.payload.id);
+            const existingCartItemIndex = state.items.findIndex((cartItem) => (cartItem.id === action.payload.id) && (cartItem.time === action.payload.time));
             
             if (existingCartItemIndex > -1) {
                 state.items[existingCartItemIndex].quantity += 1;
@@ -56,7 +56,7 @@ const cartSlice = createSlice({
             }
         },
         removeItem(state, action) {
-            const existingCartItemIndex = state.items.findIndex((cartItem) => cartItem.id === action.payload.cartItemId);
+            const existingCartItemIndex = state.items.findIndex((cartItem) => cartItem.id === action.payload.id && cartItem.time === action.payload.time);
 
             if (state.items[existingCartItemIndex].quantity > 1) {
                 state.items[existingCartItemIndex].quantity -= 1;
@@ -64,7 +64,7 @@ const cartSlice = createSlice({
                 state.totalQuantity--;
             } else {
                 state.totalPrice -= state.items[existingCartItemIndex].price;
-                state.items = state.items.filter((item) => item.id !== action.payload.cartItemId);
+                state.items = state.items.filter((item) => item.time !== action.payload.time);
                 state.totalQuantity--;
             }
 
@@ -98,7 +98,7 @@ const cartSlice = createSlice({
                 state.totalQuantity--;
             } else {
                 state.totalPrice -= state.items[existingCartItemIndex].price;
-                state.items = state.items.filter((item) => item.id !== action.payload.cartItemId);
+                state.items = state.items.filter((item) => item.id !== action.payload.id);
                 state.totalQuantity--;
             }
         },
@@ -113,7 +113,7 @@ const cartSlice = createSlice({
             state.totalQuantity = 0;
 
             if (localStorage.getItem('token')) {
-                fetch('http://localhost:8080/shop/update-cart', {
+                fetch('https://dada-chinese-rest-api.herokuapp.com/shop/update-cart', {
                     method: 'POST',
                     body: JSON.stringify({
                         cart: {

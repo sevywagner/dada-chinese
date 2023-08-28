@@ -12,6 +12,8 @@ import Teacher from "../pages/Teacher";
 import Error from "../pages/Error";
 import Admin from "../pages/admin/Admin";
 import FAQ from "../pages/FAQ";
+import ClassTimes from "../pages/ClassTimes";
+import UpdateClassTimes from "../pages/admin/UpdateClassTimes";
 
 const Home = lazy(() => import('../pages/Home'));
 const Blog = lazy(() => import('../pages/Blog'));
@@ -107,8 +109,13 @@ const router = createBrowserRouter([
           element: <OurClasses />
         },
         {
-          path: 'faq',
-          element: <FAQ />
+          path: 'class-times',
+          element: <ClassTimes />
+        },
+        {
+          path: 'update-class-times',
+          element: <UpdateClassTimes />,
+          loader: () => import('./../pages/admin/UpdateClassTimes').then((module) => module.loader())
         },
         //----- Teachers -----
         {

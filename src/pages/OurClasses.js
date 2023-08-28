@@ -14,6 +14,7 @@ const OurClasses = () => {
             <ClassItem
               key={c.id}
               id={c.id}
+              mongoId={c.mongoId}
               linkPath={`/our-classes/${c.id}`}
               name={c.name}
               subtitles={c.subtitles}

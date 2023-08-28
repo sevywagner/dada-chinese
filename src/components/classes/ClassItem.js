@@ -3,20 +3,39 @@ import { cartActions } from '../../store/redux/cart';
 import styles from './css/class-item.module.css';
 import mainStyles from './../main.module.css';
 import { PopupButton } from 'react-calendly';
+import { useEffect, useState } from 'react';
+import ClassTimeModal from './ClassTimeModal';
 
 const ClassItem = (props) => {
     const dispatch = useDispatch();
+    const [classTime, setClassTime] = useState();
+    const [showModal, setShowModal] = useState(false);
 
-    const addToCart = () => {
-        if (localStorage.getItem('token')) {
-            dispatch(cartActions.addItem({ id: props.id, title: props.name, price: props.price, quantity: 1 }));
-        } else {
-            dispatch(cartActions.addItemAsGuest({ id: props.id, title: props.name, price: props.price, quantity: 1 }));
-        }
+    const toggleShowModal = () => {
+        setShowModal((prevState) => !prevState);
     }
+
+    const addToCartHandler = (time) => {
+        if (localStorage.getItem('token')) {
+            dispatch(cartActions.addItem({ id: props.id, title: props.name, price: props.price, time, quantity: 1 }));
+        } else {
+            dispatch(cartActions.addItemAsGuest({ id: props.id, title: props.name, price: props.price, time, quantity: 1 }));
+        }
+        toggleShowModal();
+    }
+
+    useEffect(() => {
+        const getClassTimes = async () => {
+            const response = await fetch('https://dada-chinese-rest-api.herokuapp.com/class-times/get-class-times');
+            const data = await response.json();
+            setClassTime(data.classTimes.find((classTime) => classTime._id === props.mongoId));
+        }
+        getClassTimes();
+    }, [])
 
     return (
         <>
+            {showModal && <ClassTimeModal classTimes={classTime.classTimes} onAddToCart={addToCartHandler} onBack={toggleShowModal} />}
             <div className={styles.wrap}>
                 <div className={styles.item}>
                     <div className={styles.pic}>
@@ -48,8 +67,9 @@ const ClassItem = (props) => {
                             </div>
                         </>}
                     </div>
-                    {props.book === 'cart' && <button onClick={addToCart} className={styles.book}>Add to Cart</button>}
+                    {props.book === 'cart' && <button onClick={toggleShowModal} className={styles.book}>Add to Cart</button>}
                     <p className={styles.price}>${props.price} {props.book !== 'calendly' ? '/ month' : ' / class'}</p>
+                    {/* {classTime && classTime.classTimes.map((classTime) => <p key={Math.random()}>{classTime}</p>)} */}
                     {props.book === 'cart' && <p className={styles['four-classes']}>(4 classes)</p>}
                         {props.subtitles.map((subtitle) => <p className={styles.subtitle} key={Math.random()}>{subtitle}</p>)}
                         <div className={styles.line}><hr /></div>

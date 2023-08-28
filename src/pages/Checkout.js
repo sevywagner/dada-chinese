@@ -112,7 +112,8 @@ const Checkout = () => {
                                 key={item.title}
                                 title={item.title} 
                                 price={item.price} 
-                                quantity={item.quantity} 
+                                quantity={item.quantity}
+                                time={item.time}
                             />
                         ))}
                         <div className={styles.total}>

@@ -24,6 +24,7 @@ const Interface = (props) => {
                         title={item.title}
                         price={item.price}
                         quantity={item.quantity}
+                        time={item.time}
                     />)}
                 </div>
                 <div className={styles.total}>

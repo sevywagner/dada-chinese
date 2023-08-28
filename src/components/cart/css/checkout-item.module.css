@@ -11,6 +11,13 @@
     border-bottom: solid 1px white;
 }
 
+.wrap {
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+    line-height: 0;
+}
+
 .title {
     width: 33.33%;
     text-align: center;
@@ -22,11 +29,30 @@
 .price {
     width: 33.33%;
     text-align: center;
-    text-align: right;
+    text-align: center;
 }
 
 .quantity {
-    color: white;
-    position: relative;
-    /* transform: translateX(-5vh); */
+    text-align: center;
+}
+
+.section {
+    width: 33.3%;
+}
+
+.middle-section {
+    width: 33.3%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.mid-wrap {
+    display: flex;
+    justify-content: flex-end;
+    /* width: 50%; */
+}
+
+.half-section {
+    width: 60%;
 }
