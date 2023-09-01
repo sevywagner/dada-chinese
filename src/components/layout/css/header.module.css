@@ -303,4 +303,10 @@ nav {
     background-color: inherit;
     border: none;
   }
+
+  .quantity {
+    position: relative;
+    right: 18vh;
+    top: -5vh;
+  }
 }

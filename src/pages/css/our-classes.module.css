@@ -8,6 +8,10 @@
     justify-content: center;
 }
 
+.root {
+    overflow-x: hidden;
+}
+
 @media only screen and (max-width: 800px) {
     .classes {
         flex-direction: column;

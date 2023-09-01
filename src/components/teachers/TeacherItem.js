@@ -5,6 +5,7 @@ const TeacherItem = (props) => {
     return (
         <Link to={`/our-teachers/${props.name}`}>
             <div className={styles.item}>
+                <p className={styles.title1}>{props.name}</p>
                 <img src={require(`./../../pictures/teachers/${props.imageUrl}.jpg`)} />
                 <p className={styles.title}>{props.name}</p>
             </div>

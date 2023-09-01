@@ -36,3 +36,11 @@
     font-family: 'Quicksand';
     text-align: center;
 }
+
+@media only screen and (max-width: 800px) {
+    .list-wrap {
+        width: 90%;
+        padding: 3;
+        margin: 0;
+    }
+}

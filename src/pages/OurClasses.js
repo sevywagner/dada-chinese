@@ -6,7 +6,7 @@ import QuoteSection from "../components/home/QuoteSection";
 
 const OurClasses = () => {
   return (
-    <>
+    <div className={styles.root}>
       <p className={mainStyles.title}>Our Classes</p>
       <div className={styles.wrap}>
         <div className={styles.classes}>
@@ -27,7 +27,7 @@ const OurClasses = () => {
         </div>
       </div>
       <QuoteSection />
-    </>
+    </div>
   );
 };
 

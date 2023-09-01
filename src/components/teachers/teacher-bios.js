@@ -5,7 +5,7 @@ const bios = [
     imageUrl: "Jingyi",
     bodyPg:
       `I am a native Mandarin Chinese speaker with certificate of
-      National Proficiency Test of Putonghua. I&#39;ve been tutoring
+      National Proficiency Test of Putonghua. I've been tutoring
       Chinese since 2010. I teach a broad age range from age 3 to
       75. I hold a B.A. in Chinese language and Literature from
       Nankai University (China) and a M.A. in East Asian Studies
@@ -28,7 +28,7 @@ const bios = [
       with Chinese idioms, slang, poems and various folklore, to
       increase the memorability of the lesson. You can learn more
       content faster with me than with textbooks because I tailor
-      the teaching methods and learning materials to the student&#39;s
+      the teaching methods and learning materials to the student's
       needs. I like to provide individual attention to each student
       
       because everyone learns differently. I welcome all questions

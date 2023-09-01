@@ -150,7 +150,9 @@ const Checkout = () => {
                                     <input type='text' className={styles.input} ref={aptNumRef} />
                                 </fieldset>
                             </>}
-                            {(localStorage.getItem('token') && textbook === -1) && <p className={mainStyles.title}>Thank you for choosing Dada Chinese!</p>}
+                            <div className={styles.text}>
+                                {(localStorage.getItem('token') && textbook === -1) && <p className={mainStyles.title}>Thank you for choosing Dada Chinese!</p>}
+                            </div>
                             <div className={styles.wrap}>
                                 {!showPaypal ? <Button onClick={toggleCheckout}>Pay</Button> : totalPrice !== 0 && <Paypal onApprove={submitHandler} totalAmount={totalPrice} />}
                                 {totalPrice === 0 && <Button onClick={submitHandler}>Continue</Button>}

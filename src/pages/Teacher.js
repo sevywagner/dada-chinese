@@ -9,12 +9,12 @@ const Teacher = () => {
 
     return (
         <div className={styles.root}>
+                    <p className={mainStyles.title}>About {bio.name}</p>
             <div className={styles.wrap}>
                 <div className={styles.pic}>
-                    <img src={require(`./../pictures/teachers/${bio.imageUrl}.jpg`)} alt="JingYi Bio" />
+                    <img src={require(`./../pictures/teachers/${bio.imageUrl}.jpg`)} alt="Bio" />
                 </div>
                 <div className={styles.pg}>
-                    <p className={mainStyles.title}>About {bio.name}</p>
                     <p className={styles.text}>{bio.bodyPg}</p>
                 </div>
             </div>

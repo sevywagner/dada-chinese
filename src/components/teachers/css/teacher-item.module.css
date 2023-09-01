@@ -29,6 +29,10 @@
     font-size: 6vh;
 }
 
+.title1 {
+    display: none;
+}
+
 @keyframes hover {
     from {
         opacity: 1;
@@ -37,5 +41,24 @@
     to {
         opacity: .7;
         color: black;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .item {
+        margin-bottom: 20vh;
+    }
+
+    .title {
+        display: none;
+    }
+    
+    .title1 {
+        display: block;
+        text-align: center;
+        font-family: 'Lato';
+        font-size: 5vh;
+        position: relative;
+        top: 15vh;
     }
 }

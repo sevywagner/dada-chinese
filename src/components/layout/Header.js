@@ -92,10 +92,14 @@ const Header = () => {
           <Link className={styles["nav-item"]} to="/blog">Blog</Link>
           {!authCtx.isLoggedIn && <Link className={styles["nav-item"]} to="/dada-cinese/sign-up">Sign up</Link>}
           {!authCtx.isLoggedIn && <Link className={styles['nav-item']} to='/sign-in'>Sign in</Link>}
+          {authCtx.isLoggedIn && <Link className={styles['nav-item']} to='/my-orders'>My Orders</Link>}
           {localStorage.getItem('token') && <div className={styles.wrap}>
             <button onClick={cartToggle} className={styles.cart}>
               <img src={require('../../pictures/icons/cart.png')} />
             </button>
+              {cart.totalQuantity !== 0 && <div onClick={cartToggle} className={styles.quantity}>
+                <p>{cart.totalQuantity}</p>
+              </div>}
             <button onClick={logoutHandler} className={styles['mobile-logout']}>Logout</button>
           </div>}
         </motion.nav>}
