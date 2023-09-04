@@ -141,20 +141,21 @@
         width: 100%;
         border: none;
         background-color: whitesmoke;
+        align-items: center;
     }
-
+    
     .root:hover {
         animation: hover 0s ease-out;
         background-color: whitesmoke;
         color: black;
         width: 100%;
     }
-
+    
     .root:hover > .image > .two {
         animation: move-image 0s ease-in-out;
         display: none;
     }
-
+    
     .more {
         font-family: 'Avenir';
         font-size: 2vh;
@@ -165,9 +166,17 @@
         border: 1px solid white;
         color: white;
     }
-
-
+    
+    
     .text {
         width: 75%;
+    }
+    
+    .image {
+        width: 30vh;
+    }
+    
+    .image img {
+        width: 100%;
     }
 }

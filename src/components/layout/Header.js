@@ -81,9 +81,20 @@ const Header = () => {
           animate={{transform: 'translateX(0vh)'}}
           exit={{transform: 'translateX(-50vh)'}}
         >
-          <button className={styles['in-nav-more']} onClick={drawerHandler}>
-            <img height="100" src={require('./../../pictures/icons/more.png')} />
-          </button>
+          <div className={styles['mobile-drawer-top']}>
+            <button className={styles['in-nav-more']} onClick={drawerHandler}>
+              <img height="100" src={require('./../../pictures/icons/more.png')} />
+            </button>
+            <div className={styles.centered}>
+              <img src={require('./../../pictures/logos/White Logo with Text Vertical.png')} />
+            </div>
+            {cart.totalQuantity !== 0 && <div onClick={cartToggle} className={styles.quantity}>
+              <p>{cart.totalQuantity}</p>
+            </div>}
+            <button onClick={cartToggle} className={styles.cart}>
+              <img src={require('../../pictures/icons/cart.png')} />
+            </button>
+          </div>
           <Link className={styles["nav-item"]} to="/">Home</Link>
           <Link className={styles["nav-item"]} to='/our-classes'>Our Classes</Link>
           <Link className={styles["nav-item"]} to="/textbooks">Textbooks</Link>
@@ -94,12 +105,6 @@ const Header = () => {
           {!authCtx.isLoggedIn && <Link className={styles['nav-item']} to='/sign-in'>Sign in</Link>}
           {authCtx.isLoggedIn && <Link className={styles['nav-item']} to='/my-orders'>My Orders</Link>}
           {localStorage.getItem('token') && <div className={styles.wrap}>
-            <button onClick={cartToggle} className={styles.cart}>
-              <img src={require('../../pictures/icons/cart.png')} />
-            </button>
-              {cart.totalQuantity !== 0 && <div onClick={cartToggle} className={styles.quantity}>
-                <p>{cart.totalQuantity}</p>
-              </div>}
             <button onClick={logoutHandler} className={styles['mobile-logout']}>Logout</button>
           </div>}
         </motion.nav>}

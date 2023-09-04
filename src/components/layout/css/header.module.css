@@ -277,7 +277,7 @@ nav {
     flex-direction: column;
     align-items: flex-start;
     background-color: inherit;
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
@@ -296,7 +296,8 @@ nav {
   }
 
   .mobile-logout {
-    margin-left: 4vh;
+    margin-left: 2vh;
+    padding: 2vh;
     color: white;
     font-family: 'Proza Libre';
     font-size: 2.5vh;
@@ -305,8 +306,21 @@ nav {
   }
 
   .quantity {
-    position: relative;
-    right: 18vh;
-    top: -5vh;
+    position: absolute;
+    top: 7vh;
+    right: 1vh;
+  }
+
+
+  .cart {
+    position: absolute;
+    right: 5vh;
+    z-index: -1;
+  }
+  
+  .mobile-drawer-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
 }
