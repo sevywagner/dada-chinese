@@ -311,6 +311,9 @@ nav {
     right: 1vh;
   }
 
+  .centered {
+    transform: translateX(-1vh);
+  }
 
   .cart {
     position: absolute;

@@ -120,10 +120,15 @@ legend {
         padding: 3vh;
         margin: 0;
         margin-bottom: 5vh;
+        border-radius: 0;
     }
 
     .text {
         display: none;
+    }
+
+    .section {
+        width: 100%;
     }
 
     .total__text {}

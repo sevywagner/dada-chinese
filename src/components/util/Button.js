@@ -32,6 +32,11 @@ const Button = styled.button`
             color: black;
         }
     }
+
+    @media only screen and (max-width: 800px) {
+        width: 100%;
+        white-space: nowrap;
+    }
 `;
 
 export default Button;

@@ -29,6 +29,14 @@ const Header = () => {
 
   useEffect(() => {
     setShowNav(false);
+    if (localStorage.getItem('token')) {
+      const tokenIsValid = authCtx.getTokenValidity();
+      if (!tokenIsValid) {
+        authCtx.logoutHandler();
+      }
+    } else {
+      authCtx.logoutHandler();
+    }
   }, [location.pathname]);
 
   return (
@@ -101,7 +109,7 @@ const Header = () => {
           <Link className={styles["nav-item"]} to="/our-teachers">Our Teachers</Link>
           <Link className={styles["nav-item"]} to='/contact'>Contact</Link>
           <Link className={styles["nav-item"]} to="/blog">Blog</Link>
-          {!authCtx.isLoggedIn && <Link className={styles["nav-item"]} to="/dada-cinese/sign-up">Sign up</Link>}
+          {!authCtx.isLoggedIn && <Link className={styles["nav-item"]} to="/sign-up">Sign up</Link>}
           {!authCtx.isLoggedIn && <Link className={styles['nav-item']} to='/sign-in'>Sign in</Link>}
           {authCtx.isLoggedIn && <Link className={styles['nav-item']} to='/my-orders'>My Orders</Link>}
           {localStorage.getItem('token') && <div className={styles.wrap}>

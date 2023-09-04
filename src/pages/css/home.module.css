@@ -73,4 +73,8 @@
     .button {
         margin: 3vh;
     }
+
+    .title {
+        height: fit-content;
+    }
 }

@@ -2,6 +2,7 @@ import { useEffect, useContext } from 'react';
 import { useDispatch } from 'react-redux';
 import { cartActions } from './store/redux/cart';
 import { RouterProvider } from 'react-router-dom';
+import { useLocation } from 'react-router';
 import { authContext } from './store/context/auth-context';
 
 import './App.css';
@@ -32,17 +33,6 @@ function App() {
       }).catch((err) => console.log(err));
     }
   }, [authCtx.isLoggedIn, localStorage.getItem('token')])
-
-  useEffect(() => {
-    if (localStorage.getItem('token')) {
-      const tokenIsValid = authCtx.getTokenValidity();
-      if (!tokenIsValid) {
-        authCtx.logoutHandler();
-      }
-    } else {
-      authCtx.logoutHandler();
-    }
-  }, [localStorage.getItem('token')]);
 
   return <RouterProvider router={router} />;
 }

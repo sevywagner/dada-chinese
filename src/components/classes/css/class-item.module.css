@@ -147,14 +147,12 @@ a {
 
 @keyframes mobile-slide-in {
     from {
-        transform: translateY(20vh);
-        transform: translateX(10vh);
+        transform: translate(90%, 70vh);
         opacity: 0;
     }
 
     to {
-        transform: translateY(0vh);
-        transform: translateX(10vh);
+        transform: translate(90%, 40vh);
         opacity: 1;
     }
 }
@@ -175,10 +173,10 @@ a {
     .wrap {
         width: 100%;
     }
-
+    
     .info:hover ~ .info__text {
         display: block;
-        animation: mobile-slide-in .3s ease-in;
-        transform: translateX(10vh);
+        animation: mobile-slide-in .3s ease-in-out;
+        transform: translate(90%, 40vh);
     }
 }

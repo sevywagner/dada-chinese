@@ -46,7 +46,10 @@
 
 @media only screen and (max-width: 600px) {
     .item {
-        margin-bottom: 20vh;
+        margin-bottom: 8vh;
+        width: fit-content;
+        color: white;
+        font-weight: bold;
     }
 
     .title {

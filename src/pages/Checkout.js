@@ -124,7 +124,7 @@ const Checkout = () => {
                     <div className={styles.section}>
                         {hasError && <p className={mainStyles.error}>{hasError}</p>}
                         <form className={styles.form} onSubmit={toggleCheckout}>
-                            {!localStorage.getItem('token') && <>
+                            {!localStorage.getItem('token') && <div className={styles['form__section']}>
                                 <p className={styles.subtitle}>Basic Info</p>
 
                                 <fieldset>
@@ -136,8 +136,8 @@ const Checkout = () => {
                                     <legend>Email</legend>
                                     <input name="email" className={styles.input} type="text" ref={emailRef} />
                                 </fieldset>
-                            </>}
-                            {textbook !== -1 && <>
+                            </div>}
+                            {textbook !== -1 && <div className={styles['form__section']}>
                                 <p className={styles.subtitle}>Shipping Info</p>
 
                                 <fieldset>
@@ -149,13 +149,13 @@ const Checkout = () => {
                                     <legend>Apt # (optional)</legend>
                                     <input type='text' className={styles.input} ref={aptNumRef} />
                                 </fieldset>
-                            </>}
+                            </div>}
                             <div className={styles.text}>
                                 {(localStorage.getItem('token') && textbook === -1) && <p className={mainStyles.title}>Thank you for choosing Dada Chinese!</p>}
                             </div>
                             <div className={styles.wrap}>
                                 {!showPaypal ? <Button onClick={toggleCheckout}>Pay</Button> : totalPrice !== 0 && <Paypal onApprove={submitHandler} totalAmount={totalPrice} />}
-                                {totalPrice === 0 && <Button onClick={submitHandler}>Continue</Button>}
+                                {/* {totalPrice === 0 && <Button onClick={submitHandler}>Continue</Button>} */}
                             </div>
                         </form>
                     </div>

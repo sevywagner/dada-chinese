@@ -19,7 +19,7 @@ const Interface = (props) => {
                 <div className={styles.list}>
                     {cart.items.length !== 0 ? <ExampleItem /> : <p>No items in the cart yet</p>}
                     {cart.items.map((item) => <CartItem 
-                        key={item.id}
+                        key={Math.random()}
                         id={item.id}
                         title={item.title}
                         price={item.price}
@@ -28,7 +28,7 @@ const Interface = (props) => {
                     />)}
                 </div>
                 <div className={styles.total}>
-                    <p>Total Price</p>
+                    <p>Total Price:</p>
                     <p>${cart.totalPrice.toFixed(2)}</p>
                 </div>
                 <div className={mainStyles.wrap}>
