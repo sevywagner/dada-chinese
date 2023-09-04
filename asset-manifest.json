@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.cf500c03.css",
-    "main.js": "/static/js/main.c48697e2.js",
+    "main.css": "/static/css/main.4863fd6c.css",
+    "main.js": "/static/js/main.61aea294.js",
     "static/css/942.1f96cb86.chunk.css": "/static/css/942.1f96cb86.chunk.css",
     "static/js/942.41993227.chunk.js": "/static/js/942.41993227.chunk.js",
     "static/css/190.b24efcd7.chunk.css": "/static/css/190.b24efcd7.chunk.css",
@@ -53,8 +53,8 @@
     "static/media/会通封面1.jpeg": "/static/media/会通封面1.f5d745673879141125fb.jpeg",
     "static/media/checkCircle.png": "/static/media/checkCircle.a5259c875782a455aa99.png",
     "index.html": "/index.html",
-    "main.cf500c03.css.map": "/static/css/main.cf500c03.css.map",
-    "main.c48697e2.js.map": "/static/js/main.c48697e2.js.map",
+    "main.4863fd6c.css.map": "/static/css/main.4863fd6c.css.map",
+    "main.61aea294.js.map": "/static/js/main.61aea294.js.map",
     "942.1f96cb86.chunk.css.map": "/static/css/942.1f96cb86.chunk.css.map",
     "942.41993227.chunk.js.map": "/static/js/942.41993227.chunk.js.map",
     "190.b24efcd7.chunk.css.map": "/static/css/190.b24efcd7.chunk.css.map",
@@ -84,7 +84,7 @@
     "132.89730cce.chunk.js.map": "/static/js/132.89730cce.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.cf500c03.css",
-    "static/js/main.c48697e2.js"
+    "static/css/main.4863fd6c.css",
+    "static/js/main.61aea294.js"
   ]
 }
