@@ -9,6 +9,7 @@
 .subtitle {
     font-family: 'quicksand';
     font-size: 2.1vh;
+    text-align: center;
 }
 
 .data li {
@@ -169,14 +170,31 @@ a {
     }
 }
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 900px) {
     .wrap {
         width: 100%;
+    }
+
+    .item {
+        width: 95%;
     }
     
     .info:hover ~ .info__text {
         display: block;
         animation: mobile-slide-in .3s ease-in-out;
         transform: translate(90%, 40vh);
+    }
+
+    .pic {
+        height: fit-content;
+        width: fit-content;
+    }
+
+    .pic img {
+        width: 100%;
+    }
+
+    .data {
+        text-align: center
     }
 }

@@ -22,7 +22,7 @@
     font-size: 3vh;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 900px) {
     .wrap {
         margin: 1vh;
         width: 90%;

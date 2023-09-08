@@ -16,7 +16,9 @@ const Modal = ({ classTimes, onAddToCart, onBack }) => {
                             {classTime}
                     </button>
                 ))}
-                <Button onClick={onBack}>Back</Button>
+                <div className={styles['back-wrap']}>
+                    <Button onClick={onBack}>Back</Button>
+                </div>
             </div>
         </div>
     );

@@ -43,7 +43,7 @@
     margin-bottom: 3vh;
 } */
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 900px) {
     .wrap {
         flex-direction: column;
     }

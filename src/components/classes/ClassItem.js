@@ -23,6 +23,9 @@ const ClassItem = (props) => {
     useEffect(() => {
         const getClassTimes = async () => {
             const response = await fetch('https://dada-chinese-rest-api.herokuapp.com/class-times/get-class-times');
+            if (!response.ok) {
+                alert("We're currently expiriencing some technincal difficulties. Please refresh the page.");
+            }
             const data = await response.json();
             setClassTime(data.classTimes.find((classTime) => classTime._id === props.mongoId));
         }
@@ -67,8 +70,8 @@ const ClassItem = (props) => {
                     <p className={styles.price}>${props.price} {props.book !== 'calendly' ? '/ month' : ' / class'}</p>
                     {/* {classTime && classTime.classTimes.map((classTime) => <p key={Math.random()}>{classTime}</p>)} */}
                     {props.book === 'cart' && <p className={styles['four-classes']}>(4 classes)</p>}
-                        {props.subtitles.map((subtitle) => <p className={styles.subtitle} key={Math.random()}>{subtitle}</p>)}
-                        <div className={styles.line}><hr /></div>
+                    {props.subtitles.map((subtitle) => <p className={styles.subtitle} key={Math.random()}>{subtitle}</p>)}
+                    <div className={styles.line}><hr /></div>
                     <div className={styles.data}>
                         {props.bulletPoints.map((bullet) => <li key={Math.random()}><img src={require('./../../pictures/icons/checkCircle.png')} />{bullet}</li>)}
                     </div>

@@ -20,8 +20,9 @@
 }
 
 .list {
+    overflow-y: scroll;
     width: 70vh;
-    height: 50vh;
+    height: 55vh;
     background-color: rgba(0, 0, 0, 0.753);
     border-radius: 3vh;
     display: flex;
@@ -44,7 +45,8 @@
     background-color: rgb(255, 255, 255);
     margin: 1vh;
     border-radius: 5vh;
-    width: 60%;
+    width: 70%;
+    margin-bottom: 3vh;
 }
 
 .button:hover {
@@ -52,6 +54,10 @@
     background-color: rgb(130, 0, 0);
     color: white;
     border-color: white;
+}
+
+.back-wrap {
+    width: 70%;
 }
 
 @keyframes hover {

@@ -1,3 +1,9 @@
 .wrap {
     width: 80%;
 }
+
+@media only screen and (max-width: 900px) {
+    .wrap {
+        width: 100%;
+    }
+}
