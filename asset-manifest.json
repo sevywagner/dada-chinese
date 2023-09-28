@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/static/css/main.c9a79ba6.css",
+    "main.css": "/static/css/main.99e29d7e.css",
     "main.js": "/static/js/main.1f877283.js",
     "static/css/942.30f02878.chunk.css": "/static/css/942.30f02878.chunk.css",
     "static/js/942.da97a8d3.chunk.js": "/static/js/942.da97a8d3.chunk.js",
@@ -53,7 +53,7 @@
     "static/media/checkCircle.png": "/static/media/checkCircle.a5259c875782a455aa99.png",
     "static/media/小红书.jpeg": "/static/media/小红书.183920ef3ee98bf65e18.jpeg",
     "index.html": "/index.html",
-    "main.c9a79ba6.css.map": "/static/css/main.c9a79ba6.css.map",
+    "main.99e29d7e.css.map": "/static/css/main.99e29d7e.css.map",
     "main.1f877283.js.map": "/static/js/main.1f877283.js.map",
     "942.30f02878.chunk.css.map": "/static/css/942.30f02878.chunk.css.map",
     "942.da97a8d3.chunk.js.map": "/static/js/942.da97a8d3.chunk.js.map",
@@ -83,7 +83,7 @@
     "132.89730cce.chunk.js.map": "/static/js/132.89730cce.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.c9a79ba6.css",
+    "static/css/main.99e29d7e.css",
     "static/js/main.1f877283.js"
   ]
 }
