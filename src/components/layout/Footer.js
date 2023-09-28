@@ -6,23 +6,23 @@ const Footer = () => {
     <>
       <footer>
         <div className={styles.socials}>
-          <a className={styles["footer-item"]} href="https://twitter.com">
-            <img width="70" src={require("./../../pictures/icons/twitter.png")} />
-          </a>
-          <a className={styles["footer-item"]} href="https://facebook.com">
+          <a className={styles["footer-item"]} href="https://www.facebook.com/people/Dada-Chinese/pfbid0CBAhjVktN2NHsCAqFPQDMtueRzdPSMxtnCSoMHYThk2EcszjCpJs1aFznEp8YnrUl/">
             <img
               width="70"
               src={require("./../../pictures/icons/facebook.png")}
             />
           </a>
-          <a className={styles["footer-item"]} href="https://instagram.com">
+          <a className={styles["小红书"]} href="https://www.xiaohongshu.com/user/profile/5f2e167a0000000001003a13?xhsshare=CopyLink&appuid=5f2e167a0000000001003a13&apptime=1694792564">
+            <img width="70" src={require("./../../pictures/icons/小红书.jpeg")} />
+          </a>
+          <a className={styles["footer-item"]} href="https://www.instagram.com/dadachinese2023/">
             <img
               width="70"
               src={require("./../../pictures/icons/instagram.png")}
             />
           </a>
         </div>
-        <p className={styles['foot-note']}>&copy; Dada Chinese - <Link to='/policy'>Privacy Policy</Link></p>
+        <p className={styles['foot-note']}>&copy; Dada Chinese - <a href='https://www.freeprivacypolicy.com/live/a8cceb12-6ee8-4b25-b741-58c16c605472'>Privacy Policy</a></p>
       </footer>
     </>
   );

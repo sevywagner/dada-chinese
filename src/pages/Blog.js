@@ -7,8 +7,8 @@ const Blog = () => {
 
     return (
         <div>
-            <p className={mainStyles.title}>Blog</p>
-            <BlogList posts={blogPosts} />
+            <p className={mainStyles.title}>Blog Coming Soon!</p>
+            {/* <BlogList posts={blogPosts} /> */}
         </div>
     );
 }

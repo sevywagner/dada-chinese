@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import { useLoaderData } from "react-router";
+import formStyles from './../../components/contact/css/contact-form.module.css';
+import Button from "../../components/util/Button";
 
 const UpdateClassTimes = () => {
     const classes = useLoaderData();
@@ -7,6 +9,7 @@ const UpdateClassTimes = () => {
     const [amountOfTimes, setAmountOfTimes] = useState([1]);
     const [times, setTimes] = useState(['']);
     const [classItem, setClassItem] = useState(classes[0]);
+    const [result, setResult] = useState();
 
     const addTimeHandler = () => {
         setAmountOfTimes((prevState) => [...prevState, prevState.length + 1]);
@@ -23,7 +26,10 @@ const UpdateClassTimes = () => {
         setClassItem(classes.find((c) => c._id === event.target.value));
     }
 
-    const submitHandler = () => {
+    const submitHandler = (e) => {
+        e.preventDefault();
+
+        let error = false;
         fetch('https://dada-chinese-rest-api.herokuapp.com/class-times/update-class-times', {
             method: 'POST',
             body: JSON.stringify({
@@ -36,9 +42,14 @@ const UpdateClassTimes = () => {
                 Authorization: 'Bearer ' + localStorage.getItem('token')
             }
         }).then((response) => {
+            if (!response.ok) {
+                error = true;
+            }
             return response.json();
-        }).then((data) => console.log(data)).catch((err) => {
-
+        }).then((data) => {
+            setResult(error ? data.error : data.message);
+        }).catch((err) => {
+            setResult(err.message);
         });
     }
 
@@ -49,14 +60,19 @@ const UpdateClassTimes = () => {
     }, [amountOfTimes])
 
     return (
-        <div>
-            <select onChange={optionChangeHandler}>
-                {classes.map((classItem) => <option value={classItem._id} key={classItem._id}>{classItem.className}</option>)}
-            </select>
-            {amountOfTimes.map((num) => <input key={num} onChange={inputChangeHandler.bind(null, [num])} />)}
-            <button onClick={addTimeHandler}>Add a time</button>
-            <button onClick={submitHandler}>Submit</button>
-        </div>
+        <>
+            {result && <p>{result}</p>}
+            <div className={formStyles.wrap}>
+                <form className={formStyles['small-form']} onSubmit={submitHandler}>
+                    <select onChange={optionChangeHandler}>
+                        {classes.map((classItem) => <option value={classItem._id} key={classItem._id}>{classItem.className}</option>)}
+                    </select>
+                    {amountOfTimes.map((num) => <input key={num} onChange={inputChangeHandler.bind(null, [num])} />)}
+                    <Button type="button" onClick={addTimeHandler}>Add a time</Button>
+                    <Button type="submit">Submit</Button>
+                </form>
+            </div>
+        </>
     );
 }
 
@@ -64,6 +80,7 @@ export const loader = async () => {
     try {
         const response = await fetch('https://dada-chinese-rest-api.herokuapp.com/class-times/get-class-times');
         const data = await response.json();
+        data.classTimes.pop();
         return data.classTimes;
     } catch(err) {
         console.log(err);

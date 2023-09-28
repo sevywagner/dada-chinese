@@ -9,6 +9,17 @@ footer {
     margin: 3vh;
 }
 
+.小红书 {
+    margin: 3vh;
+    overflow: hidden;
+}
+
+.小红书 {
+    width: 10vh;
+    height: 10vh;
+    border-radius: 5vh;
+}
+
 .socials {
     display: flex;
     justify-content: center;

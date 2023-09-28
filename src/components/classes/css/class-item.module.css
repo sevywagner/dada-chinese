@@ -69,11 +69,13 @@ a {
     font-family: 'proza libre';
     font-size: 3vh;
     padding: 1.5vh;
+    padding-left: 3vh;
+    padding-right: 3vh;
     border: 1px solid rgb(76, 0, 0);
     background-color: rgba(255, 255, 255, 0.742);
     margin: 1vh;
     border-radius: 5vh;
-    width: 60%;
+    /* width: 60%; */
 }
 
 .price {
@@ -195,6 +197,6 @@ a {
     }
 
     .data {
-        text-align: center
+        
     }
 }
