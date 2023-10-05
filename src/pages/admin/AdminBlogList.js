@@ -5,7 +5,7 @@ import styles from './../../components/blog/css/blog.module.css';
 import BlogItem from '../../components/blog/BlogItem';
 
 const EditBlog = () => {
-    const posts = useLoaderData();
+    const posts = useLoaderData().reverse();
 
     return (
         <>

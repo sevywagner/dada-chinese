@@ -1,13 +1,14 @@
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import { useNavigate } from "react-router";
 
 import Button from "../../components/util/Button";
 import styles from "./../css/new-blog.module.css";
 import formStyles from "./../../components/sign-in/css/sign-in-form.module.css";
 import mainStyles from './../../components/main.module.css';
+import ImageUpload from "../../components/blog/ImageUpload";
 
 const NewBlog = () => {
-  const [file, setFile] = useState();
+  const [files, setFiles] = useState([null]);
   const [error, setError] = useState();
   const navigate = useNavigate();
 
@@ -21,7 +22,9 @@ const NewBlog = () => {
     const formData = new FormData();
     formData.append('title', titleRef.current.value);
     formData.append('content', contentRef.current.value);
-    formData.append('image', file);
+    for (const image of files) {
+      formData.append('image', image);
+    }
     formData.append('videoUrl', videoUrlRef.current.value);
     formData.append('date', new Date().toDateString());
 
@@ -49,11 +52,23 @@ const NewBlog = () => {
     }).catch((err) => console.log(err));
   };
 
-  const fileHandler = (event) => {
-    setFile(event.target.files[0]);
+  const fileHandler = (event, num) => {
+    setFiles((prevState) => {
+      prevState[num - 1] = event.target.files[0];
+      return prevState;
+    });
   }
 
-  console.log(file);
+  const [amountOfImages, setAmountOfImages] = useState([1]);
+
+  const addImageHandler = () => {
+      setAmountOfImages((prevState) => [...prevState, prevState.length + 1]);
+  }
+
+  useEffect(() => {
+      setFiles((prevState) => [...prevState, null]);
+      console.log(files);
+  }, [amountOfImages]);
 
   return (
     <div className={styles.root}>
@@ -66,9 +81,9 @@ const NewBlog = () => {
           <input type="text" ref={titleRef} />
         </div>
         <div className={formStyles.block}>
-          <label>Image</label>
-          <input type="file" onChange={fileHandler.bind(this)} />
+          {amountOfImages.map((num) => <ImageUpload key={num} onUpload={fileHandler} num={num} />)}
         </div>
+        <button type="button" onClick={addImageHandler}>Add another image</button>
         <div className={formStyles.block}>
           <label>Video Url</label>
           <input type="text" ref={videoUrlRef} />

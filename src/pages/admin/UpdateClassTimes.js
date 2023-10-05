@@ -54,10 +54,8 @@ const UpdateClassTimes = () => {
     }
 
     useEffect(() => {
-        const newTimes = times;
-        newTimes.push('');
-        setTimes(newTimes);
-    }, [amountOfTimes])
+        setTimes((prevState) => [...prevState, '']);
+    }, [amountOfTimes]);
 
     return (
         <>
