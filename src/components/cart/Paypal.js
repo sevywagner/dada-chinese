@@ -19,7 +19,6 @@ const Paypal = ({ totalAmount, onApprove }) => {
                 }
             ]
         }).then((order) => {
-            console.log(order);
             return order;
         });
     }
@@ -27,7 +26,6 @@ const Paypal = ({ totalAmount, onApprove }) => {
     const approveHandler = (data, actions) => {
         return actions.order.capture().then((details) => {
             const { payer } = details;
-            console.log(payer);
             onApprove();
             navigate('/order-confirmation');
             dispatch(cartActions.resetCart({ guest: localStorage.getItem('token') === null }));
@@ -40,7 +38,7 @@ const Paypal = ({ totalAmount, onApprove }) => {
 
     return (
         <PayPalScriptProvider options={{
-            "client-id": process.env.PAYPAL_CLIENT_ID
+            "client-id": process.env.REACT_APP_PAYPAL_CLIENT_ID
         }}>
             <PayPalButtons createOrder={createOrderHandler} onApprove={approveHandler} onError={errorHandler} />
         </PayPalScriptProvider>
