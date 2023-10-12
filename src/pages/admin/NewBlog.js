@@ -43,10 +43,10 @@ const NewBlog = () => {
 
       return result.json();
     }).then((data) => {
+      console.log(data);
       if (hasError) {
         setError(data.error);
       } else {
-        console.log(data.message);
         navigate('/blog');
       }
     }).catch((err) => console.log(err));
