@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router";
 import { useLoaderData } from "react-router";
 
@@ -6,9 +6,10 @@ import Button from "../../components/util/Button";
 import styles from "./../css/new-blog.module.css";
 import mainStyles from './../../components/main.module.css';
 import formStyles from "./../../components/sign-in/css/sign-in-form.module.css";
+import ImageUpload from "../../components/blog/ImageUpload";
 
 const EditPostPage = () => {
-  const [file, setFile] = useState();
+  const [files, setFiles] = useState([null]);
   const navigate = useNavigate();
   const params = useParams();
 
@@ -34,8 +35,10 @@ const EditPostPage = () => {
 
     const formData = new FormData();
     formData.append("title", title);
-    formData.append("imageWebContentLink", targetPost.imageWebContentLink);
-    formData.append("image", file);
+    formData.append("imageWebContentLinks", targetPost.imageWebContentLinks);
+    for (const image of files) {
+      formData.append('image', image);
+    }
     formData.append('videoUrl', !videoUrlRef.current.value ? targetPost.videoUrl : videoUrlRef.current.value);
     formData.append("content", contentRef.current.value);
     formData.append("date", targetPost.date);
@@ -68,9 +71,22 @@ const EditPostPage = () => {
     });
   };
 
-  const fileHandler = (event) => {
-    setFile(event.target.files[0]);
-  };
+  const fileHandler = (event, num) => {
+    setFiles((prevState) => {
+      prevState[num - 1] = event.target.files[0];
+      return prevState;
+    });
+  }
+
+  const [amountOfImages, setAmountOfImages] = useState([1]);
+
+  const addImageHandler = () => {
+      setAmountOfImages((prevState) => [...prevState, prevState.length + 1]);
+  }
+
+  useEffect(() => {
+      setFiles((prevState) => [...prevState, null]);
+  }, [amountOfImages]);
 
   return (
     <div>
@@ -83,7 +99,8 @@ const EditPostPage = () => {
           </div>
           <div className={formStyles.block}>
             <label>Image</label>
-            <input type="file" onChange={fileHandler.bind(this)} />
+            {amountOfImages.map((num) => <ImageUpload key={num} onUpload={fileHandler} num={num} />)}
+            <button type="button" onClick={addImageHandler}>Add image</button>
           </div>
           <div className={formStyles.block}>
             <label>Video Url</label>

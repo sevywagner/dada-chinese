@@ -67,7 +67,6 @@ const NewBlog = () => {
 
   useEffect(() => {
       setFiles((prevState) => [...prevState, null]);
-      console.log(files);
   }, [amountOfImages]);
 
   return (

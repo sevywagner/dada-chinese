@@ -20,7 +20,7 @@ const EditBlog = () => {
                         key={post._id}
                         id={post._id}
                         title={post.title}
-                        imageWebContentLink={post.imageWebContentLink}
+                        imageWebContentLink={post.imageWebContentLinks[0]}
                         content={post.content}
                         date={post.date}
                         admin={true}
