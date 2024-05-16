@@ -44,12 +44,9 @@ const Paypal = ({ totalAmount, onApprove }) => {
 
     return (
         <PayPalScriptProvider options={{
-            "client-id": process.env.REACT_APP_PAYPAL_CLIENT_ID,
-            components: "buttons",
-            intent: "subscription",
-            vault: true
+            "client-id": process.env.REACT_APP_PAYPAL_CLIENT_ID
         }}>
-            <PayPalButtons createSubscription={subscriptionHandler} style={{ label: "subscribe" }} />
+            <PayPalButtons createOrder={createOrderHandler} onApprove={approveHandler} onError={errorHandler} />
         </PayPalScriptProvider>
     );
 }
