@@ -23,13 +23,6 @@ const Paypal = ({ totalAmount, onApprove }) => {
         });
     }
 
-    const subscriptionHandler = (actions, data) => {
-        return actions.subscription.create({
-            /* Creates the subscription */
-            "plan-id": 'P-1NT15801DB804310BMZC22UY'
-          });
-    }
-
     const approveHandler = (data, actions) => {
         return actions.order.capture().then(() => {
             onApprove();

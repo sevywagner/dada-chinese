@@ -5,11 +5,13 @@ import mainStyles from './../main.module.css';
 import { PopupButton } from 'react-calendly';
 import { useEffect, useState } from 'react';
 import ClassTimeModal from './ClassTimeModal';
+import PaypalSubscription from '../cart/PaypalSubscription';
 
 const ClassItem = (props) => {
     const dispatch = useDispatch();
     const [classTime, setClassTime] = useState();
     const [showModal, setShowModal] = useState(false);
+    const [showSub, setShowSub] = useState(false);
 
     const toggleShowModal = () => {
         setShowModal((prevState) => !prevState);
@@ -18,6 +20,10 @@ const ClassItem = (props) => {
     const addToCartHandler = (time) => {
         dispatch(cartActions.addItem({ id: props.id, title: props.name, price: props.price, time, quantity: 1 }));
         toggleShowModal();
+    }
+
+    const showSubHandler = () => {
+        setShowSub(true);
     }
 
     useEffect(() => {
@@ -76,6 +82,7 @@ const ClassItem = (props) => {
                     <div className={styles.data}>
                         {props.bulletPoints.map((bullet) => <li key={Math.random()}><img src={require('./../../pictures/icons/checkCircle.png')} />{bullet}</li>)}
                     </div>
+                    {/* {showSub ? <PaypalSubscription planId="P-3477215868633310EMZC263A" /> :<button onClick={showSubHandler}>Start subscription</button>} */}
                 </div>
             </div>
         </>

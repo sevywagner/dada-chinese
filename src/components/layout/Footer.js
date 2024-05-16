@@ -6,7 +6,7 @@ const Footer = () => {
     <>
       <footer>
         <div className={styles.socials}>
-          <a className={styles["footer-item"]} href="https://www.facebook.com/profile.php?id=61555402481266/">
+          <a className={styles["footer-item"]} href="https://www.facebook.com/profile.php?id=61555402481266">
             <img
               width="70"
               src={require("./../../pictures/icons/facebook.png")}
