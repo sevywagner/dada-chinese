@@ -23,9 +23,15 @@ const Paypal = ({ totalAmount, onApprove }) => {
         });
     }
 
+    const subscriptionHandler = (actions, data) => {
+        return actions.subscription.create({
+            /* Creates the subscription */
+            "plan-id": 'P-1NT15801DB804310BMZC22UY'
+          });
+    }
+
     const approveHandler = (data, actions) => {
-        return actions.order.capture().then((details) => {
-            const { payer } = details;
+        return actions.order.capture().then(() => {
             onApprove();
             navigate('/order-confirmation');
             dispatch(cartActions.resetCart({ guest: localStorage.getItem('token') === null }));
@@ -38,11 +44,13 @@ const Paypal = ({ totalAmount, onApprove }) => {
 
     return (
         <PayPalScriptProvider options={{
-            "client-id": process.env.REACT_APP_PAYPAL_CLIENT_ID
+            "client-id": process.env.REACT_APP_PAYPAL_CLIENT_ID,
+            components: "buttons",
+            intent: "subscription",
+            vault: true
         }}>
-            <PayPalButtons createOrder={createOrderHandler} onApprove={approveHandler} onError={errorHandler} />
+            <PayPalButtons createSubscription={subscriptionHandler} style={{ label: "subscribe" }} />
         </PayPalScriptProvider>
-        
     );
 }
 

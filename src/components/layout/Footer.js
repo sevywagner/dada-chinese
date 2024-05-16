@@ -6,7 +6,7 @@ const Footer = () => {
     <>
       <footer>
         <div className={styles.socials}>
-          <a className={styles["footer-item"]} href="https://www.facebook.com/people/Dada-Chinese/pfbid0CBAhjVktN2NHsCAqFPQDMtueRzdPSMxtnCSoMHYThk2EcszjCpJs1aFznEp8YnrUl/">
+          <a className={styles["footer-item"]} href="https://www.facebook.com/profile.php?id=61555402481266/">
             <img
               width="70"
               src={require("./../../pictures/icons/facebook.png")}
@@ -15,7 +15,7 @@ const Footer = () => {
           <a className={styles["小红书"]} href="https://www.xiaohongshu.com/user/profile/5f2e167a0000000001003a13?xhsshare=CopyLink&appuid=5f2e167a0000000001003a13&apptime=1694792564">
             <img width="70" src={require("./../../pictures/icons/小红书.jpeg")} />
           </a>
-          <a className={styles["footer-item"]} href="https://www.instagram.com/dadachinese2023/">
+          <a className={styles["footer-item"]} href="https://www.instagram.com/dadachineseofficial/">
             <img
               width="70"
               src={require("./../../pictures/icons/instagram.png")}

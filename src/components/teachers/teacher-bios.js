@@ -35,12 +35,6 @@ const bios = [
       regarding the language, culture, and otherwise.`
   },
   {
-    id: "t2",
-    name: 'Jiao Gu',
-    imageUrl: 'JiaoGu',
-    bodyPg: "My name is Jiao Gu. I am a native Mandarin speaker from China, and I have been teaching Chinese as a foreign language for over 2 years. Teaching Chinese has always been my passion, as I strongly believe in the power of language to bridge cultural gaps and foster global understanding. I find great joy in sharing my knowledge of Chinese language and culture with students from diverse backgrounds. My teaching approach: I strive to create a dynamic and engaging learning environment. I incorporate a variety of teaching methods and resources to cater to the different learning styles and needs of my students. I emphasize not only the fundamentals of the language, such as pronunciation, grammar, and vocabulary, but also the cultural aspects that enrich the learning experience. I believe in the importance of active participation and practical application of the language. Therefore, I encourage my students to actively engage in conversations, role-plays, and interactive activities to enhance their speaking and listening skills. I look forward to getting to know each of you and assisting you in your Chinese language learning endeavors. Please feel free to reach out to me with any questions or concerns you may have."
-  },
-  {
     id: 't3',
     name: 'Chong Xu',
     imageUrl: 'ChongXu',

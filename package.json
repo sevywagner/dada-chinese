@@ -6,7 +6,7 @@
   "dependencies": {
     "@emailjs/browser": "^3.10.0",
     "@fullpage/react-fullpage": "^0.1.40",
-    "@paypal/react-paypal-js": "^7.8.2",
+    "@paypal/react-paypal-js": "^7.8.3",
     "@react-spring/web": "^9.7.2",
     "@reduxjs/toolkit": "^1.9.1",
     "@testing-library/jest-dom": "^5.16.5",
@@ -14,6 +14,7 @@
     "@testing-library/user-event": "^13.5.0",
     "framer-motion": "^8.5.0",
     "gh-pages": "^4.0.0",
+    "nodemon": "^3.1.0",
     "react": "^18.2.0",
     "react-awesome-slider": "^4.1.0",
     "react-calendly": "^4.1.1",

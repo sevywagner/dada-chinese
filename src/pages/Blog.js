@@ -4,11 +4,13 @@ import { useLoaderData } from 'react-router-dom';
 
 const Blog = () => {
     const blogPosts = useLoaderData().reverse();
+    console.log(blogPosts);
 
     return (
         <div>
             <p className={mainStyles.title}>Blog</p>
-            <BlogList posts={blogPosts} />
+            <p className={mainStyles.subtitle}>Blog coming soon!</p>
+            {/* <BlogList posts={blogPosts} /> */}
         </div>
     );
 }

@@ -5,10 +5,24 @@ import { motion } from "framer-motion";
 
 const Carousel = () => {
   let carouselTimer;
-  const [pic, setPic] = useState(
-    require("./../../pictures/carousel/pic1.jpeg")
-  );
-  const [counter, setCounter] = useState(2);
+  const [pic, setPic] = useState(require("./../../pictures/carousel/pic1.jpeg"));
+  const pics = [
+    require("./../../pictures/carousel/pic1.jpeg"),
+    require("./../../pictures/carousel/pic2.jpeg"),
+    require("./../../pictures/carousel/pic3.jpeg"),
+    require("./../../pictures/carousel/pic4.jpeg"),
+    require("./../../pictures/carousel/pic5.jpeg"),
+    require("./../../pictures/carousel/pic6.jpeg"),
+    require("./../../pictures/carousel/pic7.jpeg"),
+    require("./../../pictures/carousel/pic8.jpeg"),
+    require("./../../pictures/carousel/pic9.jpeg"),
+    require("./../../pictures/carousel/pic10.jpeg"),
+    require("./../../pictures/carousel/pic11.jpeg"),
+    require("./../../pictures/carousel/pic12.jpeg"),
+    require("./../../pictures/carousel/pic13.jpeg"),
+
+  ];
+  const [counter, setCounter] = useState(1);
 
   const nextHandler = () => {
     if (carouselTimer) {
@@ -21,7 +35,7 @@ const Carousel = () => {
       setCounter((prevState) => prevState + 1);
     }
 
-    setPic(require(`./../../pictures/carousel/pic${counter}.jpeg`));
+    // setPic(require(`./../../pictures/carousel/pic${counter}.jpeg`));
   }
 
   const prevHandler = () => {
@@ -35,12 +49,11 @@ const Carousel = () => {
       setCounter((prevState) => prevState - 1);
     }
 
-    setPic(require(`./../../pictures/carousel/pic${counter}.jpeg`));
+    // setPic(require(`./../../pictures/carousel/pic${counter}.jpeg`));
   }
 
   useEffect(() => {
     carouselTimer = setTimeout(() => {
-      setPic(require(`./../../pictures/carousel/pic${counter}.jpeg`));
       if (counter === 13) {
         setCounter(1);
       } else {
@@ -48,6 +61,10 @@ const Carousel = () => {
       }
     }, 5000);
   }, [pic]);
+  
+  useEffect(() => {
+    setPic(pics[counter]);
+  }, [counter])
 
   return (
     <div className={styles.root}>

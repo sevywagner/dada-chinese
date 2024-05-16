@@ -30,7 +30,7 @@ const NewBlog = () => {
 
     let hasError = false;
 
-    fetch("https://dada-chinese-rest-api.herokuapp.com/posts", {
+    fetch("http://localhost:8080/posts", {
       method: "POST",
       body: formData,
       headers: {

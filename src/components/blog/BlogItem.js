@@ -43,7 +43,8 @@ const BlogItem = (props) => {
             <Link className={styles.link} to={props.admin ? `/edit-post/${props.id}` : `/blog-post/${props.id}`}>
                 <div className={styles.item}>
                     <div className={styles.left}>
-                        <img src={props.imageWebContentLink} alt="blog" />
+                        {/* <img src={props.imageWebContentLink} alt="blog" /> */}
+                        <img src="https://drive.google.com/thumbnail?id=0B6wwyazyzml-OGQ3VUo0Z2thdmc&sz=w1000" alt="Page Image"></img>
                     </div>
                     <div className={styles.right}>
                         <div className={styles.date}>
