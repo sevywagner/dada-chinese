@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.eaa9528e.css",
-    "main.js": "/static/js/main.5fbafd04.js",
+    "main.js": "/static/js/main.a459099b.js",
     "static/css/942.30f02878.chunk.css": "/static/css/942.30f02878.chunk.css",
     "static/js/942.c2b21d22.chunk.js": "/static/js/942.c2b21d22.chunk.js",
     "static/css/190.adda4048.chunk.css": "/static/css/190.adda4048.chunk.css",
@@ -54,7 +54,7 @@
     "static/media/小红书.jpeg": "/static/media/小红书.183920ef3ee98bf65e18.jpeg",
     "index.html": "/index.html",
     "main.eaa9528e.css.map": "/static/css/main.eaa9528e.css.map",
-    "main.5fbafd04.js.map": "/static/js/main.5fbafd04.js.map",
+    "main.a459099b.js.map": "/static/js/main.a459099b.js.map",
     "942.30f02878.chunk.css.map": "/static/css/942.30f02878.chunk.css.map",
     "942.c2b21d22.chunk.js.map": "/static/js/942.c2b21d22.chunk.js.map",
     "190.adda4048.chunk.css.map": "/static/css/190.adda4048.chunk.css.map",
@@ -84,6 +84,6 @@
   },
   "entrypoints": [
     "static/css/main.eaa9528e.css",
-    "static/js/main.5fbafd04.js"
+    "static/js/main.a459099b.js"
   ]
 }
