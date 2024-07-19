@@ -21,6 +21,7 @@ const Home = () => {
                     rootElement={document.getElementById('root')}
                 />
             </div>
+            <p>Hi</p>
             <section>
                 <div className={styles.row}>
                     <div className={styles.carousel}>
