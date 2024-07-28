@@ -16,6 +16,18 @@
 
 .carousel {
     width: 50%;
+    display: flex;
+    justify-content: center;
+}
+
+.carousel video {
+    /* width: 100%; */
+    height: 50vh;
+    border-radius: 4vh;
+}
+
+.carousel video source {
+    border-radius: 5vh;
 }
 
 .root {

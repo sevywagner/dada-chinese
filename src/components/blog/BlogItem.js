@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 
 import styles from './css/blog.module.css';
@@ -6,7 +6,6 @@ import mainStyles from './../main.module.css'
 
 const BlogItem = (props) => {
     const [result, setResult] = useState();
-    const [file, setFile] = useState();
     const navigate = useNavigate();
 
     const dateStringArray = props.date.split(' ');

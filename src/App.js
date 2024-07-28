@@ -2,7 +2,6 @@ import { useEffect, useContext } from 'react';
 import { useDispatch } from 'react-redux';
 import { cartActions } from './store/redux/cart';
 import { RouterProvider } from 'react-router-dom';
-import { useLocation } from 'react-router';
 import { authContext } from './store/context/auth-context';
 
 import './App.css';

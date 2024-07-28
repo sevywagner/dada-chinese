@@ -24,7 +24,10 @@ const Home = () => {
             <section>
                 <div className={styles.row}>
                     <div className={styles.carousel}>
-                        <Carousel />
+                        <video autoPlay loop muted>
+                            <source src={require('./../pictures/a.mp4')} type="video/mp4" />
+                            Your browser does not support the video tag.
+                        </video>
                     </div>
                     <div className={mainStyles['half-width-block']}>
                         <About />

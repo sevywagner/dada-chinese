@@ -2,16 +2,12 @@ import { createBrowserRouter } from "react-router-dom";
 import { lazy, Suspense } from "react";
 
 import Layout from "./layout/Layout";
-import Members from "../pages/Members";
 import OurClasses from "../pages/OurClasses";
-import OurClassesDetail from "../pages/OurClassesDetail";
 import OurTeachers from "../pages/OurTeachers";
 import Textbooks from "../pages/Textbooks";
-import Policy from "../pages/Policy";
 import Teacher from "../pages/Teacher";
 import Error from "../pages/Error";
 import Admin from "../pages/admin/Admin";
-import FAQ from "../pages/FAQ";
 import ClassTimes from "../pages/ClassTimes";
 import UpdateClassTimes from "../pages/admin/UpdateClassTimes";
 
@@ -76,15 +72,6 @@ const router = createBrowserRouter([
         {
           path: 'admin',
           element: <Admin />
-        },
-        // ...
-        {
-          path: 'members',
-          element: <Members />
-        },
-        {
-          path: 'policy',
-          element: <Policy />
         },
         //----- Sign in/up -----
         {

@@ -3,8 +3,16 @@ import styles from "./css/our-classes.module.css";
 import mainStyles from './../components/main.module.css';
 import classes from "../components/classes/dummy-classes";
 import QuoteSection from "../components/home/QuoteSection";
+import { useEffect } from "react";
+import { useLocation } from "react-router";
 
 const OurClasses = () => {
+  const location = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location.pathname]);
+  
   return (
     <div className={styles.root}>
       <p className={mainStyles.title}>Our Classes</p>

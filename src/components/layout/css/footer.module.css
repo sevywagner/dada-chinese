@@ -12,12 +12,9 @@ footer {
 .小红书 {
     margin: 3vh;
     overflow: hidden;
-}
-
-.小红书 {
     width: 10vh;
     height: 10vh;
-    border-radius: 5vh;
+    /* border-radius: 5vh; */
 }
 
 .socials {
