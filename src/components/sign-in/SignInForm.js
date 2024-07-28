@@ -17,8 +17,7 @@ const SignInForm = () => {
     event.preventDefault();
 
     let responseIsOk;
-    //s://dada-chinese-rest-api.herokuapp.com
-    fetch('http://localhost:8080/auth/login', {
+    fetch('https://dada-chinese-rest-api.herokuapp.com/auth/login', {
       method: 'POST',
       body: JSON.stringify({
         email: emailInputRef.current.value,
