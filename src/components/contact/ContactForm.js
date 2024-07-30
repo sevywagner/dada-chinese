@@ -55,17 +55,28 @@ const ContactForm = () => {
     }
 
     if (nameIsValid && emailIsValid && messageIsValid) {
-      emailjs.sendForm('service_iff9mux', 'template_lszstvs', formRef.current, 'PyPxMRbgnyMI7gkRQ').then((result) => {
-        console.log(result);
-        setHasSent(true);
-
-        resetName();
-        resetEmail();
-        resetMessage();
-      }).catch((err) => {
-        setSendError(true);
-        console.log(err);
-      })
+      fetch('https://dada-chinese-rest-api.herokuapp.com/contact/contact-form', {
+        method: 'POST',
+        body: JSON.stringify({
+          name,
+          email,
+          message
+        }),
+        headers: {
+          "Content-Type": "application/json"
+        }
+      }).then((response) => {
+        if (!response.ok) {
+          setError("Error please try again later");
+        }
+        return response.json();
+      }).then((data) => {
+        if (data.error) {
+          setError(data.error)
+        } else {
+          setHasSent(true);
+        }
+      });
     }
   }
 
